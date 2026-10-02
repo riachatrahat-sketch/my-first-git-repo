@@ -1,0 +1,20 @@
+nav li {
+    list-style: none;
+    display: inline;
+    margin: 15px;
+}
+nav li:hover{
+    background-color: aqua;
+    text-shadow: burlywood;
+}
+
+nav li a{
+ 
+    text-decoration: none;
+}
+.blog{
+    background-color: aqua;
+    height: 144px;
+    width: 400px;
+
+}

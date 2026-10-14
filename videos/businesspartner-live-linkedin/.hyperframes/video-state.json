@@ -306,13 +306,15 @@
   },
   "renders": {
     "latest": {
-      "id": "2f7a33dc-c0a8-45ff-9a11-be6059ce3255",
-      "completedAt": 1791966891016,
-      "output": "/home/user/my-first-git-repo/videos/businesspartner-live-linkedin/renders/businesspartner-linkedin-35s.mp4",
+      "id": "7716220b-1080-4604-8f82-aafa1ab469e6",
+      "completedAt": 1791967120045,
+      "output": "/home/user/my-first-git-repo/videos/businesspartner-live-linkedin/renders/businesspartner-linkedin-35s-music.mp4",
       "status": "completed",
-      "revision": null
+      "revision": "a45b48e5-8340-4e73-a8c5-c7e7f1361a79"
     },
-    "retainedRevisions": []
+    "retainedRevisions": [
+      "a45b48e5-8340-4e73-a8c5-c7e7f1361a79"
+    ]
   },
   "pendingArtifactCleanup": []
 }

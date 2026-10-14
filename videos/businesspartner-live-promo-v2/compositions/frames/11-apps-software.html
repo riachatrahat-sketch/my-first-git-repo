@@ -1,0 +1,82 @@
+<template>
+  <style>
+
+
+@font-face{font-family:"Playfair Display";src:url("assets/fonts/PlayfairDisplay-400.woff2") format("woff2");font-weight:400;font-style:normal}
+@font-face{font-family:"Playfair Display";src:url("assets/fonts/PlayfairDisplay-400italic.woff2") format("woff2");font-weight:400;font-style:italic}
+@font-face{font-family:"Inter";src:url("assets/fonts/Inter-400.woff2") format("woff2");font-weight:400}
+@font-face{font-family:"Inter";src:url("assets/fonts/Inter-600.woff2") format("woff2");font-weight:600}
+@font-face{font-family:"JetBrains Mono";src:url("assets/fonts/JetBrainsMono-400.woff2") format("woff2");font-weight:400}
+
+#root{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;color:#F3EDE0;font-family:"Inter",sans-serif}
+[data-composition-id="11-apps-software"] .bg{position:absolute;inset:0;background:#060A07}
+[data-composition-id="11-apps-software"] .bloom{position:absolute;border-radius:50%;pointer-events:none}
+[data-composition-id="11-apps-software"] .bloom.sun{width:1300px;height:1300px;left:760px;top:-260px;background:radial-gradient(circle,rgba(52,213,122,.30) 0%,rgba(52,213,122,.12) 32%,rgba(18,92,50,.06) 52%,rgba(0,0,0,0) 70%)}
+[data-composition-id="11-apps-software"] .bloom.ember{width:900px;height:900px;left:-300px;top:420px;background:radial-gradient(circle,rgba(30,143,78,.16) 0%,rgba(0,0,0,0) 65%)}
+[data-composition-id="11-apps-software"] .vignette{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,0,0,0) 55%,rgba(0,0,0,.55) 100%)}
+[data-composition-id="11-apps-software"] .stage{position:absolute;inset:0}
+[data-composition-id="11-apps-software"] .display{font-family:"Playfair Display",serif;font-weight:400;letter-spacing:-0.015em;line-height:1.02;color:#F3EDE0}
+[data-composition-id="11-apps-software"] .it{font-style:italic;color:#34D57A}
+[data-composition-id="11-apps-software"] .micro{font-family:"Inter",sans-serif;font-weight:600;font-size:18px;letter-spacing:.32em;text-transform:uppercase;color:#8BF0B4}
+[data-composition-id="11-apps-software"] .mono{font-family:"JetBrains Mono",monospace;color:#34D57A}
+[data-composition-id="11-apps-software"] .hair{position:absolute;height:1px;background:#34D57A;transform-origin:0 50%}
+[data-composition-id="11-apps-software"] .card{position:absolute;background:rgba(12,22,15,.88);border:1px solid rgba(52,213,122,.45)}
+[data-composition-id="11-apps-software"] .pagenum{position:absolute;right:64px;top:52px;font-family:"JetBrains Mono",monospace;font-size:15px;letter-spacing:.08em;color:#34D57A;opacity:.75}
+[data-composition-id="11-apps-software"] .brand{position:absolute;left:64px;top:50px;font-family:"Playfair Display",serif;font-size:22px;color:#F3EDE0;opacity:.8}
+[data-composition-id="11-apps-software"] .brand b{font-weight:400;color:#34D57A}
+
+
+[data-composition-id="11-apps-software"] .phone{left:230px;top:150px;width:330px;height:640px;border-radius:44px;border:2px solid rgba(52,213,122,.6);overflow:hidden}
+[data-composition-id="11-apps-software"] .notch{position:absolute;left:115px;top:16px;width:100px;height:22px;border-radius:11px;background:rgba(52,213,122,.25)}
+[data-composition-id="11-apps-software"] .pc{position:absolute;left:28px;width:274px;height:80px;border-radius:14px;background:rgba(52,213,122,.12);border:1px solid rgba(52,213,122,.3)}
+[data-composition-id="11-apps-software"] .pc.hi{background:#34D57A}
+[data-composition-id="11-apps-software"] .plbl{position:absolute;left:230px;top:810px}
+[data-composition-id="11-apps-software"] .dash{left:700px;top:200px;width:1050px;height:520px;border-radius:12px}
+[data-composition-id="11-apps-software"] .side{position:absolute;left:0;top:0;bottom:0;width:180px;border-right:1px solid rgba(52,213,122,.25)}
+[data-composition-id="11-apps-software"] .sb{position:absolute;left:30px;width:120px;height:14px;border-radius:7px;background:rgba(52,213,122,.2)}
+[data-composition-id="11-apps-software"] .kpi{position:absolute;top:40px;width:240px;height:100px;border:1px solid rgba(52,213,122,.3);border-radius:8px}
+[data-composition-id="11-apps-software"] .bar{position:absolute;bottom:50px;width:70px;background:#34D57A;border-radius:4px 4px 0 0;transform-origin:50% 100%}
+[data-composition-id="11-apps-software"] .dlbl{position:absolute;left:700px;top:750px}
+[data-composition-id="11-apps-software"] .tail{position:absolute;left:1180px;top:810px;font-size:52px}
+
+  </style>
+  <div id="root" data-composition-id="11-apps-software" data-width="1920" data-height="1080">
+    <div class="clip bg" id="f11-apps-software-bg" data-start="0" data-duration="7.29" data-track-index="0">
+      <div class="bloom sun" id="f11-apps-software-sun"></div>
+      <div class="bloom ember" id="f11-apps-software-ember"></div>
+      <div class="vignette"></div>
+    </div>
+    <div class="clip stage" id="f11-apps-software-stage" data-start="0" data-duration="7.29" data-track-index="1">
+      <div class="brand" id="f11-apps-software-brand">BusinessPartner<b>.Live</b></div><div class="pagenum">11 / 18</div>
+<div class="card phone" id="f11-apps-software-phone"><div class="notch"></div><div class="pc hi" id="f11-apps-software-pc0" style="top:80px;height:150px"></div><div class="pc" id="f11-apps-software-pc1" style="top:180px;;top:250px"></div><div class="pc" id="f11-apps-software-pc2" style="top:280px;;top:350px"></div><div class="pc" id="f11-apps-software-pc3" style="top:380px;;top:450px"></div><div class="pc" id="f11-apps-software-pc4" style="top:480px;;top:550px"></div></div>
+<div class="micro plbl" id="f11-apps-software-plbl">Mobile apps</div>
+<div class="card dash" id="f11-apps-software-dash"><div class="side"><div class="sb" style="top:50px"></div><div class="sb" style="top:100px"></div><div class="sb" style="top:150px"></div><div class="sb" style="top:200px"></div><div class="sb" style="top:250px"></div><div class="sb" style="top:300px"></div></div><div class="kpi" id="f11-apps-software-kp0" style="left:220px"></div><div class="kpi" id="f11-apps-software-kp1" style="left:490px"></div><div class="kpi" id="f11-apps-software-kp2" style="left:760px"></div><div class="bar" id="f11-apps-software-b0" style="left:240px;height:140px"></div><div class="bar" id="f11-apps-software-b1" style="left:350px;height:200px"></div><div class="bar" id="f11-apps-software-b2" style="left:460px;height:170px"></div><div class="bar" id="f11-apps-software-b3" style="left:570px;height:260px"></div><div class="bar" id="f11-apps-software-b4" style="left:680px;height:230px"></div><div class="bar" id="f11-apps-software-b5" style="left:790px;height:300px"></div><div class="bar" id="f11-apps-software-b6" style="left:900px;height:280px"></div></div>
+<div class="micro dlbl" id="f11-apps-software-dlbl">Custom software</div><div class="display it tail" id="f11-apps-software-tail">Tailored to your goals.</div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const CID = "11-apps-software";
+      const D = 7.29;
+      const R = document.querySelector('[data-composition-id="' + CID + '"]');
+      const q = (s) => Array.from(R.querySelectorAll(s));
+      const id = (s) => "#f" + CID + "-" + s;
+      const tl = gsap.timeline({ paused: true });
+      // ambient: slow bloom drift under every shot
+      tl.fromTo(id("sun"), { scale: 0.92, x: 0 }, { scale: 1.08, x: -60, duration: D, ease: "sine.inOut" }, 0);
+      tl.fromTo(id("ember"), { opacity: 0.6 }, { opacity: 1, duration: D, ease: "sine.inOut" }, 0);
+
+      tl.fromTo(id("phone"), {opacity:0, y:80, rotation:-4}, {opacity:1, y:0, rotation:0, duration:0.8, ease:"power3.out"}, 0.2);
+      tl.fromTo(q('[id^="f11-apps-software-pc"]'), {opacity:0, y:30}, {opacity:1, y:0, duration:0.4, stagger:0.15}, 0.8);
+      tl.fromTo(id("plbl"), {opacity:0}, {opacity:1, duration:0.5}, 1.0);
+      tl.fromTo(id("dash"), {opacity:0, x:80}, {opacity:1, x:0, duration:0.8, ease:"power3.out"}, 3.3);
+      tl.fromTo(q(".kpi"), {opacity:0, y:20}, {opacity:1, y:0, duration:0.4, stagger:0.12}, 3.7);
+      tl.fromTo(q(".bar"), {scaleY:0}, {scaleY:1, duration:0.6, ease:"power3.out", stagger:0.1}, 4.0);
+      tl.fromTo(id("dlbl"), {opacity:0}, {opacity:1, duration:0.5}, 3.6);
+      tl.fromTo(id("tail"), {opacity:0, y:24}, {opacity:1, y:0, duration:0.7, ease:"power3.out"}, 5.3);
+
+      tl.set({}, {}, D);
+      window.__timelines[CID] = tl;
+    })();
+  </script>
+</template>

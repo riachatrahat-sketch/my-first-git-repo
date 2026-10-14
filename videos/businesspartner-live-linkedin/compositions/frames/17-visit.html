@@ -1,0 +1,71 @@
+<template>
+  <style>
+
+
+@font-face{font-family:"Playfair Display";src:url("assets/fonts/PlayfairDisplay-400.woff2") format("woff2");font-weight:400;font-style:normal}
+@font-face{font-family:"Playfair Display";src:url("assets/fonts/PlayfairDisplay-400italic.woff2") format("woff2");font-weight:400;font-style:italic}
+@font-face{font-family:"Inter";src:url("assets/fonts/Inter-400.woff2") format("woff2");font-weight:400}
+@font-face{font-family:"Inter";src:url("assets/fonts/Inter-600.woff2") format("woff2");font-weight:600}
+@font-face{font-family:"JetBrains Mono";src:url("assets/fonts/JetBrainsMono-400.woff2") format("woff2");font-weight:400}
+
+#root{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;color:#F3EDE0;font-family:"Inter",sans-serif}
+[data-composition-id="17-visit"] .bg{position:absolute;inset:0;background:#060A07}
+[data-composition-id="17-visit"] .bloom{position:absolute;border-radius:50%;pointer-events:none}
+[data-composition-id="17-visit"] .bloom.sun{width:1300px;height:1300px;left:760px;top:-260px;background:radial-gradient(circle,rgba(52,213,122,.30) 0%,rgba(52,213,122,.12) 32%,rgba(18,92,50,.06) 52%,rgba(0,0,0,0) 70%)}
+[data-composition-id="17-visit"] .bloom.ember{width:900px;height:900px;left:-300px;top:420px;background:radial-gradient(circle,rgba(30,143,78,.16) 0%,rgba(0,0,0,0) 65%)}
+[data-composition-id="17-visit"] .vignette{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,0,0,0) 55%,rgba(0,0,0,.55) 100%)}
+[data-composition-id="17-visit"] .stage{position:absolute;inset:0}
+[data-composition-id="17-visit"] .display{font-family:"Playfair Display",serif;font-weight:400;letter-spacing:-0.015em;line-height:1.02;color:#F3EDE0}
+[data-composition-id="17-visit"] .it{font-style:italic;color:#34D57A}
+[data-composition-id="17-visit"] .micro{font-family:"Inter",sans-serif;font-weight:600;font-size:18px;letter-spacing:.32em;text-transform:uppercase;color:#8BF0B4}
+[data-composition-id="17-visit"] .mono{font-family:"JetBrains Mono",monospace;color:#34D57A}
+[data-composition-id="17-visit"] .hair{position:absolute;height:1px;background:#34D57A;transform-origin:0 50%}
+[data-composition-id="17-visit"] .card{position:absolute;background:rgba(12,22,15,.88);border:1px solid rgba(52,213,122,.45)}
+[data-composition-id="17-visit"] .pagenum{position:absolute;right:64px;top:52px;font-family:"JetBrains Mono",monospace;font-size:15px;letter-spacing:.08em;color:#34D57A;opacity:.75}
+[data-composition-id="17-visit"] .brand{position:absolute;left:64px;top:50px;font-family:"Playfair Display",serif;font-size:22px;color:#F3EDE0;opacity:.8}
+[data-composition-id="17-visit"] .brand b{font-weight:400;color:#34D57A}
+
+
+[data-composition-id="17-visit"] .lbl{position:absolute;left:0;right:0;top:250px;text-align:center}
+[data-composition-id="17-visit"] .cta{position:absolute;left:510px;top:340px;width:900px;height:160px;border-radius:80px;background:#34D57A;color:#060A07;display:flex;align-items:center;justify-content:center;font-family:"Playfair Display",serif;font-size:66px}
+[data-composition-id="17-visit"] .cur{position:absolute;left:1180px;top:440px}
+[data-composition-id="17-visit"] .poss{position:absolute;left:0;right:0;top:590px;text-align:center;font-size:72px}
+
+  </style>
+  <div id="root" data-composition-id="17-visit" data-width="1920" data-height="1080" data-duration="4.78">
+    <div class="clip bg" id="f17-visit-bg" data-start="0" data-duration="4.78" data-track-index="0">
+      <div class="bloom sun" id="f17-visit-sun"></div>
+      <div class="bloom ember" id="f17-visit-ember"></div>
+      <div class="vignette"></div>
+    </div>
+    <div class="clip stage" id="f17-visit-stage" data-start="0" data-duration="4.78" data-track-index="1">
+      <div class="brand" id="f17-visit-brand">BusinessPartner<b>.Live</b></div><div class="pagenum">04 / 05</div>
+<div class="micro lbl" id="f17-visit-lbl">Visit today</div><div class="cta" id="f17-visit-cta">BusinessPartner.Live</div>
+<div class="cur" id="f17-visit-cur"><svg width="72" height="72" viewBox="0 0 48 48" fill="none" stroke="#F3EDE0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 6l26 16-11 3-5 12z"/></svg></div><div class="display poss" id="f17-visit-poss">Discover <span class="it">what's possible.</span></div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const CID = "17-visit";
+      const D = 4.38;
+      const R = document.querySelector('[data-composition-id="' + CID + '"]');
+      const q = (s) => Array.from(R.querySelectorAll(s));
+      const id = (s) => "#f" + CID + "-" + s;
+      const tl = gsap.timeline({ paused: true });
+      // ambient: slow bloom drift under every shot
+      tl.fromTo(id("sun"), { scale: 0.92, x: 0 }, { scale: 1.08, x: -60, duration: D, ease: "sine.inOut" }, 0);
+      tl.fromTo(id("ember"), { opacity: 0.6 }, { opacity: 1, duration: D, ease: "sine.inOut" }, 0);
+
+      tl.fromTo(id("lbl"), {opacity:0, y:12}, {opacity:1, y:0, duration:0.5}, 0.05);
+      tl.fromTo(id("cta"), {opacity:0, scale:0.4}, {opacity:1, scale:1, duration:0.6, ease:"back.out(1.8)"}, 0.1);
+      tl.fromTo(id("cur"), {opacity:0, x:200, y:200}, {opacity:1, x:0, y:0, duration:0.7, ease:"power2.out"}, 0.6);
+      tl.to(id("cta"), {scale:0.95, duration:0.12, ease:"power2.in"}, 1.35);
+      tl.to(id("cta"), {scale:1, duration:0.35, ease:"back.out(3)"}, 1.47);
+      tl.fromTo(id("cta"), {boxShadow:"0 0 0 0 rgba(52,213,122,0.7)"}, {boxShadow:"0 0 0 60px rgba(52,213,122,0)", duration:0.9, ease:"power2.out"}, 1.45);
+      tl.fromTo(id("poss"), {opacity:0, y:30}, {opacity:1, y:0, duration:0.7, ease:"power3.out"}, 2.3);
+
+      tl.set({}, {}, D);
+      window.__timelines[CID] = tl;
+    })();
+  </script>
+</template>

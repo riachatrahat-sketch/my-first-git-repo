@@ -1,0 +1,76 @@
+<template>
+  <style>
+
+@font-face{font-family:"Montserrat";src:url("assets/fonts/Montserrat-800.woff2") format("woff2");font-weight:800}
+@font-face{font-family:"Montserrat";src:url("assets/fonts/Montserrat-900.woff2") format("woff2");font-weight:900}
+@font-face{font-family:"Inter";src:url("assets/fonts/Inter-400.woff2") format("woff2");font-weight:400}
+@font-face{font-family:"Inter";src:url("assets/fonts/Inter-600.woff2") format("woff2");font-weight:600}
+
+#root{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;color:#F7F7FA;font-family:"Inter",sans-serif}
+[data-composition-id="05-file"] .bg{position:absolute;inset:0;background:#050507}
+[data-composition-id="05-file"] .glow{position:absolute;border-radius:50%;pointer-events:none}
+[data-composition-id="05-file"] .g1{width:1100px;height:1100px;left:-520px;top:-620px;background:radial-gradient(circle,rgba(124,58,237,.75) 0%,rgba(91,33,182,.35) 35%,rgba(0,0,0,0) 68%)}
+[data-composition-id="05-file"] .g2{width:1100px;height:1100px;left:1340px;top:-640px;background:radial-gradient(circle,rgba(124,58,237,.6) 0%,rgba(91,33,182,.28) 35%,rgba(0,0,0,0) 68%)}
+[data-composition-id="05-file"] .g3{width:1400px;height:900px;left:260px;top:620px;background:radial-gradient(ellipse,rgba(91,33,182,.22) 0%,rgba(0,0,0,0) 65%)}
+[data-composition-id="05-file"] .stage{position:absolute;inset:0}
+[data-composition-id="05-file"] .h{font-family:"Montserrat",sans-serif;font-weight:900;text-transform:uppercase;letter-spacing:-0.01em;line-height:1.0;color:#F7F7FA}
+[data-composition-id="05-file"] .y{background:linear-gradient(180deg,#FFE94D 0%,#FFD60A 45%,#F5A800 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+[data-composition-id="05-file"] .tag{font-family:"Montserrat",sans-serif;font-weight:800;font-size:22px;letter-spacing:.18em;text-transform:uppercase;color:#FFD60A}
+[data-composition-id="05-file"] .pill{position:absolute;display:flex;align-items:center;gap:14px;padding:16px 28px;border-radius:999px;background:rgba(139,92,246,.16);border:2px solid rgba(139,92,246,.7);font-family:"Montserrat",sans-serif;font-weight:800;font-size:30px;white-space:nowrap}
+[data-composition-id="05-file"] .card{position:absolute;border-radius:18px;background:#121218;border:1px solid rgba(255,255,255,.08);box-shadow:0 30px 80px rgba(0,0,0,.55)}
+[data-composition-id="05-file"] .ln{position:absolute;height:12px;border-radius:6px;background:rgba(0,0,0,.14)}
+[data-composition-id="05-file"] .sel{position:absolute;border:2px solid #0D99FF;pointer-events:none}
+[data-composition-id="05-file"] .sel i{position:absolute;width:12px;height:12px;background:#fff;border:2px solid #0D99FF}
+[data-composition-id="05-file"] .chk{width:44px;height:44px;border-radius:50%;background:#FFD60A;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+
+
+[data-composition-id="05-file"] .ttl{position:absolute;left:0;right:0;top:70px;text-align:center;font-size:60px}
+[data-composition-id="05-file"] .ed{left:210px;top:200px;width:1500px;height:700px;overflow:hidden;background:#1E1E1E;border-radius:14px}
+[data-composition-id="05-file"] .lp{position:absolute;left:0;top:0;bottom:0;width:300px;background:#2C2C2C;border-right:1px solid #3a3a3a}
+[data-composition-id="05-file"] .rp{position:absolute;right:0;top:0;bottom:0;width:300px;background:#2C2C2C;border-left:1px solid #3a3a3a}
+[data-composition-id="05-file"] .ph{position:absolute;left:22px;font-weight:600;font-size:19px;color:#fff}
+[data-composition-id="05-file"] .lr{position:absolute;left:22px;display:flex;align-items:center;gap:12px;font-size:18px;color:#ddd;white-space:nowrap}
+[data-composition-id="05-file"] .lr b{display:inline-block;width:16px;height:16px;border-radius:3px}
+[data-composition-id="05-file"] .cmp{color:#C4A7FF}
+[data-composition-id="05-file"] .fr{position:absolute;top:110px;width:200px;height:400px}
+[data-composition-id="05-file"] .frl{position:absolute;top:-30px;left:0;font-size:16px;color:#aaa}
+[data-composition-id="05-file"] .rrow{position:absolute;left:22px;width:256px;height:40px;border-radius:6px;background:#383838}
+
+  </style>
+  <div id="root" data-composition-id="05-file" data-width="1920" data-height="1080">
+    <div class="clip bg" id="f05-file-bg" data-start="0" data-duration="5.1" data-track-index="0">
+      <div class="glow g1" id="f05-file-g1"></div><div class="glow g2" id="f05-file-g2"></div><div class="glow g3"></div>
+    </div>
+    <div class="clip stage" id="f05-file-stage" data-start="0" data-duration="5.1" data-track-index="1">
+<div class="h ttl" id="f05-file-ttl">Well-structured <span class="y">Figma file</span></div><div class="card ed" id="f05-file-ed"><div class="lp"><div class="ph" style="top:22px">Layers</div><div class="lr" id="f05-file-l0" style="top:70px;left:22px"><b style="background:#8B5CF6;"></b>Frame · Home</div><div class="lr" id="f05-file-l1" style="top:114px;left:46px"><b style="background:#555;"></b>Header</div><div class="lr" id="f05-file-l2" style="top:158px;left:46px"><b style="background:#555;"></b>Hero image</div><div class="lr" id="f05-file-l3" style="top:202px;left:46px"><b style="background:#555;"></b>Title · Text</div><div class="lr cmp" id="f05-file-l4" style="top:246px;left:46px"><b style="background:#8B5CF6;transform:rotate(45deg);width:13px;height:13px"></b>Button</div><div class="lr cmp" id="f05-file-l5" style="top:290px;left:46px"><b style="background:#8B5CF6;transform:rotate(45deg);width:13px;height:13px"></b>Card</div><div class="lr cmp" id="f05-file-l6" style="top:334px;left:46px"><b style="background:#8B5CF6;transform:rotate(45deg);width:13px;height:13px"></b>Nav bar</div><div class="ph" style="top:420px">Components</div><div class="lr cmp" id="f05-file-k0" style="top:466px"><b style="background:#8B5CF6;transform:rotate(45deg);width:13px;height:13px"></b>Button / Primary</div><div class="lr cmp" id="f05-file-k1" style="top:510px"><b style="background:#8B5CF6;transform:rotate(45deg);width:13px;height:13px"></b>Card / Default</div><div class="lr cmp" id="f05-file-k2" style="top:554px"><b style="background:#8B5CF6;transform:rotate(45deg);width:13px;height:13px"></b>Nav / Bottom</div></div><div class="rp"><div class="ph" style="top:22px">Design</div><div class="rrow" style="top:70px"></div><div class="rrow" style="top:126px"></div><div class="rrow" style="top:182px"></div><div class="rrow" style="top:238px"></div><div class="rrow" style="top:294px"></div><div class="rrow" style="top:350px"></div></div><div class="fr" id="f05-file-fr0" style="left:360px"><div class="frl">Screen 1</div><div style="position:absolute;inset:0;overflow:hidden;border-radius:24px"><div style="position:absolute;inset:0;border-radius:30px;background:#F1EDE2;border:6px solid #1c1c22"></div><div style="position:absolute;left:22px;top:30px;width:120px;height:14px;border-radius:7px;background:rgba(0,0,0,.6)"></div><div style="position:absolute;left:22px;top:62px;width:156px;height:150px;border-radius:16px;background:linear-gradient(135deg,#4A7C3A,#9BC36B)"></div><div style="position:absolute;left:22px;top:232px;width:156px;height:40px;border-radius:10px;background:rgba(0,0,0,.08)"></div><div style="position:absolute;left:22px;top:284px;width:156px;height:40px;border-radius:10px;background:rgba(0,0,0,.08)"></div><div style="position:absolute;left:22px;top:336px;width:156px;height:40px;border-radius:10px;background:rgba(0,0,0,.08)"></div><div style="position:absolute;left:22px;top:320px;width:156px;height:46px;border-radius:23px;background:#4A7C3A"></div></div></div><div class="fr" id="f05-file-fr1" style="left:640px"><div class="frl">Screen 2</div><div style="position:absolute;inset:0;overflow:hidden;border-radius:24px"><div style="position:absolute;inset:0;border-radius:30px;background:#F1EDE2;border:6px solid #1c1c22"></div><div style="position:absolute;left:22px;top:30px;width:120px;height:14px;border-radius:7px;background:rgba(0,0,0,.6)"></div><div style="position:absolute;left:22px;top:62px;width:156px;height:150px;border-radius:16px;background:linear-gradient(135deg,#7C3AED,#9BC36B)"></div><div style="position:absolute;left:22px;top:232px;width:156px;height:40px;border-radius:10px;background:rgba(0,0,0,.08)"></div><div style="position:absolute;left:22px;top:284px;width:156px;height:40px;border-radius:10px;background:rgba(0,0,0,.08)"></div><div style="position:absolute;left:22px;top:336px;width:156px;height:40px;border-radius:10px;background:rgba(0,0,0,.08)"></div><div style="position:absolute;left:22px;top:320px;width:156px;height:46px;border-radius:23px;background:#7C3AED"></div></div></div><div class="fr" id="f05-file-fr2" style="left:920px"><div class="frl">Screen 3</div><div style="position:absolute;inset:0;overflow:hidden;border-radius:24px"><div style="position:absolute;inset:0;border-radius:30px;background:#F1EDE2;border:6px solid #1c1c22"></div><div style="position:absolute;left:22px;top:30px;width:120px;height:14px;border-radius:7px;background:rgba(0,0,0,.6)"></div><div style="position:absolute;left:22px;top:62px;width:156px;height:150px;border-radius:16px;background:linear-gradient(135deg,#E5322D,#9BC36B)"></div><div style="position:absolute;left:22px;top:232px;width:156px;height:40px;border-radius:10px;background:rgba(0,0,0,.08)"></div><div style="position:absolute;left:22px;top:284px;width:156px;height:40px;border-radius:10px;background:rgba(0,0,0,.08)"></div><div style="position:absolute;left:22px;top:336px;width:156px;height:40px;border-radius:10px;background:rgba(0,0,0,.08)"></div><div style="position:absolute;left:22px;top:320px;width:156px;height:46px;border-radius:23px;background:#E5322D"></div></div></div><div class="sel" id="f05-file-sb" style="left:658px;top:430px;width:164px;height:46px"><i style="left:-7px;top:-7px"></i><i style="left:157px;top:-7px"></i><i style="left:-7px;top:39px"></i><i style="left:157px;top:39px"></i></div></div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const CID = "05-file";
+      const D = 5.1;
+      const R = document.querySelector('[data-composition-id="' + CID + '"]');
+      const q = (s) => Array.from(R.querySelectorAll(s));
+      const id = (s) => "#f" + CID + "-" + s;
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo(id("g1"), {x:0, y:0, scale:1}, {x:60, y:30, scale:1.08, duration:D, ease:"sine.inOut"}, 0);
+      tl.fromTo(id("g2"), {x:0, y:0, scale:1.05}, {x:-60, y:20, scale:0.95, duration:D, ease:"sine.inOut"}, 0);
+      tl.fromTo(id("ttl"), {opacity:0, y:40}, {opacity:1, y:0, duration:0.6, ease:"power3.out"}, 0.05);
+
+      tl.fromTo(id("ed"), {opacity:0, y:80, scale:0.94}, {opacity:1, y:0, scale:1, duration:0.8, ease:"power3.out"}, 0.3);
+      tl.fromTo(q('[id^="f05-file-fr"]'), {opacity:0, y:40}, {opacity:1, y:0, duration:0.5, ease:"power3.out", stagger:0.15}, 0.8);
+      tl.fromTo(id("sb"), {opacity:0, scale:1.2}, {opacity:1, scale:1, duration:0.35}, 3.5);
+      tl.fromTo(q('[id^="f05-file-k"]'), {opacity:0, x:-20}, {opacity:1, x:0, duration:0.35, stagger:0.15}, 3.7);
+      tl.fromTo(id("l0"), {opacity:0, x:-20}, {opacity:1, x:0, duration:0.3}, 2.2);
+      tl.fromTo(id("l1"), {opacity:0, x:-20}, {opacity:1, x:0, duration:0.3}, 2.35);
+      tl.fromTo(id("l2"), {opacity:0, x:-20}, {opacity:1, x:0, duration:0.3}, 2.5);
+      tl.fromTo(id("l3"), {opacity:0, x:-20}, {opacity:1, x:0, duration:0.3}, 2.65);
+      tl.fromTo(id("l4"), {opacity:0, x:-20}, {opacity:1, x:0, duration:0.3}, 3.5);
+      tl.fromTo(id("l5"), {opacity:0, x:-20}, {opacity:1, x:0, duration:0.3}, 3.65);
+      tl.fromTo(id("l6"), {opacity:0, x:-20}, {opacity:1, x:0, duration:0.3}, 3.8);
+
+      tl.set({}, {}, D);
+      window.__timelines[CID] = tl;
+    })();
+  </script>
+</template>

@@ -1,0 +1,71 @@
+<template>
+  <style>
+
+
+@font-face{font-family:"Playfair Display";src:url("assets/fonts/PlayfairDisplay-400.woff2") format("woff2");font-weight:400;font-style:normal}
+@font-face{font-family:"Playfair Display";src:url("assets/fonts/PlayfairDisplay-400italic.woff2") format("woff2");font-weight:400;font-style:italic}
+@font-face{font-family:"Inter";src:url("assets/fonts/Inter-400.woff2") format("woff2");font-weight:400}
+@font-face{font-family:"Inter";src:url("assets/fonts/Inter-600.woff2") format("woff2");font-weight:600}
+@font-face{font-family:"JetBrains Mono";src:url("assets/fonts/JetBrainsMono-400.woff2") format("woff2");font-weight:400}
+
+#root{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;color:#F3EDE0;font-family:"Inter",sans-serif}
+[data-composition-id="09-more"] .bg{position:absolute;inset:0;background:#060A07}
+[data-composition-id="09-more"] .bloom{position:absolute;border-radius:50%;pointer-events:none}
+[data-composition-id="09-more"] .bloom.sun{width:1300px;height:1300px;left:760px;top:-260px;background:radial-gradient(circle,rgba(52,213,122,.30) 0%,rgba(52,213,122,.12) 32%,rgba(18,92,50,.06) 52%,rgba(0,0,0,0) 70%)}
+[data-composition-id="09-more"] .bloom.ember{width:900px;height:900px;left:-300px;top:420px;background:radial-gradient(circle,rgba(30,143,78,.16) 0%,rgba(0,0,0,0) 65%)}
+[data-composition-id="09-more"] .vignette{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,0,0,0) 55%,rgba(0,0,0,.55) 100%)}
+[data-composition-id="09-more"] .stage{position:absolute;inset:0}
+[data-composition-id="09-more"] .display{font-family:"Playfair Display",serif;font-weight:400;letter-spacing:-0.015em;line-height:1.02;color:#F3EDE0}
+[data-composition-id="09-more"] .it{font-style:italic;color:#34D57A}
+[data-composition-id="09-more"] .micro{font-family:"Inter",sans-serif;font-weight:600;font-size:18px;letter-spacing:.32em;text-transform:uppercase;color:#8BF0B4}
+[data-composition-id="09-more"] .mono{font-family:"JetBrains Mono",monospace;color:#34D57A}
+[data-composition-id="09-more"] .hair{position:absolute;height:1px;background:#34D57A;transform-origin:0 50%}
+[data-composition-id="09-more"] .card{position:absolute;background:rgba(12,22,15,.88);border:1px solid rgba(52,213,122,.45)}
+[data-composition-id="09-more"] .pagenum{position:absolute;right:64px;top:52px;font-family:"JetBrains Mono",monospace;font-size:15px;letter-spacing:.08em;color:#34D57A;opacity:.75}
+[data-composition-id="09-more"] .brand{position:absolute;left:64px;top:50px;font-family:"Playfair Display",serif;font-size:22px;color:#F3EDE0;opacity:.8}
+[data-composition-id="09-more"] .brand b{font-weight:400;color:#34D57A}
+
+
+[data-composition-id="09-more"] .nab{position:absolute;left:0;right:0;top:390px;text-align:center;font-size:130px}
+[data-composition-id="09-more"] .l1{position:absolute;left:0;right:0;top:300px;text-align:center;font-size:110px}
+[data-composition-id="09-more"] .l2{position:absolute;left:0;right:0;top:420px;text-align:center;font-size:110px}
+[data-composition-id="09-more"] .row{position:absolute;left:0;right:0;top:620px;display:flex;justify-content:center;gap:40px}
+[data-composition-id="09-more"] .ic{width:200px;height:170px;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;font-size:22px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#8BF0B4}
+
+  </style>
+  <div id="root" data-composition-id="09-more" data-width="1920" data-height="1080">
+    <div class="clip bg" id="f09-more-bg" data-start="0" data-duration="6.19" data-track-index="0">
+      <div class="bloom sun" id="f09-more-sun"></div>
+      <div class="bloom ember" id="f09-more-ember"></div>
+      <div class="vignette"></div>
+    </div>
+    <div class="clip stage" id="f09-more-stage" data-start="0" data-duration="6.19" data-track-index="1">
+      <div class="brand" id="f09-more-brand">BusinessPartner<b>.Live</b></div><div class="pagenum">09 / 18</div>
+<div class="display nab" id="f09-more-nab">But that's <span class="it">not all.</span></div>
+<div class="display l1" id="f09-more-l1">Your digital ideas,</div><div class="display it l2" id="f09-more-l2">brought to life.</div>
+<div class="row"><div class="card ic" id="f09-more-i0" style="position:relative"><svg width="64" height="64" viewBox="0 0 48 48" fill="none" stroke="#34D57A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="17"/><path d="M7 24h34M24 7c5 5 7 11 7 17s-2 12-7 17c-5-5-7-11-7-17s2-12 7-17z"/></svg><span>Websites</span></div><div class="card ic" id="f09-more-i1" style="position:relative"><svg width="64" height="64" viewBox="0 0 48 48" fill="none" stroke="#34D57A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="5" width="20" height="38" rx="3"/><line x1="21" y1="37" x2="27" y2="37"/></svg><span>Apps</span></div><div class="card ic" id="f09-more-i2" style="position:relative"><svg width="64" height="64" viewBox="0 0 48 48" fill="none" stroke="#34D57A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6l18 9-18 9-18-9z"/><path d="M6 24l18 9 18-9"/><path d="M6 33l18 9 18-9"/></svg><span>Software</span></div><div class="card ic" id="f09-more-i3" style="position:relative"><svg width="64" height="64" viewBox="0 0 48 48" fill="none" stroke="#34D57A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="13" y="13" width="22" height="22" rx="2"/><rect x="19" y="19" width="10" height="10"/><path d="M18 6v7M24 6v7M30 6v7M18 35v7M24 35v7M30 35v7M6 18h7M6 24h7M6 30h7M35 18h7M35 24h7M35 30h7"/></svg><span>AI</span></div></div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const CID = "09-more";
+      const D = 6.19;
+      const R = document.querySelector('[data-composition-id="' + CID + '"]');
+      const q = (s) => Array.from(R.querySelectorAll(s));
+      const id = (s) => "#f" + CID + "-" + s;
+      const tl = gsap.timeline({ paused: true });
+      // ambient: slow bloom drift under every shot
+      tl.fromTo(id("sun"), { scale: 0.92, x: 0 }, { scale: 1.08, x: -60, duration: D, ease: "sine.inOut" }, 0);
+      tl.fromTo(id("ember"), { opacity: 0.6 }, { opacity: 1, duration: D, ease: "sine.inOut" }, 0);
+
+      tl.fromTo(id("nab"), {opacity:0, scale:0.9}, {opacity:1, scale:1, duration:0.6, ease:"power3.out"}, 0.05);
+      tl.to(id("nab"), {opacity:0, y:-160, scale:0.6, duration:0.5, ease:"power3.in"}, 1.2);
+      tl.fromTo(id("l1"), {opacity:0, y:30}, {opacity:1, y:0, duration:0.7, ease:"power3.out"}, 1.6);
+      tl.fromTo(id("l2"), {opacity:0, y:30}, {opacity:1, y:0, duration:0.8, ease:"power3.out"}, 3.6);
+      tl.fromTo(q(".ic"), {opacity:0, y:50}, {opacity:1, y:0, duration:0.5, ease:"back.out(1.8)", stagger:0.2}, 4.3);
+
+      tl.set({}, {}, D);
+      window.__timelines[CID] = tl;
+    })();
+  </script>
+</template>

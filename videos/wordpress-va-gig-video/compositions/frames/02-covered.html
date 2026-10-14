@@ -1,0 +1,58 @@
+<template>
+  <style>
+
+@font-face{font-family:"Montserrat";src:url("assets/fonts/Montserrat-800.woff2") format("woff2");font-weight:800}
+@font-face{font-family:"Montserrat";src:url("assets/fonts/Montserrat-900.woff2") format("woff2");font-weight:900}
+@font-face{font-family:"Inter";src:url("assets/fonts/Inter-400.woff2") format("woff2");font-weight:400}
+@font-face{font-family:"Inter";src:url("assets/fonts/Inter-600.woff2") format("woff2");font-weight:600}
+
+#root{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;color:#F7F7FA;font-family:"Inter",sans-serif}
+[data-composition-id="02-covered"] .bg{position:absolute;inset:0;background:#050507}
+[data-composition-id="02-covered"] .glow{position:absolute;border-radius:50%;pointer-events:none}
+[data-composition-id="02-covered"] .g1{width:1100px;height:1100px;left:-520px;top:-620px;background:radial-gradient(circle,rgba(124,58,237,.75) 0%,rgba(91,33,182,.35) 35%,rgba(0,0,0,0) 68%)}
+[data-composition-id="02-covered"] .g2{width:1100px;height:1100px;left:1340px;top:-640px;background:radial-gradient(circle,rgba(124,58,237,.6) 0%,rgba(91,33,182,.28) 35%,rgba(0,0,0,0) 68%)}
+[data-composition-id="02-covered"] .g3{width:1400px;height:900px;left:260px;top:620px;background:radial-gradient(ellipse,rgba(91,33,182,.22) 0%,rgba(0,0,0,0) 65%)}
+[data-composition-id="02-covered"] .stage{position:absolute;inset:0}
+[data-composition-id="02-covered"] .h{font-family:"Montserrat",sans-serif;font-weight:900;text-transform:uppercase;letter-spacing:-0.01em;line-height:1.0;color:#F7F7FA}
+[data-composition-id="02-covered"] .y{background:linear-gradient(180deg,#FFE94D 0%,#FFD60A 45%,#F5A800 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+[data-composition-id="02-covered"] .tag{font-family:"Montserrat",sans-serif;font-weight:800;font-size:22px;letter-spacing:.18em;text-transform:uppercase;color:#FFD60A}
+[data-composition-id="02-covered"] .pill{position:absolute;display:flex;align-items:center;gap:14px;padding:16px 28px;border-radius:999px;background:rgba(139,92,246,.16);border:2px solid rgba(139,92,246,.7);font-family:"Montserrat",sans-serif;font-weight:800;font-size:30px;white-space:nowrap}
+[data-composition-id="02-covered"] .card{position:absolute;border-radius:18px;background:#121218;border:1px solid rgba(255,255,255,.08);box-shadow:0 30px 80px rgba(0,0,0,.55)}
+[data-composition-id="02-covered"] .ln{position:absolute;height:12px;border-radius:6px;background:rgba(0,0,0,.14)}
+[data-composition-id="02-covered"] .sel{position:absolute;border:2px solid #0D99FF;pointer-events:none}
+[data-composition-id="02-covered"] .sel i{position:absolute;width:12px;height:12px;background:#fff;border:2px solid #0D99FF}
+[data-composition-id="02-covered"] .chk{width:44px;height:44px;border-radius:50%;background:#FFD60A;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+
+
+[data-composition-id="02-covered"] .ic{position:absolute;left:880px;top:150px}
+[data-composition-id="02-covered"] .a{position:absolute;left:0;right:0;top:350px;text-align:center;font-size:140px;line-height:1.05}
+[data-composition-id="02-covered"] .bar{position:absolute;left:560px;top:690px;width:800px;height:10px;border-radius:5px;background:linear-gradient(90deg,#8B5CF6,#FFD60A);transform-origin:0 50%}
+
+  </style>
+  <div id="root" data-composition-id="02-covered" data-width="1920" data-height="1080">
+    <div class="clip bg" id="f02-covered-bg" data-start="0" data-duration="1.47" data-track-index="0">
+      <div class="glow g1" id="f02-covered-g1"></div><div class="glow g2" id="f02-covered-g2"></div><div class="glow g3"></div>
+    </div>
+    <div class="clip stage" id="f02-covered-stage" data-start="0" data-duration="1.47" data-track-index="1">
+<div class="ic" id="f02-covered-ic"><svg width="160" height="160" viewBox="0 0 48 48" fill="none" stroke="#FFD60A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M24 4l16 6v12c0 10-7 18-16 22C15 40 8 32 8 22V10z"/><path d="M16 24l6 6 11-12"/></svg></div><div class="h a" id="f02-covered-a">I've got you<br><span class="y">covered!</span></div><div class="bar" id="f02-covered-bar"></div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const CID = "02-covered";
+      const D = 1.47;
+      const R = document.querySelector('[data-composition-id="' + CID + '"]');
+      const q = (s) => Array.from(R.querySelectorAll(s));
+      const id = (s) => "#f" + CID + "-" + s;
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo(id("g1"), {x:0, y:0, scale:1}, {x:60, y:30, scale:1.08, duration:D, ease:"sine.inOut"}, 0);
+      tl.fromTo(id("g2"), {x:0, y:0, scale:1.05}, {x:-60, y:20, scale:0.95, duration:D, ease:"sine.inOut"}, 0);
+      tl.fromTo(id("ic"), {opacity:0, scale:0.3, rotation:-20}, {opacity:1, scale:1, rotation:0, duration:0.5, ease:"back.out(2.4)"}, 0.02);
+      tl.fromTo(id("a"), {opacity:0, y:50}, {opacity:1, y:0, duration:0.45, ease:"power3.out"}, 0.15);
+      tl.fromTo(id("bar"), {scaleX:0}, {scaleX:1, duration:0.6, ease:"power3.inOut"}, 0.5);
+
+      tl.set({}, {}, D);
+      window.__timelines[CID] = tl;
+    })();
+  </script>
+</template>

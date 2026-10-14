@@ -1,0 +1,78 @@
+<template>
+  <style>
+
+
+@font-face{font-family:"Playfair Display";src:url("assets/fonts/PlayfairDisplay-400.woff2") format("woff2");font-weight:400;font-style:normal}
+@font-face{font-family:"Playfair Display";src:url("assets/fonts/PlayfairDisplay-400italic.woff2") format("woff2");font-weight:400;font-style:italic}
+@font-face{font-family:"Inter";src:url("assets/fonts/Inter-400.woff2") format("woff2");font-weight:400}
+@font-face{font-family:"Inter";src:url("assets/fonts/Inter-600.woff2") format("woff2");font-weight:600}
+@font-face{font-family:"JetBrains Mono";src:url("assets/fonts/JetBrainsMono-400.woff2") format("woff2");font-weight:400}
+
+#root{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;color:#F3EDE0;font-family:"Inter",sans-serif}
+[data-composition-id="03-roles"] .bg{position:absolute;inset:0;background:#060A07}
+[data-composition-id="03-roles"] .bloom{position:absolute;border-radius:50%;pointer-events:none}
+[data-composition-id="03-roles"] .bloom.sun{width:1300px;height:1300px;left:760px;top:-260px;background:radial-gradient(circle,rgba(52,213,122,.30) 0%,rgba(52,213,122,.12) 32%,rgba(18,92,50,.06) 52%,rgba(0,0,0,0) 70%)}
+[data-composition-id="03-roles"] .bloom.ember{width:900px;height:900px;left:-300px;top:420px;background:radial-gradient(circle,rgba(30,143,78,.16) 0%,rgba(0,0,0,0) 65%)}
+[data-composition-id="03-roles"] .vignette{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,0,0,0) 55%,rgba(0,0,0,.55) 100%)}
+[data-composition-id="03-roles"] .stage{position:absolute;inset:0}
+[data-composition-id="03-roles"] .display{font-family:"Playfair Display",serif;font-weight:400;letter-spacing:-0.015em;line-height:1.02;color:#F3EDE0}
+[data-composition-id="03-roles"] .it{font-style:italic;color:#34D57A}
+[data-composition-id="03-roles"] .micro{font-family:"Inter",sans-serif;font-weight:600;font-size:18px;letter-spacing:.32em;text-transform:uppercase;color:#8BF0B4}
+[data-composition-id="03-roles"] .mono{font-family:"JetBrains Mono",monospace;color:#34D57A}
+[data-composition-id="03-roles"] .hair{position:absolute;height:1px;background:#34D57A;transform-origin:0 50%}
+[data-composition-id="03-roles"] .card{position:absolute;background:rgba(12,22,15,.88);border:1px solid rgba(52,213,122,.45)}
+[data-composition-id="03-roles"] .pagenum{position:absolute;right:64px;top:52px;font-family:"JetBrains Mono",monospace;font-size:15px;letter-spacing:.08em;color:#34D57A;opacity:.75}
+[data-composition-id="03-roles"] .brand{position:absolute;left:64px;top:50px;font-family:"Playfair Display",serif;font-size:22px;color:#F3EDE0;opacity:.8}
+[data-composition-id="03-roles"] .brand b{font-weight:400;color:#34D57A}
+
+
+[data-composition-id="03-roles"] .anchor{position:absolute;left:180px;top:250px;font-size:96px}
+[data-composition-id="03-roles"] .slot{position:absolute;left:180px;top:370px;width:1500px;height:150px}
+[data-composition-id="03-roles"] .role{position:absolute;left:0;top:0;display:flex;align-items:center;gap:36px;font-size:120px;white-space:nowrap}
+[data-composition-id="03-roles"] .ring{width:130px;height:130px;border-radius:50%;border:1px solid rgba(52,213,122,.6);display:flex;align-items:center;justify-content:center;background:rgba(12,22,15,.8)}
+[data-composition-id="03-roles"] .rcard{width:340px;height:170px;top:640px;padding:26px 28px;display:flex;flex-direction:column;justify-content:space-between}
+[data-composition-id="03-roles"] .rcard span{font-size:28px;font-weight:600}
+[data-composition-id="03-roles"] .cap{position:absolute;left:180px;top:560px}
+
+  </style>
+  <div id="root" data-composition-id="03-roles" data-width="1920" data-height="1080">
+    <div class="clip bg" id="f03-roles-bg" data-start="0" data-duration="9.67" data-track-index="0">
+      <div class="bloom sun" id="f03-roles-sun"></div>
+      <div class="bloom ember" id="f03-roles-ember"></div>
+      <div class="vignette"></div>
+    </div>
+    <div class="clip stage" id="f03-roles-stage" data-start="0" data-duration="9.67" data-track-index="1">
+      <div class="brand" id="f03-roles-brand">BusinessPartner<b>.Live</b></div><div class="pagenum">03 / 18</div>
+<div class="display anchor" id="f03-roles-anchor">Find your</div><div class="slot"><div class="role" id="f03-roles-r0"><div class="ring"><svg width="72" height="72" viewBox="0 0 48 48" fill="none" stroke="#34D57A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="12" width="28" height="24" rx="2"/><path d="M34 20l9-5v18l-9-5z"/></svg></div><span class="display it">Video Editor</span></div><div class="role" id="f03-roles-r1"><div class="ring"><svg width="72" height="72" viewBox="0 0 48 48" fill="none" stroke="#34D57A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 6h8l3 9-5 3c2 5 5 8 10 10l3-5 9 3v8c0 2-2 4-4 4C20 38 10 28 10 10c0-2 2-4 4-4z"/></svg></div><span class="display it">Appointment Setter</span></div><div class="role" id="f03-roles-r2"><div class="ring"><svg width="72" height="72" viewBox="0 0 48 48" fill="none" stroke="#34D57A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22l8-8 8 4 6-4 8 2 10 6"/><path d="M12 14l12 14c2 2 5 2 6 0l8-8"/><path d="M18 30l4 4M22 26l5 5"/></svg></div><span class="display it">Sales Closer</span></div><div class="role" id="f03-roles-r3"><div class="ring"><svg width="72" height="72" viewBox="0 0 48 48" fill="none" stroke="#34D57A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="10" width="28" height="19" rx="2"/><path d="M4 36h40l-3-5H7z"/></svg></div><span class="display it">Virtual Assistant</span></div><div class="role" id="f03-roles-r4"><div class="ring"><svg width="72" height="72" viewBox="0 0 48 48" fill="none" stroke="#34D57A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="16" r="8"/><path d="M8 42c2-9 9-13 16-13s14 4 16 13"/></svg></div><span class="display it">& more</span></div></div><div class="micro cap" id="f03-roles-cap">Skilled professionals · for your goals</div><div class="card rcard" id="f03-roles-k0" style="left:180px"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="#34D57A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="12" width="28" height="24" rx="2"/><path d="M34 20l9-5v18l-9-5z"/></svg><span>Video Editor</span></div><div class="card rcard" id="f03-roles-k1" style="left:580px"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="#34D57A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 6h8l3 9-5 3c2 5 5 8 10 10l3-5 9 3v8c0 2-2 4-4 4C20 38 10 28 10 10c0-2 2-4 4-4z"/></svg><span>Appointment Setter</span></div><div class="card rcard" id="f03-roles-k2" style="left:980px"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="#34D57A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22l8-8 8 4 6-4 8 2 10 6"/><path d="M12 14l12 14c2 2 5 2 6 0l8-8"/><path d="M18 30l4 4M22 26l5 5"/></svg><span>Sales Closer</span></div><div class="card rcard" id="f03-roles-k3" style="left:1380px"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="#34D57A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="10" width="28" height="19" rx="2"/><path d="M4 36h40l-3-5H7z"/></svg><span>Virtual Assistant</span></div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const CID = "03-roles";
+      const D = 9.67;
+      const R = document.querySelector('[data-composition-id="' + CID + '"]');
+      const q = (s) => Array.from(R.querySelectorAll(s));
+      const id = (s) => "#f" + CID + "-" + s;
+      const tl = gsap.timeline({ paused: true });
+      // ambient: slow bloom drift under every shot
+      tl.fromTo(id("sun"), { scale: 0.92, x: 0 }, { scale: 1.08, x: -60, duration: D, ease: "sine.inOut" }, 0);
+      tl.fromTo(id("ember"), { opacity: 0.6 }, { opacity: 1, duration: D, ease: "sine.inOut" }, 0);
+      tl.fromTo(id("anchor"), {opacity:0, x:-40}, {opacity:1, x:0, duration:0.6, ease:"power3.out"}, 0.05);
+      tl.fromTo(id("r0"), {opacity:0, y:80}, {opacity:1, y:0, duration:0.45, ease:"power3.out"}, 0.4);
+      tl.to(id("r0"), {opacity:0, y:-80, duration:0.3, ease:"power2.in"}, 1.60);
+      tl.fromTo(id("r1"), {opacity:0, y:80}, {opacity:1, y:0, duration:0.45, ease:"power3.out"}, 1.8);
+      tl.to(id("r1"), {opacity:0, y:-80, duration:0.3, ease:"power2.in"}, 2.80);
+      tl.fromTo(id("r2"), {opacity:0, y:80}, {opacity:1, y:0, duration:0.45, ease:"power3.out"}, 3.0);
+      tl.to(id("r2"), {opacity:0, y:-80, duration:0.3, ease:"power2.in"}, 3.75);
+      tl.fromTo(id("r3"), {opacity:0, y:80}, {opacity:1, y:0, duration:0.45, ease:"power3.out"}, 3.95);
+      tl.to(id("r3"), {opacity:0, y:-80, duration:0.3, ease:"power2.in"}, 4.50);
+      tl.fromTo(id("r4"), {opacity:0, y:80}, {opacity:1, y:0, duration:0.45, ease:"power3.out"}, 4.7);
+      tl.fromTo(id("cap"), {opacity:0, y:12}, {opacity:1, y:0, duration:0.6}, 5.5);
+      tl.fromTo(q(".rcard"), {opacity:0, y:60}, {opacity:1, y:0, duration:0.6, ease:"power3.out", stagger:0.22}, 5.9);
+      tl.fromTo(q(".rcard"), {borderColor:"rgba(52,213,122,0.45)"}, {borderColor:"rgba(139,240,180,1)", duration:0.4, stagger:0.25}, 7.8);
+
+      tl.set({}, {}, D);
+      window.__timelines[CID] = tl;
+    })();
+  </script>
+</template>

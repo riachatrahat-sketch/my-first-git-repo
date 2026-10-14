@@ -1,0 +1,65 @@
+<template>
+  <style>
+
+@font-face{font-family:"Montserrat";src:url("assets/fonts/Montserrat-800.woff2") format("woff2");font-weight:800}
+@font-face{font-family:"Montserrat";src:url("assets/fonts/Montserrat-900.woff2") format("woff2");font-weight:900}
+@font-face{font-family:"Inter";src:url("assets/fonts/Inter-400.woff2") format("woff2");font-weight:400}
+@font-face{font-family:"Inter";src:url("assets/fonts/Inter-600.woff2") format("woff2");font-weight:600}
+
+#root{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;color:#F7F7FA;font-family:"Inter",sans-serif}
+[data-composition-id="01-hook"] .bg{position:absolute;inset:0;background:#050507}
+[data-composition-id="01-hook"] .glow{position:absolute;border-radius:50%;pointer-events:none}
+[data-composition-id="01-hook"] .g1{width:1100px;height:1100px;left:-520px;top:-620px;background:radial-gradient(circle,rgba(124,58,237,.75) 0%,rgba(91,33,182,.35) 35%,rgba(0,0,0,0) 68%)}
+[data-composition-id="01-hook"] .g2{width:1100px;height:1100px;left:1340px;top:-640px;background:radial-gradient(circle,rgba(124,58,237,.6) 0%,rgba(91,33,182,.28) 35%,rgba(0,0,0,0) 68%)}
+[data-composition-id="01-hook"] .g3{width:1400px;height:900px;left:260px;top:620px;background:radial-gradient(ellipse,rgba(91,33,182,.22) 0%,rgba(0,0,0,0) 65%)}
+[data-composition-id="01-hook"] .stage{position:absolute;inset:0}
+[data-composition-id="01-hook"] .h{font-family:"Montserrat",sans-serif;font-weight:900;text-transform:uppercase;letter-spacing:-0.01em;line-height:1.0;color:#F7F7FA}
+[data-composition-id="01-hook"] .y{background:linear-gradient(180deg,#FFE94D 0%,#FFD60A 45%,#F5A800 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+[data-composition-id="01-hook"] .tag{font-family:"Montserrat",sans-serif;font-weight:800;font-size:22px;letter-spacing:.18em;text-transform:uppercase;color:#FFD60A}
+[data-composition-id="01-hook"] .pill{position:absolute;display:flex;align-items:center;gap:14px;padding:16px 28px;border-radius:999px;background:rgba(139,92,246,.16);border:2px solid rgba(139,92,246,.7);font-family:"Montserrat",sans-serif;font-weight:800;font-size:30px;white-space:nowrap}
+[data-composition-id="01-hook"] .card{position:absolute;border-radius:18px;background:#121218;border:1px solid rgba(255,255,255,.08);box-shadow:0 30px 80px rgba(0,0,0,.55)}
+[data-composition-id="01-hook"] .ln{position:absolute;height:12px;border-radius:6px;background:rgba(0,0,0,.14)}
+[data-composition-id="01-hook"] .sel{position:absolute;border:2px solid #0D99FF;pointer-events:none}
+[data-composition-id="01-hook"] .sel i{position:absolute;width:12px;height:12px;background:#fff;border:2px solid #0D99FF}
+[data-composition-id="01-hook"] .chk{width:44px;height:44px;border-radius:50%;background:#FFD60A;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+
+
+[data-composition-id="01-hook"] .a{position:absolute;left:0;right:0;top:110px;text-align:center;font-size:76px}
+[data-composition-id="01-hook"] .b{position:absolute;left:0;right:0;top:200px;text-align:center;font-size:118px}
+[data-composition-id="01-hook"] .win{left:520px;top:400px;width:880px;height:500px}
+
+  </style>
+  <div id="root" data-composition-id="01-hook" data-width="1920" data-height="1080">
+    <div class="clip bg" id="f01-hook-bg" data-start="0" data-duration="4.39" data-track-index="0">
+      <div class="glow g1" id="f01-hook-g1"></div><div class="glow g2" id="f01-hook-g2"></div><div class="glow g3"></div>
+    </div>
+    <div class="clip stage" id="f01-hook-stage" data-start="0" data-duration="4.39" data-track-index="1">
+<div class="h a" id="f01-hook-a">Need a reliable</div><div class="h y b" id="f01-hook-b">WordPress VA?</div>
+<div class="card win" id="f01-hook-win"><div style="position:absolute;inset:0;border-radius:14px;background:#FFFFFF;overflow:hidden"><div style="position:absolute;left:0;right:0;top:0;height:44px;background:#E9E9EF;display:flex;align-items:center;gap:10px;padding-left:18px"><i style="width:12px;height:12px;border-radius:50%;background:#FF5F57"></i><i style="width:12px;height:12px;border-radius:50%;background:#FEBC2E"></i><i style="width:12px;height:12px;border-radius:50%;background:#28C840"></i><span style="margin-left:20px;width:680px;height:22px;border-radius:11px;background:#fff"></span></div><div style="position:absolute;left:30px;top:70px;width:90px;height:18px;border-radius:5px;background:#111"></div><div style="position:absolute;left:550px;top:74px;width:52px;height:10px;border-radius:5px;background:rgba(0,0,0,.25)"></div><div style="position:absolute;left:622px;top:74px;width:52px;height:10px;border-radius:5px;background:rgba(0,0,0,.25)"></div><div style="position:absolute;left:694px;top:74px;width:52px;height:10px;border-radius:5px;background:rgba(0,0,0,.25)"></div><div style="position:absolute;left:766px;top:74px;width:52px;height:10px;border-radius:5px;background:rgba(0,0,0,.25)"></div><div style="position:absolute;left:30px;top:130px;width:396px;height:28px;border-radius:6px;background:#111"></div><div style="position:absolute;left:30px;top:170px;width:308px;height:28px;border-radius:6px;background:#111"></div><div style="position:absolute;left:30px;top:222px;width:352px;height:10px;border-radius:5px;background:rgba(0,0,0,.2)"></div><div style="position:absolute;left:30px;top:262px;width:150px;height:44px;border-radius:22px;background:#8B5CF6"></div><div style="position:absolute;left:484px;top:120px;width:352px;height:200px;border-radius:12px;background:linear-gradient(135deg,#C4B5FD,#8B5CF6)"></div><div style="position:absolute;left:30px;top:350px;width:253px;height:110px;border-radius:10px;background:rgba(0,0,0,.06)"></div><div style="position:absolute;left:303px;top:350px;width:253px;height:110px;border-radius:10px;background:rgba(0,0,0,.06)"></div><div style="position:absolute;left:576px;top:350px;width:253px;height:110px;border-radius:10px;background:rgba(0,0,0,.06)"></div></div></div>
+<div id="f01-hook-e0" style="position:absolute;left:300px;top:470px;display:flex;align-items:center;gap:12px;padding:14px 22px;border-radius:12px;background:#16161C;border:2px solid #EF4444;font-family:Montserrat;font-weight:800;font-size:24px;white-space:nowrap;box-shadow:0 20px 40px rgba(0,0,0,.5)"><span style="width:14px;height:14px;border-radius:50%;background:#EF4444"></span>3 plugin updates</div><div id="f01-hook-e1" style="position:absolute;left:1330px;top:560px;display:flex;align-items:center;gap:12px;padding:14px 22px;border-radius:12px;background:#16161C;border:2px solid #F59E0B;font-family:Montserrat;font-weight:800;font-size:24px;white-space:nowrap;box-shadow:0 20px 40px rgba(0,0,0,.5)"><span style="width:14px;height:14px;border-radius:50%;background:#F59E0B"></span>Outdated content</div><div id="f01-hook-e2" style="position:absolute;left:360px;top:760px;display:flex;align-items:center;gap:12px;padding:14px 22px;border-radius:12px;background:#16161C;border:2px solid #EF4444;font-family:Montserrat;font-weight:800;font-size:24px;white-space:nowrap;box-shadow:0 20px 40px rgba(0,0,0,.5)"><span style="width:14px;height:14px;border-radius:50%;background:#EF4444"></span>Broken layout</div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const CID = "01-hook";
+      const D = 4.39;
+      const R = document.querySelector('[data-composition-id="' + CID + '"]');
+      const q = (s) => Array.from(R.querySelectorAll(s));
+      const id = (s) => "#f" + CID + "-" + s;
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo(id("g1"), {x:0, y:0, scale:1}, {x:60, y:30, scale:1.08, duration:D, ease:"sine.inOut"}, 0);
+      tl.fromTo(id("g2"), {x:0, y:0, scale:1.05}, {x:-60, y:20, scale:0.95, duration:D, ease:"sine.inOut"}, 0);
+      tl.fromTo(id("a"), {opacity:0, y:40}, {opacity:1, y:0, duration:0.5, ease:"power3.out"}, 0.05);
+
+      tl.fromTo(id("b"), {opacity:0, scale:0.6}, {opacity:1, scale:1, duration:0.5, ease:"back.out(2.2)"}, 0.8);
+      tl.fromTo(id("win"), {opacity:0, y:120}, {opacity:1, y:0, duration:0.7, ease:"power3.out"}, 0.6);
+      tl.fromTo(id("e0"), {opacity:0, scale:0.5}, {opacity:1, scale:1, duration:0.4, ease:"back.out(2.4)"}, 1.9);
+      tl.fromTo(id("e1"), {opacity:0, scale:0.5}, {opacity:1, scale:1, duration:0.4, ease:"back.out(2.4)"}, 2.3);
+      tl.fromTo(id("e2"), {opacity:0, scale:0.5}, {opacity:1, scale:1, duration:0.4, ease:"back.out(2.4)"}, 2.7);
+      tl.to([id("e0"), id("e1"), id("e2")], {y:-10, duration:1.2, ease:"sine.inOut"}, 3.1);
+
+      tl.set({}, {}, D);
+      window.__timelines[CID] = tl;
+    })();
+  </script>
+</template>

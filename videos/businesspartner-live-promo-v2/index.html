@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="assets/vendor/gsap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #000;
+      }
+      #root {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #060A07;
+      }
+      .scene {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="137.17"
+      data-width="1920"
+      data-height="1080"
+    >
+      <div
+        id="el-01-hook"
+        class="scene"
+        data-composition-id="01-hook"
+        data-composition-src="compositions/frames/01-hook.html"
+        data-start="0"
+        data-duration="6.88"
+        data-track-index="0"
+      ></div>
+      <audio
+        id="el-01-hook-voice"
+        src="assets/voice/01.wav"
+        data-start="0"
+        data-duration="6.48"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-02-intro"
+        class="scene"
+        data-composition-id="02-intro"
+        data-composition-src="compositions/frames/02-intro.html"
+        data-start="6.48"
+        data-duration="9.18"
+        data-track-index="1"
+      ></div>
+      <audio
+        id="el-02-intro-voice"
+        src="assets/voice/02.wav"
+        data-start="6.48"
+        data-duration="8.68"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-03-roles"
+        class="scene"
+        data-composition-id="03-roles"
+        data-composition-src="compositions/frames/03-roles.html"
+        data-start="15.16"
+        data-duration="10.17"
+        data-track-index="0"
+      ></div>
+      <audio
+        id="el-03-roles-voice"
+        src="assets/voice/03.wav"
+        data-start="15.16"
+        data-duration="9.67"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-04-services"
+        class="scene"
+        data-composition-id="04-services"
+        data-composition-src="compositions/frames/04-services.html"
+        data-start="24.83"
+        data-duration="12.53"
+        data-track-index="1"
+      ></div>
+      <audio
+        id="el-04-services-voice"
+        src="assets/voice/04.wav"
+        data-start="24.83"
+        data-duration="12.13"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-05-step1"
+        class="scene"
+        data-composition-id="05-step1"
+        data-composition-src="compositions/frames/05-step1.html"
+        data-start="36.96"
+        data-duration="5.81"
+        data-track-index="0"
+      ></div>
+      <audio
+        id="el-05-step1-voice"
+        src="assets/voice/05.wav"
+        data-start="36.96"
+        data-duration="5.31"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-06-step2"
+        class="scene"
+        data-composition-id="06-step2"
+        data-composition-src="compositions/frames/06-step2.html"
+        data-start="42.27"
+        data-duration="5.04"
+        data-track-index="1"
+      ></div>
+      <audio
+        id="el-06-step2-voice"
+        src="assets/voice/06.wav"
+        data-start="42.27"
+        data-duration="4.54"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-07-step3"
+        class="scene"
+        data-composition-id="07-step3"
+        data-composition-src="compositions/frames/07-step3.html"
+        data-start="46.81"
+        data-duration="4.51"
+        data-track-index="0"
+      ></div>
+      <audio
+        id="el-07-step3-voice"
+        src="assets/voice/07.wav"
+        data-start="46.81"
+        data-duration="4.01"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-08-step4"
+        class="scene"
+        data-composition-id="08-step4"
+        data-composition-src="compositions/frames/08-step4.html"
+        data-start="50.82"
+        data-duration="5.11"
+        data-track-index="1"
+      ></div>
+      <audio
+        id="el-08-step4-voice"
+        src="assets/voice/08.wav"
+        data-start="50.82"
+        data-duration="4.71"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-09-more"
+        class="scene"
+        data-composition-id="09-more"
+        data-composition-src="compositions/frames/09-more.html"
+        data-start="55.53"
+        data-duration="6.69"
+        data-track-index="0"
+      ></div>
+      <audio
+        id="el-09-more-voice"
+        src="assets/voice/09.wav"
+        data-start="55.53"
+        data-duration="6.19"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-10-websites"
+        class="scene"
+        data-composition-id="10-websites"
+        data-composition-src="compositions/frames/10-websites.html"
+        data-start="61.72"
+        data-duration="7.86"
+        data-track-index="1"
+      ></div>
+      <audio
+        id="el-10-websites-voice"
+        src="assets/voice/10.wav"
+        data-start="61.72"
+        data-duration="7.36"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-11-apps-software"
+        class="scene"
+        data-composition-id="11-apps-software"
+        data-composition-src="compositions/frames/11-apps-software.html"
+        data-start="69.08"
+        data-duration="7.79"
+        data-track-index="0"
+      ></div>
+      <audio
+        id="el-11-apps-software-voice"
+        src="assets/voice/11.wav"
+        data-start="69.08"
+        data-duration="7.29"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-12-ai"
+        class="scene"
+        data-composition-id="12-ai"
+        data-composition-src="compositions/frames/12-ai.html"
+        data-start="76.37"
+        data-duration="11.89"
+        data-track-index="1"
+      ></div>
+      <audio
+        id="el-12-ai-voice"
+        src="assets/voice/12.wav"
+        data-start="76.37"
+        data-duration="11.39"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-13-built"
+        class="scene"
+        data-composition-id="13-built"
+        data-composition-src="compositions/frames/13-built.html"
+        data-start="87.76"
+        data-duration="7.96"
+        data-track-index="0"
+      ></div>
+      <audio
+        id="el-13-built-voice"
+        src="assets/voice/13.wav"
+        data-start="87.76"
+        data-duration="7.56"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-14-pricing"
+        class="scene"
+        data-composition-id="14-pricing"
+        data-composition-src="compositions/frames/14-pricing.html"
+        data-start="95.32000000000001"
+        data-duration="6.8"
+        data-track-index="1"
+      ></div>
+      <audio
+        id="el-14-pricing-voice"
+        src="assets/voice/14.wav"
+        data-start="95.32000000000001"
+        data-duration="6.3"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-15-no-hassle"
+        class="scene"
+        data-composition-id="15-no-hassle"
+        data-composition-src="compositions/frames/15-no-hassle.html"
+        data-start="101.62"
+        data-duration="11.47"
+        data-track-index="0"
+      ></div>
+      <audio
+        id="el-15-no-hassle-voice"
+        src="assets/voice/15.wav"
+        data-start="101.62"
+        data-duration="10.97"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-16-every-step"
+        class="scene"
+        data-composition-id="16-every-step"
+        data-composition-src="compositions/frames/16-every-step.html"
+        data-start="112.59"
+        data-duration="9.89"
+        data-track-index="1"
+      ></div>
+      <audio
+        id="el-16-every-step-voice"
+        src="assets/voice/16.wav"
+        data-start="112.59"
+        data-duration="9.29"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-17-cta"
+        class="scene"
+        data-composition-id="17-cta"
+        data-composition-src="compositions/frames/17-cta.html"
+        data-start="121.88"
+        data-duration="8.87"
+        data-track-index="0"
+      ></div>
+      <audio
+        id="el-17-cta-voice"
+        src="assets/voice/17.wav"
+        data-start="121.88"
+        data-duration="8.47"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-18-outro"
+        class="scene"
+        data-composition-id="18-outro"
+        data-composition-src="compositions/frames/18-outro.html"
+        data-start="130.35"
+        data-duration="6.82"
+        data-track-index="1"
+      ></div>
+      <audio
+        id="el-18-outro-voice"
+        src="assets/voice/18.wav"
+        data-start="130.35"
+        data-duration="6.82"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+      // ── frame transitions (injected by transitions.mjs) ──
+      (function () { var tl = window.__timelines["main"];
+        tl.to("#el-01-hook", { scale: 2.5, opacity: 0, filter: "blur(8px)", duration: 0.4, ease: "power3.in" }, 6.48);
+        tl.fromTo("#el-02-intro", { scale: 0.5, opacity: 0, filter: "blur(8px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power3.out" }, 6.48);
+        tl.to("#el-02-intro", { opacity: 0, duration: 0.5, ease: "power2.inOut" }, 15.16);
+        tl.fromTo("#el-03-roles", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut" }, 15.16);
+        tl.to("#el-03-roles", { x: -1920, duration: 0.5, ease: "power3.inOut" }, 24.83);
+        tl.fromTo("#el-04-services", { x: 1920, opacity: 1 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.inOut" }, 24.83);
+        tl.to("#el-04-services", { scale: 2.5, opacity: 0, filter: "blur(8px)", duration: 0.4, ease: "power3.in" }, 36.96);
+        tl.fromTo("#el-05-step1", { scale: 0.5, opacity: 0, filter: "blur(8px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power3.out" }, 36.96);
+        tl.to("#el-05-step1", { x: -1920, duration: 0.5, ease: "power3.inOut" }, 42.27);
+        tl.fromTo("#el-06-step2", { x: 1920, opacity: 1 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.inOut" }, 42.27);
+        tl.to("#el-06-step2", { x: -1920, duration: 0.5, ease: "power3.inOut" }, 46.81);
+        tl.fromTo("#el-07-step3", { x: 1920, opacity: 1 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.inOut" }, 46.81);
+        tl.to("#el-07-step3", { x: -1920, duration: 0.5, ease: "power3.inOut" }, 50.82);
+        tl.fromTo("#el-08-step4", { x: 1920, opacity: 1 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.inOut" }, 50.82);
+        tl.to("#el-08-step4", { scale: 2.5, opacity: 0, filter: "blur(8px)", duration: 0.4, ease: "power3.in" }, 55.53);
+        tl.fromTo("#el-09-more", { scale: 0.5, opacity: 0, filter: "blur(8px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power3.out" }, 55.53);
+        tl.to("#el-09-more", { opacity: 0, duration: 0.5, ease: "power2.inOut" }, 61.72);
+        tl.fromTo("#el-10-websites", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut" }, 61.72);
+        tl.to("#el-10-websites", { x: -1920, duration: 0.5, ease: "power3.inOut" }, 69.08);
+        tl.fromTo("#el-11-apps-software", { x: 1920, opacity: 1 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.inOut" }, 69.08);
+        tl.to("#el-11-apps-software", { x: -1920, duration: 0.5, ease: "power3.inOut" }, 76.37);
+        tl.fromTo("#el-12-ai", { x: 1920, opacity: 1 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.inOut" }, 76.37);
+        tl.to("#el-12-ai", { opacity: 0, duration: 0.5, ease: "power2.inOut" }, 87.76);
+        tl.fromTo("#el-13-built", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut" }, 87.76);
+        tl.to("#el-13-built", { scale: 2.5, opacity: 0, filter: "blur(8px)", duration: 0.4, ease: "power3.in" }, 95.32);
+        tl.fromTo("#el-14-pricing", { scale: 0.5, opacity: 0, filter: "blur(8px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power3.out" }, 95.32);
+        tl.to("#el-14-pricing", { opacity: 0, duration: 0.5, ease: "power2.inOut" }, 101.62);
+        tl.fromTo("#el-15-no-hassle", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut" }, 101.62);
+        tl.to("#el-15-no-hassle", { opacity: 0, duration: 0.5, ease: "power2.inOut" }, 112.59);
+        tl.fromTo("#el-16-every-step", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut" }, 112.59);
+        tl.to("#el-16-every-step", { filter: "blur(10px)", scale: 1.03, opacity: 0, duration: 0.6, ease: "power2.inOut" }, 121.88);
+        tl.fromTo("#el-17-cta", { filter: "blur(10px)", scale: 0.97, opacity: 0 }, { filter: "blur(0px)", scale: 1, opacity: 1, duration: 0.6, ease: "power2.inOut" }, 121.88);
+        tl.to("#el-17-cta", { scale: 2.5, opacity: 0, filter: "blur(8px)", duration: 0.4, ease: "power3.in" }, 130.35);
+        tl.fromTo("#el-18-outro", { scale: 0.5, opacity: 0, filter: "blur(8px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power3.out" }, 130.35);
+        tl.to({}, { duration: 137.17 }, 0); // full-span anchor — main.duration() == composition total (Studio master duration)
+      })();
+    </script>
+  </body>
+</html>

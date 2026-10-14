@@ -1,0 +1,78 @@
+<template>
+  <style>
+
+
+@font-face{font-family:"Playfair Display";src:url("assets/fonts/PlayfairDisplay-400.woff2") format("woff2");font-weight:400;font-style:normal}
+@font-face{font-family:"Playfair Display";src:url("assets/fonts/PlayfairDisplay-400italic.woff2") format("woff2");font-weight:400;font-style:italic}
+@font-face{font-family:"Inter";src:url("assets/fonts/Inter-400.woff2") format("woff2");font-weight:400}
+@font-face{font-family:"Inter";src:url("assets/fonts/Inter-600.woff2") format("woff2");font-weight:600}
+@font-face{font-family:"JetBrains Mono";src:url("assets/fonts/JetBrainsMono-400.woff2") format("woff2");font-weight:400}
+
+#root{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;color:#F3EDE0;font-family:"Inter",sans-serif}
+[data-composition-id="01-hook"] .bg{position:absolute;inset:0;background:#060A07}
+[data-composition-id="01-hook"] .bloom{position:absolute;border-radius:50%;pointer-events:none}
+[data-composition-id="01-hook"] .bloom.sun{width:1300px;height:1300px;left:760px;top:-260px;background:radial-gradient(circle,rgba(52,213,122,.30) 0%,rgba(52,213,122,.12) 32%,rgba(18,92,50,.06) 52%,rgba(0,0,0,0) 70%)}
+[data-composition-id="01-hook"] .bloom.ember{width:900px;height:900px;left:-300px;top:420px;background:radial-gradient(circle,rgba(30,143,78,.16) 0%,rgba(0,0,0,0) 65%)}
+[data-composition-id="01-hook"] .vignette{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,0,0,0) 55%,rgba(0,0,0,.55) 100%)}
+[data-composition-id="01-hook"] .stage{position:absolute;inset:0}
+[data-composition-id="01-hook"] .display{font-family:"Playfair Display",serif;font-weight:400;letter-spacing:-0.015em;line-height:1.02;color:#F3EDE0}
+[data-composition-id="01-hook"] .it{font-style:italic;color:#34D57A}
+[data-composition-id="01-hook"] .micro{font-family:"Inter",sans-serif;font-weight:600;font-size:18px;letter-spacing:.32em;text-transform:uppercase;color:#8BF0B4}
+[data-composition-id="01-hook"] .mono{font-family:"JetBrains Mono",monospace;color:#34D57A}
+[data-composition-id="01-hook"] .hair{position:absolute;height:1px;background:#34D57A;transform-origin:0 50%}
+[data-composition-id="01-hook"] .card{position:absolute;background:rgba(12,22,15,.88);border:1px solid rgba(52,213,122,.45)}
+[data-composition-id="01-hook"] .pagenum{position:absolute;right:64px;top:52px;font-family:"JetBrains Mono",monospace;font-size:15px;letter-spacing:.08em;color:#34D57A;opacity:.75}
+[data-composition-id="01-hook"] .brand{position:absolute;left:64px;top:50px;font-family:"Playfair Display",serif;font-size:22px;color:#F3EDE0;opacity:.8}
+[data-composition-id="01-hook"] .brand b{font-weight:400;color:#34D57A}
+
+
+[data-composition-id="01-hook"] .q{position:absolute;left:0;right:0;top:330px;text-align:center}
+[data-composition-id="01-hook"] .q .l1,[data-composition-id="01-hook"] .q .l2{font-size:120px}
+[data-composition-id="01-hook"] .q .l2{margin-top:6px}
+[data-composition-id="01-hook"] .chip{position:absolute;display:flex;align-items:center;gap:16px;padding:18px 28px;font-size:28px;font-weight:600;color:#F3EDE0}
+
+  </style>
+  <div id="root" data-composition-id="01-hook" data-width="1920" data-height="1080">
+    <div class="clip bg" id="f01-hook-bg" data-start="0" data-duration="6.48" data-track-index="0">
+      <div class="bloom sun" id="f01-hook-sun"></div>
+      <div class="bloom ember" id="f01-hook-ember"></div>
+      <div class="vignette"></div>
+    </div>
+    <div class="clip stage" id="f01-hook-stage" data-start="0" data-duration="6.48" data-track-index="1">
+      <div class="brand" id="f01-hook-brand">BusinessPartner<b>.Live</b></div><div class="pagenum">01 / 18</div>
+<div class="q"><div class="display l1" id="f01-hook-l1">Grow your business</div>
+<div class="display it l2" id="f01-hook-l2">without the stress?</div></div><div class="card chip" id="f01-hook-c0" style="left:250px;top:230px"><svg width="40" height="40" viewBox="0 0 48 48" fill="none" stroke="#34D57A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="12" y="6" width="24" height="36" rx="2"/><line x1="17" y1="16" x2="31" y2="16"/><line x1="17" y1="23" x2="31" y2="23"/><line x1="17" y1="30" x2="26" y2="30"/></svg><span>Job posts</span></div><div class="card chip" id="f01-hook-c1" style="left:1390px;top:210px"><svg width="40" height="40" viewBox="0 0 48 48" fill="none" stroke="#34D57A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="9" width="28" height="33" rx="2"/><rect x="18" y="5" width="12" height="7" rx="1"/><path d="M17 26l5 5 9-10"/></svg><span>Résumés</span></div><div class="card chip" id="f01-hook-c2" style="left:180px;top:610px"><svg width="40" height="40" viewBox="0 0 48 48" fill="none" stroke="#34D57A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 10h32v22H20l-8 7v-7H8z"/></svg><span>Interviews</span></div><div class="card chip" id="f01-hook-c3" style="left:1460px;top:600px"><svg width="40" height="40" viewBox="0 0 48 48" fill="none" stroke="#34D57A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="16"/><path d="M24 14v20M29 18h-7a3 3 0 0 0 0 6h4a3 3 0 0 1 0 6h-7"/></svg><span>Payroll</span></div><div class="card chip" id="f01-hook-c4" style="left:560px;top:770px"><svg width="40" height="40" viewBox="0 0 48 48" fill="none" stroke="#34D57A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="16" r="8"/><path d="M8 42c2-9 9-13 16-13s14 4 16 13"/></svg><span>Managing staff</span></div><div class="card chip" id="f01-hook-c5" style="left:1040px;top:770px"><svg width="40" height="40" viewBox="0 0 48 48" fill="none" stroke="#34D57A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="17"/><path d="M24 13v11l7 5"/></svg><span>Doing it all yourself</span></div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const CID = "01-hook";
+      const D = 6.48;
+      const R = document.querySelector('[data-composition-id="' + CID + '"]');
+      const q = (s) => Array.from(R.querySelectorAll(s));
+      const id = (s) => "#f" + CID + "-" + s;
+      const tl = gsap.timeline({ paused: true });
+      // ambient: slow bloom drift under every shot
+      tl.fromTo(id("sun"), { scale: 0.92, x: 0 }, { scale: 1.08, x: -60, duration: D, ease: "sine.inOut" }, 0);
+      tl.fromTo(id("ember"), { opacity: 0.6 }, { opacity: 1, duration: D, ease: "sine.inOut" }, 0);
+      tl.fromTo(id("l1"), {opacity:0, y:40}, {opacity:1, y:0, duration:0.8, ease:"power3.out"}, 0.1);
+      tl.fromTo(id("l2"), {opacity:0, y:40}, {opacity:1, y:0, duration:0.8, ease:"power3.out"}, 1.5);
+      tl.fromTo(id("c0"), {opacity:0, scale:0.6, rotation:-12}, {opacity:1, scale:1, rotation:-4, duration:0.5, ease:"back.out(2)"}, 2.1);
+      tl.fromTo(id("c0"), {x:0, y:0}, {x:67, y:32, duration:4.38, ease:"sine.in"}, 2.1);
+      tl.fromTo(id("c1"), {opacity:0, scale:0.6, rotation:9}, {opacity:1, scale:1, rotation:3, duration:0.5, ease:"back.out(2)"}, 2.45);
+      tl.fromTo(id("c1"), {x:0, y:0}, {x:-70, y:35, duration:4.03, ease:"sine.in"}, 2.45);
+      tl.fromTo(id("c2"), {opacity:0, scale:0.6, rotation:9}, {opacity:1, scale:1, rotation:3, duration:0.5, ease:"back.out(2)"}, 2.8);
+      tl.fromTo(id("c2"), {x:0, y:0}, {x:76, y:-13, duration:3.68, ease:"sine.in"}, 2.8);
+      tl.fromTo(id("c3"), {opacity:0, scale:0.6, rotation:-9}, {opacity:1, scale:1, rotation:-3, duration:0.5, ease:"back.out(2)"}, 3.35);
+      tl.fromTo(id("c3"), {x:0, y:0}, {x:-78, y:-12, duration:3.13, ease:"sine.in"}, 3.35);
+      tl.fromTo(id("c4"), {opacity:0, scale:0.6, rotation:-6}, {opacity:1, scale:1, rotation:-2, duration:0.5, ease:"back.out(2)"}, 3.8);
+      tl.fromTo(id("c4"), {x:0, y:0}, {x:30, y:-32, duration:2.68, ease:"sine.in"}, 3.8);
+      tl.fromTo(id("c5"), {opacity:0, scale:0.6, rotation:6}, {opacity:1, scale:1, rotation:2, duration:0.5, ease:"back.out(2)"}, 4.9);
+      tl.fromTo(id("c5"), {x:0, y:0}, {x:-28, y:-32, duration:1.58, ease:"sine.in"}, 4.9);
+      tl.to(q(".chip"), {opacity:0.45, duration:0.6}, 5.7);
+
+      tl.set({}, {}, D);
+      window.__timelines[CID] = tl;
+    })();
+  </script>
+</template>

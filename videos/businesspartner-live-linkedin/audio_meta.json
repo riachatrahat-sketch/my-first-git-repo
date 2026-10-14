@@ -1,5 +1,9 @@
 {
- "bgm": null,
+ "bgm": {
+  "path": "assets/bgm/bed.wav",
+  "volume": 0.09,
+  "source": "host"
+ },
  "voices": [
   {
    "frame": 1,

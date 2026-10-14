@@ -5,7 +5,7 @@ message: "Hire smarter. Build better. Work simpler. Grow faster."
 arc: hook → intro → pricing → CTA → tagline
 audience: small business owners on LinkedIn
 mode: autonomous
-music: none
+music: host — procedural corporate bed (assets/bgm/bed.wav)
 vo_mode: verbatim
 ---
 

@@ -1,0 +1,104 @@
+<template>
+  <style>
+
+
+@font-face{font-family:"Playfair Display";src:url("assets/fonts/PlayfairDisplay-400.woff2") format("woff2");font-weight:400;font-style:normal}
+@font-face{font-family:"Playfair Display";src:url("assets/fonts/PlayfairDisplay-400italic.woff2") format("woff2");font-weight:400;font-style:italic}
+@font-face{font-family:"Inter";src:url("assets/fonts/Inter-400.woff2") format("woff2");font-weight:400}
+@font-face{font-family:"Inter";src:url("assets/fonts/Inter-600.woff2") format("woff2");font-weight:600}
+@font-face{font-family:"JetBrains Mono";src:url("assets/fonts/JetBrainsMono-400.woff2") format("woff2");font-weight:400}
+
+#root{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;color:#F3EDE0;font-family:"Inter",sans-serif}
+[data-composition-id="05-step1"] .bg{position:absolute;inset:0;background:#0B0A08}
+[data-composition-id="05-step1"] .bloom{position:absolute;border-radius:50%;pointer-events:none}
+[data-composition-id="05-step1"] .bloom.sun{width:1300px;height:1300px;left:760px;top:-260px;background:radial-gradient(circle,rgba(212,175,55,.30) 0%,rgba(212,175,55,.12) 32%,rgba(120,98,26,.06) 52%,rgba(0,0,0,0) 70%)}
+[data-composition-id="05-step1"] .bloom.ember{width:900px;height:900px;left:-300px;top:420px;background:radial-gradient(circle,rgba(184,134,43,.16) 0%,rgba(0,0,0,0) 65%)}
+[data-composition-id="05-step1"] .vignette{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,0,0,0) 55%,rgba(0,0,0,.55) 100%)}
+[data-composition-id="05-step1"] .stage{position:absolute;inset:0}
+[data-composition-id="05-step1"] .display{font-family:"Playfair Display",serif;font-weight:400;letter-spacing:-0.015em;line-height:1.02;color:#F3EDE0}
+[data-composition-id="05-step1"] .it{font-style:italic;color:#D4AF37}
+[data-composition-id="05-step1"] .micro{font-family:"Inter",sans-serif;font-weight:600;font-size:18px;letter-spacing:.32em;text-transform:uppercase;color:#F1D78A}
+[data-composition-id="05-step1"] .mono{font-family:"JetBrains Mono",monospace;color:#D4AF37}
+[data-composition-id="05-step1"] .hair{position:absolute;height:1px;background:#D4AF37;transform-origin:0 50%}
+[data-composition-id="05-step1"] .card{position:absolute;background:rgba(23,20,15,.88);border:1px solid rgba(212,175,55,.45)}
+[data-composition-id="05-step1"] .pagenum{position:absolute;right:64px;top:52px;font-family:"JetBrains Mono",monospace;font-size:15px;letter-spacing:.08em;color:#D4AF37;opacity:.75}
+[data-composition-id="05-step1"] .brand{position:absolute;left:64px;top:50px;font-family:"Playfair Display",serif;font-size:22px;color:#F3EDE0;opacity:.8}
+[data-composition-id="05-step1"] .brand b{font-weight:400;color:#D4AF37}
+
+
+[data-composition-id="05-step1"] .rail-track{position:absolute;left:240px;top:860px;width:1440px;height:2px;margin-top:-1px;background:rgba(212,175,55,.22)}
+[data-composition-id="05-step1"] .rail-fill{position:absolute;left:240px;top:860px;width:1440px;height:2px;margin-top:-1px;background:#D4AF37;transform-origin:0 50%}
+[data-composition-id="05-step1"] .node{position:absolute;top:846px;width:28px;height:28px;margin-left:-14px;border-radius:50%;border:2px solid rgba(212,175,55,.5);background:#0B0A08}
+[data-composition-id="05-step1"] .node-on{position:absolute;inset:3px;border-radius:50%;background:#D4AF37}
+[data-composition-id="05-step1"] .node-lbl{position:absolute;top:804px;width:200px;margin-left:-100px;text-align:center;font-weight:600;font-size:16px;letter-spacing:.28em;text-transform:uppercase;color:rgba(243,237,224,.55)}
+[data-composition-id="05-step1"] .node-lbl.on{color:#F1D78A}
+
+[data-composition-id="05-step1"] .num{position:absolute;left:180px;top:250px;font-size:220px;line-height:.85}
+[data-composition-id="05-step1"] .sw{position:absolute;left:180px;top:470px;font-size:110px}
+[data-composition-id="05-step1"] .ss{position:absolute;left:184px;top:610px;font-size:34px;color:rgba(243,237,224,.8)}
+[data-composition-id="05-step1"] .ttl{position:absolute;left:0;right:0;top:150px;text-align:center;font-size:96px}
+
+[data-composition-id="05-step1"] .panel{left:1000px;top:280px;width:740px;height:420px}
+[data-composition-id="05-step1"] .chip{position:absolute;left:60px;width:620px;padding:22px 30px;font-size:32px;font-weight:600;border:1px solid rgba(212,175,55,.35);background:rgba(11,10,8,.6)}
+[data-composition-id="05-step1"] .mag{position:absolute;left:520px;top:20px}
+
+
+  </style>
+  <div id="root" data-composition-id="05-step1" data-width="1920" data-height="1080">
+    <div class="clip bg" id="f05-step1-bg" data-start="0" data-duration="5.31" data-track-index="0">
+      <div class="bloom sun" id="f05-step1-sun"></div>
+      <div class="bloom ember" id="f05-step1-ember"></div>
+      <div class="vignette"></div>
+    </div>
+    <div class="clip stage" id="f05-step1-stage" data-start="0" data-duration="5.31" data-track-index="1">
+      <div class="brand" id="f05-step1-brand">BusinessPartner<b>.Live</b></div><div class="pagenum">05 / 18</div>
+<div class="display ttl" id="f05-step1-ttl">How it <span class="it">works</span></div><div class="mono num" id="f05-step1-num">01</div><div class="display sw" id="f05-step1-sw">Discover</div><div class="ss" id="f05-step1-ss">the right role or service</div><div class="card panel" id="f05-step1-panel"><div class="chip" id="f05-step1-ch0" style="top:60px">Sales Closer</div><div class="chip" id="f05-step1-ch1" style="top:175px">Website Development</div><div class="chip" id="f05-step1-ch2" style="top:290px">Virtual Assistant</div><div class="mag" id="f05-step1-mag"><svg width="110" height="110" viewBox="0 0 48 48" fill="none" stroke="#F1D78A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="20" r="12"/><line x1="29" y1="29" x2="42" y2="42"/></svg></div></div><div class="rail-track" id="f05-step1-rtrack"></div>
+<div class="rail-fill" id="f05-step1-rfill"></div>
+<div class="node" style="left:240px"><div class="node-on" id="f05-step1-n1"></div></div>
+<div class="node-lbl " id="f05-step1-l1" style="left:240px">Discover</div>
+<div class="node" style="left:720px"><div class="node-on" id="f05-step1-n2"></div></div>
+<div class="node-lbl " id="f05-step1-l2" style="left:720px">Choose</div>
+<div class="node" style="left:1200px"><div class="node-on" id="f05-step1-n3"></div></div>
+<div class="node-lbl " id="f05-step1-l3" style="left:1200px">Start</div>
+<div class="node" style="left:1680px"><div class="node-on" id="f05-step1-n4"></div></div>
+<div class="node-lbl " id="f05-step1-l4" style="left:1680px">Track</div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const CID = "05-step1";
+      const D = 5.31;
+      const R = document.querySelector('[data-composition-id="' + CID + '"]');
+      const q = (s) => Array.from(R.querySelectorAll(s));
+      const id = (s) => "#f" + CID + "-" + s;
+      const tl = gsap.timeline({ paused: true });
+      // ambient: slow bloom drift under every shot
+      tl.fromTo(id("sun"), { scale: 0.92, x: 0 }, { scale: 1.08, x: -60, duration: D, ease: "sine.inOut" }, 0);
+      tl.fromTo(id("ember"), { opacity: 0.6 }, { opacity: 1, duration: D, ease: "sine.inOut" }, 0);
+      tl.fromTo(id("ttl"), {opacity:0, y:30}, {opacity:1, y:0, duration:0.6, ease:"power3.out"}, 0.05);
+      tl.to(id("ttl"), {opacity:0, y:-40, scale:0.9, duration:0.4, ease:"power2.in"}, 1.0);
+      tl.fromTo(id("num"), {opacity:0, y:60}, {opacity:1, y:0, duration:0.6, ease:"power3.out"}, 1.35);
+      tl.fromTo(id("sw"), {opacity:0, x:-40}, {opacity:1, x:0, duration:0.6, ease:"power3.out"}, 1.55);
+      tl.fromTo(id("ss"), {opacity:0, y:14}, {opacity:1, y:0, duration:0.5, ease:"power3.out"}, 1.8);
+      tl.fromTo(id("rtrack"), {scaleX:0, transformOrigin:"0 50%"}, {scaleX:1, duration:0.7, ease:"power3.out"}, 0.3);
+      tl.fromTo(q(".node"), {scale:0}, {scale:1, duration:0.4, ease:"back.out(2)", stagger:0.1}, 0.4);
+      tl.fromTo(q(".node-lbl"), {opacity:0, y:10}, {opacity:1, y:0, duration:0.4, stagger:0.1}, 0.55);
+      tl.fromTo(id("rfill"), {scaleX:0.0000}, {scaleX:0.0000, duration:0.6, ease:"power2.inOut"}, 1.2);
+      tl.fromTo(id("n1"), {scale:0, opacity:0}, {scale:1, opacity:1, duration:0.35, ease:"back.out(3)"}, 1.65);
+      tl.fromTo(id("l1"), {color:"rgba(243,237,224,0.55)"}, {color:"#F1D78A", duration:0.3}, 1.65);
+      tl.set(id("n2"), {scale:0, opacity:0}, 0);
+      tl.set(id("n3"), {scale:0, opacity:0}, 0);
+      tl.set(id("n4"), {scale:0, opacity:0}, 0);
+
+      tl.fromTo(id("panel"), {opacity:0, x:60}, {opacity:1, x:0, duration:0.6, ease:"power3.out"}, 1.9);
+      tl.fromTo(q(".chip"), {opacity:0, x:30}, {opacity:1, x:0, duration:0.4, stagger:0.18}, 2.2);
+      tl.fromTo(id("mag"), {opacity:0}, {opacity:1, duration:0.3}, 2.7);
+      tl.to(id("mag"), {y:115, duration:0.7, ease:"power2.inOut"}, 3.0);
+      tl.fromTo(id("ch1"), {borderColor:"rgba(212,175,55,0.35)", color:"#F3EDE0"}, {borderColor:"rgba(241,215,138,1)", color:"#F1D78A", duration:0.35}, 3.7);
+      tl.fromTo(id("ch1"), {scale:1}, {scale:1.04, duration:0.35, ease:"back.out(3)"}, 3.7);
+
+      tl.set({}, {}, D);
+      window.__timelines[CID] = tl;
+    })();
+  </script>
+</template>

@@ -1,0 +1,71 @@
+<template>
+  <style>
+
+
+@font-face{font-family:"Playfair Display";src:url("assets/fonts/PlayfairDisplay-400.woff2") format("woff2");font-weight:400;font-style:normal}
+@font-face{font-family:"Playfair Display";src:url("assets/fonts/PlayfairDisplay-400italic.woff2") format("woff2");font-weight:400;font-style:italic}
+@font-face{font-family:"Inter";src:url("assets/fonts/Inter-400.woff2") format("woff2");font-weight:400}
+@font-face{font-family:"Inter";src:url("assets/fonts/Inter-600.woff2") format("woff2");font-weight:600}
+@font-face{font-family:"JetBrains Mono";src:url("assets/fonts/JetBrainsMono-400.woff2") format("woff2");font-weight:400}
+
+#root{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;color:#F3EDE0;font-family:"Inter",sans-serif}
+[data-composition-id="14-pricing"] .bg{position:absolute;inset:0;background:#0B0A08}
+[data-composition-id="14-pricing"] .bloom{position:absolute;border-radius:50%;pointer-events:none}
+[data-composition-id="14-pricing"] .bloom.sun{width:1300px;height:1300px;left:760px;top:-260px;background:radial-gradient(circle,rgba(212,175,55,.30) 0%,rgba(212,175,55,.12) 32%,rgba(120,98,26,.06) 52%,rgba(0,0,0,0) 70%)}
+[data-composition-id="14-pricing"] .bloom.ember{width:900px;height:900px;left:-300px;top:420px;background:radial-gradient(circle,rgba(184,134,43,.16) 0%,rgba(0,0,0,0) 65%)}
+[data-composition-id="14-pricing"] .vignette{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,0,0,0) 55%,rgba(0,0,0,.55) 100%)}
+[data-composition-id="14-pricing"] .stage{position:absolute;inset:0}
+[data-composition-id="14-pricing"] .display{font-family:"Playfair Display",serif;font-weight:400;letter-spacing:-0.015em;line-height:1.02;color:#F3EDE0}
+[data-composition-id="14-pricing"] .it{font-style:italic;color:#D4AF37}
+[data-composition-id="14-pricing"] .micro{font-family:"Inter",sans-serif;font-weight:600;font-size:18px;letter-spacing:.32em;text-transform:uppercase;color:#F1D78A}
+[data-composition-id="14-pricing"] .mono{font-family:"JetBrains Mono",monospace;color:#D4AF37}
+[data-composition-id="14-pricing"] .hair{position:absolute;height:1px;background:#D4AF37;transform-origin:0 50%}
+[data-composition-id="14-pricing"] .card{position:absolute;background:rgba(23,20,15,.88);border:1px solid rgba(212,175,55,.45)}
+[data-composition-id="14-pricing"] .pagenum{position:absolute;right:64px;top:52px;font-family:"JetBrains Mono",monospace;font-size:15px;letter-spacing:.08em;color:#D4AF37;opacity:.75}
+[data-composition-id="14-pricing"] .brand{position:absolute;left:64px;top:50px;font-family:"Playfair Display",serif;font-size:22px;color:#F3EDE0;opacity:.8}
+[data-composition-id="14-pricing"] .brand b{font-weight:400;color:#D4AF37}
+
+
+[data-composition-id="14-pricing"] .h1{position:absolute;left:150px;top:150px;font-size:90px}
+[data-composition-id="14-pricing"] .h2{position:absolute;left:150px;top:255px;font-size:90px}
+[data-composition-id="14-pricing"] .pc{top:430px;width:380px;height:330px;padding:34px 32px;display:flex;flex-direction:column;justify-content:space-between}
+[data-composition-id="14-pricing"] .pc .nm{font-family:"Playfair Display",serif;font-size:42px;white-space:nowrap}
+[data-composition-id="14-pricing"] .pc svg{flex-shrink:0}
+[data-composition-id="14-pricing"] .pc .from{font-size:16px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:rgba(243,237,224,.6)}
+[data-composition-id="14-pricing"] .pc .pr{font-family:"Playfair Display",serif;font-size:62px;color:#D4AF37}
+[data-composition-id="14-pricing"] .fit{position:absolute;left:1240px;top:270px;padding:16px 30px;border:1px solid #D4AF37;border-radius:40px;font-size:28px;color:#F1D78A}
+
+  </style>
+  <div id="root" data-composition-id="14-pricing" data-width="1920" data-height="1080">
+    <div class="clip bg" id="f14-pricing-bg" data-start="0" data-duration="6.3" data-track-index="0">
+      <div class="bloom sun" id="f14-pricing-sun"></div>
+      <div class="bloom ember" id="f14-pricing-ember"></div>
+      <div class="vignette"></div>
+    </div>
+    <div class="clip stage" id="f14-pricing-stage" data-start="0" data-duration="6.3" data-track-index="1">
+      <div class="brand" id="f14-pricing-brand">BusinessPartner<b>.Live</b></div><div class="pagenum">14 / 18</div>
+<div class="display h1" id="f14-pricing-h1">Transparent pricing.</div><div class="display it h2" id="f14-pricing-h2">Flexible plans.</div><div class="card pc" id="f14-pricing-c0" style="left:150px"><svg width="56" height="56" viewBox="0 0 48 48" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="17"/><path d="M7 24h34M24 7c5 5 7 11 7 17s-2 12-7 17c-5-5-7-11-7-17s2-12 7-17z"/></svg><div class="nm">Website</div><div><div class="from">Starting from</div><div class="pr">$1,000</div></div></div><div class="card pc" id="f14-pricing-c1" style="left:560px"><svg width="56" height="56" viewBox="0 0 48 48" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="5" width="20" height="38" rx="3"/><line x1="21" y1="37" x2="27" y2="37"/></svg><div class="nm">App</div><div><div class="from">Starting from</div><div class="pr">$5,000</div></div></div><div class="card pc" id="f14-pricing-c2" style="left:970px"><svg width="56" height="56" viewBox="0 0 48 48" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6l18 9-18 9-18-9z"/><path d="M6 24l18 9 18-9"/><path d="M6 33l18 9 18-9"/></svg><div class="nm">Software</div><div><div class="from">Starting from</div><div class="pr">$10,000</div></div></div><div class="card pc" id="f14-pricing-c3" style="left:1380px"><svg width="56" height="56" viewBox="0 0 48 48" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="13" y="13" width="22" height="22" rx="2"/><rect x="19" y="19" width="10" height="10"/><path d="M18 6v7M24 6v7M30 6v7M18 35v7M24 35v7M30 35v7M6 18h7M6 24h7M6 30h7M35 18h7M35 24h7M35 30h7"/></svg><div class="nm">AI Automation</div><div><div class="from">Pricing</div><div class="pr" style="font-size:48px;white-space:nowrap">Custom quote</div></div></div><div class="fit" id="f14-pricing-fit">Fits your needs &amp; budget</div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const CID = "14-pricing";
+      const D = 6.3;
+      const R = document.querySelector('[data-composition-id="' + CID + '"]');
+      const q = (s) => Array.from(R.querySelectorAll(s));
+      const id = (s) => "#f" + CID + "-" + s;
+      const tl = gsap.timeline({ paused: true });
+      // ambient: slow bloom drift under every shot
+      tl.fromTo(id("sun"), { scale: 0.92, x: 0 }, { scale: 1.08, x: -60, duration: D, ease: "sine.inOut" }, 0);
+      tl.fromTo(id("ember"), { opacity: 0.6 }, { opacity: 1, duration: D, ease: "sine.inOut" }, 0);
+      tl.fromTo(id("h1"), {opacity:0, y:30}, {opacity:1, y:0, duration:0.7, ease:"power3.out"}, 0.1);
+      tl.fromTo(id("h2"), {opacity:0, y:30}, {opacity:1, y:0, duration:0.7, ease:"power3.out"}, 1.2);
+      tl.fromTo(q(".pc"), {opacity:0, y:70}, {opacity:1, y:0, duration:0.6, ease:"power3.out", stagger:0.25}, 2.5);
+      tl.fromTo(q(".pc"), {borderColor:"rgba(241,215,138,1)"}, {borderColor:"rgba(212,175,55,0.45)", duration:0.8, stagger:0.25}, 3.0);
+      tl.fromTo(id("fit"), {opacity:0, y:20}, {opacity:1, y:0, duration:0.6, ease:"power3.out"}, 4.6);
+
+      tl.set({}, {}, D);
+      window.__timelines[CID] = tl;
+    })();
+  </script>
+</template>

@@ -1,0 +1,80 @@
+<template>
+  <style>
+
+
+@font-face{font-family:"Playfair Display";src:url("assets/fonts/PlayfairDisplay-400.woff2") format("woff2");font-weight:400;font-style:normal}
+@font-face{font-family:"Playfair Display";src:url("assets/fonts/PlayfairDisplay-400italic.woff2") format("woff2");font-weight:400;font-style:italic}
+@font-face{font-family:"Inter";src:url("assets/fonts/Inter-400.woff2") format("woff2");font-weight:400}
+@font-face{font-family:"Inter";src:url("assets/fonts/Inter-600.woff2") format("woff2");font-weight:600}
+@font-face{font-family:"JetBrains Mono";src:url("assets/fonts/JetBrainsMono-400.woff2") format("woff2");font-weight:400}
+
+#root{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;color:#F3EDE0;font-family:"Inter",sans-serif}
+[data-composition-id="15-no-hassle"] .bg{position:absolute;inset:0;background:#0B0A08}
+[data-composition-id="15-no-hassle"] .bloom{position:absolute;border-radius:50%;pointer-events:none}
+[data-composition-id="15-no-hassle"] .bloom.sun{width:1300px;height:1300px;left:760px;top:-260px;background:radial-gradient(circle,rgba(212,175,55,.30) 0%,rgba(212,175,55,.12) 32%,rgba(120,98,26,.06) 52%,rgba(0,0,0,0) 70%)}
+[data-composition-id="15-no-hassle"] .bloom.ember{width:900px;height:900px;left:-300px;top:420px;background:radial-gradient(circle,rgba(184,134,43,.16) 0%,rgba(0,0,0,0) 65%)}
+[data-composition-id="15-no-hassle"] .vignette{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,0,0,0) 55%,rgba(0,0,0,.55) 100%)}
+[data-composition-id="15-no-hassle"] .stage{position:absolute;inset:0}
+[data-composition-id="15-no-hassle"] .display{font-family:"Playfair Display",serif;font-weight:400;letter-spacing:-0.015em;line-height:1.02;color:#F3EDE0}
+[data-composition-id="15-no-hassle"] .it{font-style:italic;color:#D4AF37}
+[data-composition-id="15-no-hassle"] .micro{font-family:"Inter",sans-serif;font-weight:600;font-size:18px;letter-spacing:.32em;text-transform:uppercase;color:#F1D78A}
+[data-composition-id="15-no-hassle"] .mono{font-family:"JetBrains Mono",monospace;color:#D4AF37}
+[data-composition-id="15-no-hassle"] .hair{position:absolute;height:1px;background:#D4AF37;transform-origin:0 50%}
+[data-composition-id="15-no-hassle"] .card{position:absolute;background:rgba(23,20,15,.88);border:1px solid rgba(212,175,55,.45)}
+[data-composition-id="15-no-hassle"] .pagenum{position:absolute;right:64px;top:52px;font-family:"JetBrains Mono",monospace;font-size:15px;letter-spacing:.08em;color:#D4AF37;opacity:.75}
+[data-composition-id="15-no-hassle"] .brand{position:absolute;left:64px;top:50px;font-family:"Playfair Display",serif;font-size:22px;color:#F3EDE0;opacity:.8}
+[data-composition-id="15-no-hassle"] .brand b{font-weight:400;color:#D4AF37}
+
+
+[data-composition-id="15-no-hassle"] .ln{position:absolute;left:0;right:0;text-align:center;font-size:96px}
+[data-composition-id="15-no-hassle"] .ln span{position:relative;display:inline-block}
+[data-composition-id="15-no-hassle"] .strike{position:absolute;left:-20px;right:-20px;top:55%;height:6px;background:#D4AF37;transform-origin:0 50%}
+[data-composition-id="15-no-hassle"] .tri{position:absolute;left:0;right:0;text-align:center;font-size:100px}
+[data-composition-id="15-no-hassle"] .fwd{position:absolute;left:0;right:0;top:790px;text-align:center}
+
+  </style>
+  <div id="root" data-composition-id="15-no-hassle" data-width="1920" data-height="1080">
+    <div class="clip bg" id="f15-no-hassle-bg" data-start="0" data-duration="10.97" data-track-index="0">
+      <div class="bloom sun" id="f15-no-hassle-sun"></div>
+      <div class="bloom ember" id="f15-no-hassle-ember"></div>
+      <div class="vignette"></div>
+    </div>
+    <div class="clip stage" id="f15-no-hassle-stage" data-start="0" data-duration="10.97" data-track-index="1">
+      <div class="brand" id="f15-no-hassle-brand">BusinessPartner<b>.Live</b></div><div class="pagenum">15 / 18</div>
+<div class="display ln" id="f15-no-hassle-a" style="top:280px"><span>Complicated hiring<i class="strike" id="f15-no-hassle-sa"></i></span></div>
+<div class="display ln" id="f15-no-hassle-b" style="top:420px"><span>Unnecessary hassle<i class="strike" id="f15-no-hassle-sb"></i></span></div>
+<div class="display tri" id="f15-no-hassle-t0" style="top:330px">The right people.</div>
+<div class="display tri" id="f15-no-hassle-t1" style="top:460px">Smarter technology.</div>
+<div class="display it tri" id="f15-no-hassle-t2" style="top:590px">Practical solutions.</div>
+<div class="micro fwd" id="f15-no-hassle-fwd">To move your business forward</div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const CID = "15-no-hassle";
+      const D = 10.97;
+      const R = document.querySelector('[data-composition-id="' + CID + '"]');
+      const q = (s) => Array.from(R.querySelectorAll(s));
+      const id = (s) => "#f" + CID + "-" + s;
+      const tl = gsap.timeline({ paused: true });
+      // ambient: slow bloom drift under every shot
+      tl.fromTo(id("sun"), { scale: 0.92, x: 0 }, { scale: 1.08, x: -60, duration: D, ease: "sine.inOut" }, 0);
+      tl.fromTo(id("ember"), { opacity: 0.6 }, { opacity: 1, duration: D, ease: "sine.inOut" }, 0);
+
+      tl.fromTo(id("a"), {opacity:0, y:30}, {opacity:1, y:0, duration:0.6, ease:"power3.out"}, 0.1);
+      tl.fromTo(id("sa"), {scaleX:0}, {scaleX:1, duration:0.4, ease:"power2.inOut"}, 1.2);
+      tl.to(id("a"), {opacity:0.3, duration:0.4}, 1.65);
+      tl.fromTo(id("b"), {opacity:0, y:30}, {opacity:1, y:0, duration:0.6, ease:"power3.out"}, 2.2);
+      tl.fromTo(id("sb"), {scaleX:0}, {scaleX:1, duration:0.4, ease:"power2.inOut"}, 3.1);
+      tl.to(id("b"), {opacity:0.3, duration:0.4}, 3.55);
+      tl.to([id("a"), id("b")], {y:-200, scale:0.5, opacity:0, duration:0.6, ease:"power3.in"}, 4.0);
+      tl.fromTo(id("t0"), {opacity:0, y:40}, {opacity:1, y:0, duration:0.7, ease:"power3.out"}, 4.6);
+      tl.fromTo(id("t1"), {opacity:0, y:40}, {opacity:1, y:0, duration:0.7, ease:"power3.out"}, 6.3);
+      tl.fromTo(id("t2"), {opacity:0, y:40}, {opacity:1, y:0, duration:0.7, ease:"power3.out"}, 7.9);
+      tl.fromTo(id("fwd"), {opacity:0, y:14}, {opacity:1, y:0, duration:0.6, ease:"power3.out"}, 9.3);
+
+      tl.set({}, {}, D);
+      window.__timelines[CID] = tl;
+    })();
+  </script>
+</template>

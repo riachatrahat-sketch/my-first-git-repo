@@ -326,5 +326,18 @@
         "attribution": "unversioned"
       }
     ]
-  }
+  },
+  "renders": {
+    "latest": {
+      "id": "41083cd5-ebd1-4e30-9d15-a411bc3372b6",
+      "completedAt": 1791967364277,
+      "output": "/home/user/my-first-git-repo/videos/businesspartner-live-tiktok/renders/businesspartner-tiktok.mp4",
+      "status": "completed",
+      "revision": "9f616231-8956-4d47-8c06-580d6a4664fc"
+    },
+    "retainedRevisions": [
+      "9f616231-8956-4d47-8c06-580d6a4664fc"
+    ]
+  },
+  "pendingArtifactCleanup": []
 }

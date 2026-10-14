@@ -1,3 +1,4 @@
 node_modules/
 .hyperframes/artifacts/
 .hyperframes/render.log
+renders/work-*/

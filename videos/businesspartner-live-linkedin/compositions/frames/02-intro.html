@@ -1,0 +1,79 @@
+<template>
+  <style>
+
+
+@font-face{font-family:"Playfair Display";src:url("assets/fonts/PlayfairDisplay-400.woff2") format("woff2");font-weight:400;font-style:normal}
+@font-face{font-family:"Playfair Display";src:url("assets/fonts/PlayfairDisplay-400italic.woff2") format("woff2");font-weight:400;font-style:italic}
+@font-face{font-family:"Inter";src:url("assets/fonts/Inter-400.woff2") format("woff2");font-weight:400}
+@font-face{font-family:"Inter";src:url("assets/fonts/Inter-600.woff2") format("woff2");font-weight:600}
+@font-face{font-family:"JetBrains Mono";src:url("assets/fonts/JetBrainsMono-400.woff2") format("woff2");font-weight:400}
+
+#root{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;color:#F3EDE0;font-family:"Inter",sans-serif}
+[data-composition-id="02-intro"] .bg{position:absolute;inset:0;background:#060A07}
+[data-composition-id="02-intro"] .bloom{position:absolute;border-radius:50%;pointer-events:none}
+[data-composition-id="02-intro"] .bloom.sun{width:1300px;height:1300px;left:760px;top:-260px;background:radial-gradient(circle,rgba(52,213,122,.30) 0%,rgba(52,213,122,.12) 32%,rgba(18,92,50,.06) 52%,rgba(0,0,0,0) 70%)}
+[data-composition-id="02-intro"] .bloom.ember{width:900px;height:900px;left:-300px;top:420px;background:radial-gradient(circle,rgba(30,143,78,.16) 0%,rgba(0,0,0,0) 65%)}
+[data-composition-id="02-intro"] .vignette{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,0,0,0) 55%,rgba(0,0,0,.55) 100%)}
+[data-composition-id="02-intro"] .stage{position:absolute;inset:0}
+[data-composition-id="02-intro"] .display{font-family:"Playfair Display",serif;font-weight:400;letter-spacing:-0.015em;line-height:1.02;color:#F3EDE0}
+[data-composition-id="02-intro"] .it{font-style:italic;color:#34D57A}
+[data-composition-id="02-intro"] .micro{font-family:"Inter",sans-serif;font-weight:600;font-size:18px;letter-spacing:.32em;text-transform:uppercase;color:#8BF0B4}
+[data-composition-id="02-intro"] .mono{font-family:"JetBrains Mono",monospace;color:#34D57A}
+[data-composition-id="02-intro"] .hair{position:absolute;height:1px;background:#34D57A;transform-origin:0 50%}
+[data-composition-id="02-intro"] .card{position:absolute;background:rgba(12,22,15,.88);border:1px solid rgba(52,213,122,.45)}
+[data-composition-id="02-intro"] .pagenum{position:absolute;right:64px;top:52px;font-family:"JetBrains Mono",monospace;font-size:15px;letter-spacing:.08em;color:#34D57A;opacity:.75}
+[data-composition-id="02-intro"] .brand{position:absolute;left:64px;top:50px;font-family:"Playfair Display",serif;font-size:22px;color:#F3EDE0;opacity:.8}
+[data-composition-id="02-intro"] .brand b{font-weight:400;color:#34D57A}
+
+
+[data-composition-id="02-intro"] .meet{position:absolute;left:0;right:0;top:210px;text-align:center}
+[data-composition-id="02-intro"] .wm{position:absolute;left:0;right:0;top:260px;text-align:center;font-size:140px;white-space:nowrap}
+[data-composition-id="02-intro"] .wm span{display:inline-block}
+[data-composition-id="02-intro"] .wm .gold{color:#34D57A;font-style:italic}
+[data-composition-id="02-intro"] .rule{left:560px;top:460px;width:800px}
+[data-composition-id="02-intro"] .sub{position:absolute;left:0;right:0;top:500px;text-align:center}
+[data-composition-id="02-intro"] .pil{top:570px;width:520px;height:170px;display:flex;align-items:center;gap:30px;padding:0 40px;font-family:"Playfair Display",serif;font-size:50px}
+[data-composition-id="02-intro"] .grow{position:absolute;left:0;right:0;top:785px;text-align:center}
+
+  </style>
+  <div id="root" data-composition-id="02-intro" data-width="1920" data-height="1080" data-duration="9.08">
+    <div class="clip bg" id="f02-intro-bg" data-start="0" data-duration="9.08" data-track-index="0">
+      <div class="bloom sun" id="f02-intro-sun"></div>
+      <div class="bloom ember" id="f02-intro-ember"></div>
+      <div class="vignette"></div>
+    </div>
+    <div class="clip stage" id="f02-intro-stage" data-start="0" data-duration="9.08" data-track-index="1">
+      <div class="brand" id="f02-intro-brand">BusinessPartner<b>.Live</b></div><div class="pagenum">02 / 05</div>
+<div class="micro meet" id="f02-intro-meet">Meet</div><div class="display wm" id="f02-intro-wm"><span class="ch">B</span><span class="ch">u</span><span class="ch">s</span><span class="ch">i</span><span class="ch">n</span><span class="ch">e</span><span class="ch">s</span><span class="ch">s</span><span class="ch">P</span><span class="ch">a</span><span class="ch">r</span><span class="ch">t</span><span class="ch">n</span><span class="ch">e</span><span class="ch">r</span><span class="ch gold">.</span><span class="ch gold">L</span><span class="ch gold">i</span><span class="ch gold">v</span><span class="ch gold">e</span></div>
+<div class="hair rule" id="f02-intro-rule"></div><div class="micro sub" id="f02-intro-sub">Your partner for</div>
+<div class="card pil" id="f02-intro-p0" style="left:390px"><svg width="76" height="76" viewBox="0 0 48 48" fill="none" stroke="#34D57A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="16" r="8"/><path d="M8 42c2-9 9-13 16-13s14 4 16 13"/></svg><span>Right <i class="it">talent</i></span></div>
+<div class="card pil" id="f02-intro-p1" style="left:1010px"><svg width="76" height="76" viewBox="0 0 48 48" fill="none" stroke="#34D57A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6l18 9-18 9-18-9z"/><path d="M6 24l18 9 18-9"/><path d="M6 33l18 9 18-9"/></svg><span>Digital <i class="it">solutions</i></span></div>
+<div class="micro grow" id="f02-intro-grow">To help your business grow</div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const CID = "02-intro";
+      const D = 8.68;
+      const R = document.querySelector('[data-composition-id="' + CID + '"]');
+      const q = (s) => Array.from(R.querySelectorAll(s));
+      const id = (s) => "#f" + CID + "-" + s;
+      const tl = gsap.timeline({ paused: true });
+      // ambient: slow bloom drift under every shot
+      tl.fromTo(id("sun"), { scale: 0.92, x: 0 }, { scale: 1.08, x: -60, duration: D, ease: "sine.inOut" }, 0);
+      tl.fromTo(id("ember"), { opacity: 0.6 }, { opacity: 1, duration: D, ease: "sine.inOut" }, 0);
+
+      tl.fromTo(id("meet"), {opacity:0, y:-16}, {opacity:1, y:0, duration:0.8}, 0.05);
+      tl.fromTo(q(".ch"), {opacity:0, y:70, rotationX:-70}, {opacity:1, y:0, rotationX:0, duration:0.7, ease:"power3.out", stagger:0.05}, 0.25);
+      tl.fromTo(id("rule"), {scaleX:0}, {scaleX:1, duration:0.9, ease:"power3.inOut"}, 1.6);
+      tl.fromTo(id("sub"), {opacity:0, y:14}, {opacity:1, y:0, duration:0.6}, 2.3);
+      tl.fromTo(id("p0"), {opacity:0, y:50}, {opacity:1, y:0, duration:0.7, ease:"power3.out"}, 3.4);
+      tl.fromTo(id("p1"), {opacity:0, y:50}, {opacity:1, y:0, duration:0.7, ease:"power3.out"}, 5.3);
+      tl.fromTo(id("grow"), {opacity:0, y:14}, {opacity:1, y:0, duration:0.6}, 7.0);
+      tl.fromTo(id("sun"), {opacity:0.4}, {opacity:1, duration:2.0}, 0.2);
+
+      tl.set({}, {}, D);
+      window.__timelines[CID] = tl;
+    })();
+  </script>
+</template>

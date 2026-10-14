@@ -1,0 +1,442 @@
+{
+  "version": 1,
+  "historyId": "d0f36267-aba4-4c33-b001-b6e75b6e8faf",
+  "currentRevision": "8aad9119-93e9-4465-9f54-cfe835f74a64",
+  "pendingChanges": false,
+  "files": {
+    "AGENTS.md": {
+      "hash": "1d4f0c8ca2507b94fd7c9df709fff01416adbd51a0f922b9d6ed2f40129147d5",
+      "content": "/root/.cache/hyperframes/history/d0f36267-aba4-4c33-b001-b6e75b6e8faf/blobs/1d/1d4f0c8ca2507b94fd7c9df709fff01416adbd51a0f922b9d6ed2f40129147d5"
+    },
+    "CLAUDE.md": {
+      "hash": "1d4f0c8ca2507b94fd7c9df709fff01416adbd51a0f922b9d6ed2f40129147d5",
+      "content": "/root/.cache/hyperframes/history/d0f36267-aba4-4c33-b001-b6e75b6e8faf/blobs/1d/1d4f0c8ca2507b94fd7c9df709fff01416adbd51a0f922b9d6ed2f40129147d5"
+    },
+    "STORYBOARD.md": {
+      "hash": "555652b19c0f30ea7799c6c51db55766cadf14e6f7fbf67287d534541b563842",
+      "content": "/root/.cache/hyperframes/history/d0f36267-aba4-4c33-b001-b6e75b6e8faf/blobs/55/555652b19c0f30ea7799c6c51db55766cadf14e6f7fbf67287d534541b563842"
+    },
+    "assets/fonts/Inter-400.woff2": {
+      "hash": "8909904ab6c872eb994093482a88a28eca2cd95912d7b6fecd72103b0dc07edc",
+      "content": "/root/.cache/hyperframes/history/d0f36267-aba4-4c33-b001-b6e75b6e8faf/blobs/89/8909904ab6c872eb994093482a88a28eca2cd95912d7b6fecd72103b0dc07edc"
+    },
+    "assets/fonts/Inter-600.woff2": {
+      "hash": "f9a06e79cd3a2a20951c0f0e28f66dd0e6d3fda73911d640a2125c8fcb78f21a",
+      "content": "/root/.cache/hyperframes/history/d0f36267-aba4-4c33-b001-b6e75b6e8faf/blobs/f9/f9a06e79cd3a2a20951c0f0e28f66dd0e6d3fda73911d640a2125c8fcb78f21a"
+    },
+    "assets/fonts/Montserrat-800.woff2": {
+      "hash": "ba826fb84c2e961578adf3a08b5778b87905d4443445d1d56d84f9f157d5ea4b",
+      "content": "/root/.cache/hyperframes/history/d0f36267-aba4-4c33-b001-b6e75b6e8faf/blobs/ba/ba826fb84c2e961578adf3a08b5778b87905d4443445d1d56d84f9f157d5ea4b"
+    },
+    "assets/fonts/Montserrat-900.woff2": {
+      "hash": "5b6958520638bb8609f9eacb17c4d189563efeae96d5da49f7c2043988697205",
+      "content": "/root/.cache/hyperframes/history/d0f36267-aba4-4c33-b001-b6e75b6e8faf/blobs/5b/5b6958520638bb8609f9eacb17c4d189563efeae96d5da49f7c2043988697205"
+    },
+    "assets/vendor/gsap.min.js": {
+      "hash": "c174bfce53a729418d57a8ad8625e7247c793a22fef8e2851e3cfa3de9cd8280",
+      "content": "/root/.cache/hyperframes/history/d0f36267-aba4-4c33-b001-b6e75b6e8faf/blobs/c1/c174bfce53a729418d57a8ad8625e7247c793a22fef8e2851e3cfa3de9cd8280"
+    },
+    "assets/voice/01.wav": {
+      "hash": "755037dea6d654ae639f0b084047e4d1f096160738ceccddb5ce661b8e4047f4",
+      "content": "/root/.cache/hyperframes/history/d0f36267-aba4-4c33-b001-b6e75b6e8faf/blobs/75/755037dea6d654ae639f0b084047e4d1f096160738ceccddb5ce661b8e4047f4"
+    },
+    "assets/voice/02.wav": {
+      "hash": "ef669a2b47972327eefb64fd51403d651e8dec5b5a0e8bda7c055cfbe5390293",
+      "content": "/root/.cache/hyperframes/history/d0f36267-aba4-4c33-b001-b6e75b6e8faf/blobs/ef/ef669a2b47972327eefb64fd51403d651e8dec5b5a0e8bda7c055cfbe5390293"
+    },
+    "assets/voice/04.wav": {
+      "hash": "1656cd500528c4cd9d2b6ddcfae5394ccfed3724df6dafaf785e3967262ec7a3",
+      "content": "/root/.cache/hyperframes/history/d0f36267-aba4-4c33-b001-b6e75b6e8faf/blobs/16/1656cd500528c4cd9d2b6ddcfae5394ccfed3724df6dafaf785e3967262ec7a3"
+    },
+    "assets/voice/06.wav": {
+      "hash": "74ddb4a9dbbb2e8c33a2de7e6428ab81d58cea615dbea8dfd4753d9b08a0b3ff",
+      "content": "/root/.cache/hyperframes/history/d0f36267-aba4-4c33-b001-b6e75b6e8faf/blobs/74/74ddb4a9dbbb2e8c33a2de7e6428ab81d58cea615dbea8dfd4753d9b08a0b3ff"
+    },
+    "assets/voice/07.wav": {
+      "hash": "44b5c6933e0dc142f5c97410b3f196a7b846884e5d6b01994fa3ca584a64e851",
+      "content": "/root/.cache/hyperframes/history/d0f36267-aba4-4c33-b001-b6e75b6e8faf/blobs/44/44b5c6933e0dc142f5c97410b3f196a7b846884e5d6b01994fa3ca584a64e851"
+    },
+    "assets/voiceover.mp3": {
+      "hash": "4d7a60c3e2cde9fcd680d150ffd338338852dbddbe0e9dd783959a613cffeabd",
+      "content": "/root/.cache/hyperframes/history/d0f36267-aba4-4c33-b001-b6e75b6e8faf/blobs/4d/4d7a60c3e2cde9fcd680d150ffd338338852dbddbe0e9dd783959a613cffeabd"
+    },
+    "audio_meta.json": {
+      "hash": "76848443bb34b8b6793ef126cde27b655ef0197885c5020ed3e342d8d2444238",
+      "content": "/root/.cache/hyperframes/history/d0f36267-aba4-4c33-b001-b6e75b6e8faf/blobs/76/76848443bb34b8b6793ef126cde27b655ef0197885c5020ed3e342d8d2444238"
+    },
+    "compositions/frames/01-hook.html": {
+      "hash": "8433ff850f0868443dff4a684708e0fb2a9eb3d099812439fa662513cf923b6c",
+      "content": "/root/.cache/hyperframes/history/d0f36267-aba4-4c33-b001-b6e75b6e8faf/blobs/84/8433ff850f0868443dff4a684708e0fb2a9eb3d099812439fa662513cf923b6c"
+    },
+    "compositions/frames/02-covered.html": {
+      "hash": "1e2d0dc9ce16ecf3afa66595ed661f9a110134d39bbf4f9059a735bf9ef59493",
+      "content": "/root/.cache/hyperframes/history/d0f36267-aba4-4c33-b001-b6e75b6e8faf/blobs/1e/1e2d0dc9ce16ecf3afa66595ed661f9a110134d39bbf4f9059a735bf9ef59493"
+    },
+    "compositions/frames/03-tasks.html": {
+      "hash": "f96840fe61f032cb70932814101d06a60ce22a4e839ce9f16b0b11d2d74c2e6f",
+      "content": "/root/.cache/hyperframes/history/d0f36267-aba4-4c33-b001-b6e75b6e8faf/blobs/f9/f96840fe61f032cb70932814101d06a60ce22a4e839ce9f16b0b11d2d74c2e6f"
+    },
+    "compositions/frames/04-promise.html": {
+      "hash": "8299782aa53560fb36ca1568cf73bb44a693e56a6fd8187bd996a678b94d9676",
+      "content": "/root/.cache/hyperframes/history/d0f36267-aba4-4c33-b001-b6e75b6e8faf/blobs/82/8299782aa53560fb36ca1568cf73bb44a693e56a6fd8187bd996a678b94d9676"
+    },
+    "compositions/frames/05-plans.html": {
+      "hash": "f166e02ddc46df7b2b3b355572a705a72619fcc9a6e8ccc5f56b725f982d94d1",
+      "content": "/root/.cache/hyperframes/history/d0f36267-aba4-4c33-b001-b6e75b6e8faf/blobs/f1/f166e02ddc46df7b2b3b355572a705a72619fcc9a6e8ccc5f56b725f982d94d1"
+    },
+    "compositions/frames/06-focus.html": {
+      "hash": "73c47f8f3d2c5c55d475f3aa5658fb561ff501513332ee73a45740d91edf26b2",
+      "content": "/root/.cache/hyperframes/history/d0f36267-aba4-4c33-b001-b6e75b6e8faf/blobs/73/73c47f8f3d2c5c55d475f3aa5658fb561ff501513332ee73a45740d91edf26b2"
+    },
+    "compositions/frames/07-cta.html": {
+      "hash": "f950ffc00d41235ae62b5f299c6d4d2d241058ffcf0a2b71b7093b375cee369f",
+      "content": "/root/.cache/hyperframes/history/d0f36267-aba4-4c33-b001-b6e75b6e8faf/blobs/f9/f950ffc00d41235ae62b5f299c6d4d2d241058ffcf0a2b71b7093b375cee369f"
+    },
+    "frame.md": {
+      "hash": "badd49de18b09e71b8452824228ef6ce6df1e3a0e7d7a8127d4c89f96980a759",
+      "content": "/root/.cache/hyperframes/history/d0f36267-aba4-4c33-b001-b6e75b6e8faf/blobs/ba/badd49de18b09e71b8452824228ef6ce6df1e3a0e7d7a8127d4c89f96980a759"
+    },
+    "hyperframes.json": {
+      "hash": "44d4e8dcefebce0a13f5afa82aa270b0b19a1d3f82e434f92616010cee775dc4",
+      "content": "/root/.cache/hyperframes/history/d0f36267-aba4-4c33-b001-b6e75b6e8faf/blobs/44/44d4e8dcefebce0a13f5afa82aa270b0b19a1d3f82e434f92616010cee775dc4"
+    },
+    "index.html": {
+      "hash": "94c1a257c812dbd994d1cd4eebd07614864c31201447aa9663e8630e2175d0de",
+      "content": "/root/.cache/hyperframes/history/d0f36267-aba4-4c33-b001-b6e75b6e8faf/blobs/94/94c1a257c812dbd994d1cd4eebd07614864c31201447aa9663e8630e2175d0de"
+    },
+    "meta.json": {
+      "hash": "ddf758d5457e17a1a6bab8d289725b5b52814e481e8f06496f22082eea4054ba",
+      "content": "/root/.cache/hyperframes/history/d0f36267-aba4-4c33-b001-b6e75b6e8faf/blobs/dd/ddf758d5457e17a1a6bab8d289725b5b52814e481e8f06496f22082eea4054ba"
+    },
+    "package.json": {
+      "hash": "2db38460849ce1ecf1f239119e65fe1ba4cfb1805024a1affc33ac7f24bfc2fc",
+      "content": "/root/.cache/hyperframes/history/d0f36267-aba4-4c33-b001-b6e75b6e8faf/blobs/2d/2db38460849ce1ecf1f239119e65fe1ba4cfb1805024a1affc33ac7f24bfc2fc"
+    },
+    "assets/bgm/bed.wav": {
+      "hash": "f8a203260e93630834905a003b32d953da05c1b94d9eb5654b19e23643e6d6d7",
+      "content": "/root/.cache/hyperframes/history/d0f36267-aba4-4c33-b001-b6e75b6e8faf/blobs/f8/f8a203260e93630834905a003b32d953da05c1b94d9eb5654b19e23643e6d6d7"
+    },
+    "assets/voice/03.wav": {
+      "hash": "9109f9e9e836591b6b196b4932f568216e1a9089580b47daf192e3c9fefbd714",
+      "content": "/root/.cache/hyperframes/history/d0f36267-aba4-4c33-b001-b6e75b6e8faf/blobs/91/9109f9e9e836591b6b196b4932f568216e1a9089580b47daf192e3c9fefbd714"
+    },
+    "assets/voice/05.wav": {
+      "hash": "47867e44e9ddfb1b978b580b63d1eca13b6b44c291394bbdc81cc26d36947514",
+      "content": "/root/.cache/hyperframes/history/d0f36267-aba4-4c33-b001-b6e75b6e8faf/blobs/47/47867e44e9ddfb1b978b580b63d1eca13b6b44c291394bbdc81cc26d36947514"
+    }
+  },
+  "revisions": {
+    "8aad9119-93e9-4465-9f54-cfe835f74a64": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1791993503998,
+      "endedAt": 1791993504019,
+      "files": {
+        "compositions/frames/01-hook.html": {
+          "before": "/root/.cache/hyperframes/history/d0f36267-aba4-4c33-b001-b6e75b6e8faf/blobs/a7/a7646dde012e00cc732d18bd23f598cc13776a855d3315c2f5577fa029045403",
+          "after": "/root/.cache/hyperframes/history/d0f36267-aba4-4c33-b001-b6e75b6e8faf/blobs/84/8433ff850f0868443dff4a684708e0fb2a9eb3d099812439fa662513cf923b6c"
+        },
+        "compositions/frames/02-covered.html": {
+          "before": "/root/.cache/hyperframes/history/d0f36267-aba4-4c33-b001-b6e75b6e8faf/blobs/8d/8d6d9431356c80586eb70147de0806afb0ce0e5f68756560656aeaabed18a3ad",
+          "after": "/root/.cache/hyperframes/history/d0f36267-aba4-4c33-b001-b6e75b6e8faf/blobs/1e/1e2d0dc9ce16ecf3afa66595ed661f9a110134d39bbf4f9059a735bf9ef59493"
+        },
+        "compositions/frames/03-tasks.html": {
+          "before": "/root/.cache/hyperframes/history/d0f36267-aba4-4c33-b001-b6e75b6e8faf/blobs/23/23d973cddb7e169e7f5b4570215b902840882b91269cb8edcc221588d3711e2c",
+          "after": "/root/.cache/hyperframes/history/d0f36267-aba4-4c33-b001-b6e75b6e8faf/blobs/f9/f96840fe61f032cb70932814101d06a60ce22a4e839ce9f16b0b11d2d74c2e6f"
+        },
+        "compositions/frames/04-promise.html": {
+          "before": "/root/.cache/hyperframes/history/d0f36267-aba4-4c33-b001-b6e75b6e8faf/blobs/f4/f4a86a1804e5daada6aa32100f0ce551b4c60ee991a1cccb47d336b07911209b",
+          "after": "/root/.cache/hyperframes/history/d0f36267-aba4-4c33-b001-b6e75b6e8faf/blobs/82/8299782aa53560fb36ca1568cf73bb44a693e56a6fd8187bd996a678b94d9676"
+        },
+        "compositions/frames/05-plans.html": {
+          "before": "/root/.cache/hyperframes/history/d0f36267-aba4-4c33-b001-b6e75b6e8faf/blobs/b8/b8ea5806867d52d2fe0dbac9896b15e503d384e464c61443e4e804b0cd4ec4fb",
+          "after": "/root/.cache/hyperframes/history/d0f36267-aba4-4c33-b001-b6e75b6e8faf/blobs/f1/f166e02ddc46df7b2b3b355572a705a72619fcc9a6e8ccc5f56b725f982d94d1"
+        },
+        "compositions/frames/06-focus.html": {
+          "before": "/root/.cache/hyperframes/history/d0f36267-aba4-4c33-b001-b6e75b6e8faf/blobs/7a/7a7e731d0108a9dd4762d63cf6daee82a439690a8cfa73eb48c9bb9529b599bb",
+          "after": "/root/.cache/hyperframes/history/d0f36267-aba4-4c33-b001-b6e75b6e8faf/blobs/73/73c47f8f3d2c5c55d475f3aa5658fb561ff501513332ee73a45740d91edf26b2"
+        }
+      }
+    }
+  },
+  "checks": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "snapshots": {
+    "latest": {
+      "revision": "8aad9119-93e9-4465-9f54-cfe835f74a64",
+      "id": "ee7e0212-eae1-4126-ba21-07dd613653ae-2"
+    },
+    "revisions": {
+      "8aad9119-93e9-4465-9f54-cfe835f74a64": [
+        {
+          "scope": "full",
+          "id": "ee7e0212-eae1-4126-ba21-07dd613653ae-0",
+          "image": "/home/user/my-first-git-repo/videos/wordpress-va-gig-video/.hyperframes/artifacts/snapshots/72b9bd17-51ea-4803-87d7-7d2789a71c7e/frame-00-at-5.5s.png",
+          "time": 5.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1791993508275,
+          "contentHash": "444847c1ebdbda84556a7b48ca01b57b569f25df97de9b31db942cd77ab1c14a",
+          "revision": "8aad9119-93e9-4465-9f54-cfe835f74a64",
+          "inputFingerprint": "602d2aa079495768b439c81204d036b500764a06b70e9e9de969786d1903b15a",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "ee7e0212-eae1-4126-ba21-07dd613653ae-1",
+          "image": "/home/user/my-first-git-repo/videos/wordpress-va-gig-video/.hyperframes/artifacts/snapshots/72b9bd17-51ea-4803-87d7-7d2789a71c7e/frame-01-at-30.3s.png",
+          "time": 30.3,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1791993508275,
+          "contentHash": "e8a5fdf957709447c8087b4888642556c2adcc2e9ddb9a35351db3bf16f71b75",
+          "revision": "8aad9119-93e9-4465-9f54-cfe835f74a64",
+          "inputFingerprint": "602d2aa079495768b439c81204d036b500764a06b70e9e9de969786d1903b15a",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "ee7e0212-eae1-4126-ba21-07dd613653ae-2",
+          "image": "/home/user/my-first-git-repo/videos/wordpress-va-gig-video/.hyperframes/artifacts/snapshots/72b9bd17-51ea-4803-87d7-7d2789a71c7e/frame-02-at-32.98s.png",
+          "time": 32.98,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1791993508275,
+          "contentHash": "53c7414ed57ec8d92bedde691fa0b6ceae32f9112de1686f21dc4d1da25c32f6",
+          "revision": "8aad9119-93e9-4465-9f54-cfe835f74a64",
+          "inputFingerprint": "602d2aa079495768b439c81204d036b500764a06b70e9e9de969786d1903b15a",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ]
+    },
+    "unversioned": [
+      {
+        "scope": "full",
+        "id": "af607816-ed01-4b98-82af-5ae3632603b7-0",
+        "image": "/home/user/my-first-git-repo/videos/wordpress-va-gig-video/.hyperframes/artifacts/snapshots/f32b50d0-f18c-4ac9-9adb-874fd968a3d1/frame-00-at-3.6s.png",
+        "time": 3.6,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1791993480541,
+        "contentHash": "efb8d057877864319b1003cdd6687eaeb81a673f25e0bd554453fb904428f932",
+        "revision": null,
+        "inputFingerprint": "5c1849e463f6c42ffe1c21caf2ea62b7262d46cff1d3aef0035601dbaa926d39",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "af607816-ed01-4b98-82af-5ae3632603b7-1",
+        "image": "/home/user/my-first-git-repo/videos/wordpress-va-gig-video/.hyperframes/artifacts/snapshots/f32b50d0-f18c-4ac9-9adb-874fd968a3d1/frame-01-at-5.4s.png",
+        "time": 5.4,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1791993480542,
+        "contentHash": "d2b33c34782d283fe934176aeb9b5a795bca84aabee580bd61ed4584836ae935",
+        "revision": null,
+        "inputFingerprint": "5c1849e463f6c42ffe1c21caf2ea62b7262d46cff1d3aef0035601dbaa926d39",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "af607816-ed01-4b98-82af-5ae3632603b7-2",
+        "image": "/home/user/my-first-git-repo/videos/wordpress-va-gig-video/.hyperframes/artifacts/snapshots/f32b50d0-f18c-4ac9-9adb-874fd968a3d1/frame-02-at-8.2s.png",
+        "time": 8.2,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1791993480542,
+        "contentHash": "bd57864415c899e4b300d34d0e6914cb1499132f255ae7d888722ebe93aa2e23",
+        "revision": null,
+        "inputFingerprint": "5c1849e463f6c42ffe1c21caf2ea62b7262d46cff1d3aef0035601dbaa926d39",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "af607816-ed01-4b98-82af-5ae3632603b7-3",
+        "image": "/home/user/my-first-git-repo/videos/wordpress-va-gig-video/.hyperframes/artifacts/snapshots/f32b50d0-f18c-4ac9-9adb-874fd968a3d1/frame-03-at-11s.png",
+        "time": 11,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1791993480542,
+        "contentHash": "12a48d04399e1f3b419cce1638b5039ff5261fc57bd9c6d1d2855776e0374783",
+        "revision": null,
+        "inputFingerprint": "5c1849e463f6c42ffe1c21caf2ea62b7262d46cff1d3aef0035601dbaa926d39",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "af607816-ed01-4b98-82af-5ae3632603b7-4",
+        "image": "/home/user/my-first-git-repo/videos/wordpress-va-gig-video/.hyperframes/artifacts/snapshots/f32b50d0-f18c-4ac9-9adb-874fd968a3d1/frame-04-at-15.6s.png",
+        "time": 15.6,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1791993480542,
+        "contentHash": "0902ae75dbec2c7e7c96ff55a3474355baa8301bc3f07160e3465aa801c9ce53",
+        "revision": null,
+        "inputFingerprint": "5c1849e463f6c42ffe1c21caf2ea62b7262d46cff1d3aef0035601dbaa926d39",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "af607816-ed01-4b98-82af-5ae3632603b7-5",
+        "image": "/home/user/my-first-git-repo/videos/wordpress-va-gig-video/.hyperframes/artifacts/snapshots/f32b50d0-f18c-4ac9-9adb-874fd968a3d1/frame-05-at-20.4s.png",
+        "time": 20.4,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1791993480542,
+        "contentHash": "f69cd19894ee2cd6003ca18ddddef874adece0a4335d51dccaf1b472a46d7552",
+        "revision": null,
+        "inputFingerprint": "5c1849e463f6c42ffe1c21caf2ea62b7262d46cff1d3aef0035601dbaa926d39",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "af607816-ed01-4b98-82af-5ae3632603b7-6",
+        "image": "/home/user/my-first-git-repo/videos/wordpress-va-gig-video/.hyperframes/artifacts/snapshots/f32b50d0-f18c-4ac9-9adb-874fd968a3d1/frame-06-at-26.3s.png",
+        "time": 26.3,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1791993480542,
+        "contentHash": "04869e7c59c309e739313bf5192b2631f565bb36397be22da2bd9745b86ab866",
+        "revision": null,
+        "inputFingerprint": "5c1849e463f6c42ffe1c21caf2ea62b7262d46cff1d3aef0035601dbaa926d39",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "af607816-ed01-4b98-82af-5ae3632603b7-7",
+        "image": "/home/user/my-first-git-repo/videos/wordpress-va-gig-video/.hyperframes/artifacts/snapshots/f32b50d0-f18c-4ac9-9adb-874fd968a3d1/frame-07-at-30.2s.png",
+        "time": 30.2,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1791993480542,
+        "contentHash": "f033a8962f4bdee3591b03549298eaafc73832489100ceff71c87b6132d3f30d",
+        "revision": null,
+        "inputFingerprint": "5c1849e463f6c42ffe1c21caf2ea62b7262d46cff1d3aef0035601dbaa926d39",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "af607816-ed01-4b98-82af-5ae3632603b7-8",
+        "image": "/home/user/my-first-git-repo/videos/wordpress-va-gig-video/.hyperframes/artifacts/snapshots/f32b50d0-f18c-4ac9-9adb-874fd968a3d1/frame-08-at-33.6s.png",
+        "time": 33.6,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1791993480542,
+        "contentHash": "bbd7953e3f979416d65892fc4ac9c07673cd2799204a569119807dc8d09d211a",
+        "revision": null,
+        "inputFingerprint": "5c1849e463f6c42ffe1c21caf2ea62b7262d46cff1d3aef0035601dbaa926d39",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "af607816-ed01-4b98-82af-5ae3632603b7-9",
+        "image": "/home/user/my-first-git-repo/videos/wordpress-va-gig-video/.hyperframes/artifacts/snapshots/f32b50d0-f18c-4ac9-9adb-874fd968a3d1/frame-09-at-32.98s.png",
+        "time": 32.98,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1791993480542,
+        "contentHash": "53c7414ed57ec8d92bedde691fa0b6ceae32f9112de1686f21dc4d1da25c32f6",
+        "revision": null,
+        "inputFingerprint": "5c1849e463f6c42ffe1c21caf2ea62b7262d46cff1d3aef0035601dbaa926d39",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      }
+    ]
+  }
+}

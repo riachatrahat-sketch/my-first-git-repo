@@ -1,0 +1,100 @@
+<template>
+  <style>
+
+@font-face{font-family:"Montserrat";src:url("assets/fonts/Montserrat-800.woff2") format("woff2");font-weight:800}
+@font-face{font-family:"Montserrat";src:url("assets/fonts/Montserrat-900.woff2") format("woff2");font-weight:900}
+@font-face{font-family:"Inter";src:url("assets/fonts/Inter-400.woff2") format("woff2");font-weight:400}
+@font-face{font-family:"Inter";src:url("assets/fonts/Inter-600.woff2") format("woff2");font-weight:600}
+
+#root{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;color:#F7F7FA;font-family:"Inter",sans-serif}
+[data-composition-id="03-tasks"] .bg{position:absolute;inset:0;background:#050507}
+[data-composition-id="03-tasks"] .glow{position:absolute;border-radius:50%;pointer-events:none}
+[data-composition-id="03-tasks"] .g1{width:1100px;height:1100px;left:-520px;top:-620px;background:radial-gradient(circle,rgba(124,58,237,.75) 0%,rgba(91,33,182,.35) 35%,rgba(0,0,0,0) 68%)}
+[data-composition-id="03-tasks"] .g2{width:1100px;height:1100px;left:1340px;top:-640px;background:radial-gradient(circle,rgba(124,58,237,.6) 0%,rgba(91,33,182,.28) 35%,rgba(0,0,0,0) 68%)}
+[data-composition-id="03-tasks"] .g3{width:1400px;height:900px;left:260px;top:620px;background:radial-gradient(ellipse,rgba(91,33,182,.22) 0%,rgba(0,0,0,0) 65%)}
+[data-composition-id="03-tasks"] .stage{position:absolute;inset:0}
+[data-composition-id="03-tasks"] .h{font-family:"Montserrat",sans-serif;font-weight:900;text-transform:uppercase;letter-spacing:-0.01em;line-height:1.0;color:#F7F7FA}
+[data-composition-id="03-tasks"] .y{background:linear-gradient(180deg,#FFE94D 0%,#FFD60A 45%,#F5A800 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+[data-composition-id="03-tasks"] .tag{font-family:"Montserrat",sans-serif;font-weight:800;font-size:22px;letter-spacing:.18em;text-transform:uppercase;color:#FFD60A}
+[data-composition-id="03-tasks"] .pill{position:absolute;display:flex;align-items:center;gap:14px;padding:16px 28px;border-radius:999px;background:rgba(139,92,246,.16);border:2px solid rgba(139,92,246,.7);font-family:"Montserrat",sans-serif;font-weight:800;font-size:30px;white-space:nowrap}
+[data-composition-id="03-tasks"] .card{position:absolute;border-radius:18px;background:#121218;border:1px solid rgba(255,255,255,.08);box-shadow:0 30px 80px rgba(0,0,0,.55)}
+[data-composition-id="03-tasks"] .ln{position:absolute;height:12px;border-radius:6px;background:rgba(0,0,0,.14)}
+[data-composition-id="03-tasks"] .sel{position:absolute;border:2px solid #0D99FF;pointer-events:none}
+[data-composition-id="03-tasks"] .sel i{position:absolute;width:12px;height:12px;background:#fff;border:2px solid #0D99FF}
+[data-composition-id="03-tasks"] .chk{width:44px;height:44px;border-radius:50%;background:#FFD60A;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+
+
+[data-composition-id="03-tasks"] .ttl{position:absolute;left:130px;top:150px;font-size:58px}
+[data-composition-id="03-tasks"] .t{position:absolute;left:130px;display:flex;align-items:center;gap:20px;font-family:"Montserrat",sans-serif;font-weight:800;font-size:36px;white-space:nowrap}
+[data-composition-id="03-tasks"] .t .chk{width:50px;height:50px;background:rgba(255,214,10,.15);border:2px solid #FFD60A}
+[data-composition-id="03-tasks"] .adm{left:900px;top:190px;width:880px;height:640px;overflow:hidden;background:#F3F3F6}
+[data-composition-id="03-tasks"] .sb{position:absolute;left:0;top:0;bottom:0;width:220px;background:#1D2327}
+[data-composition-id="03-tasks"] .si{position:absolute;left:0;width:220px;height:52px;display:flex;align-items:center;padding-left:28px;font-size:20px;font-weight:600;color:#C3C4C7}
+[data-composition-id="03-tasks"] .hl{position:absolute;left:0;width:220px;height:52px;background:#8B5CF6}
+[data-composition-id="03-tasks"] .pn{position:absolute;left:250px;top:40px;width:600px;height:540px}
+[data-composition-id="03-tasks"] .row{position:absolute;left:0;width:600px;height:70px;border-radius:10px;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+[data-composition-id="03-tasks"] .toast{position:absolute;left:1150px;top:800px;display:flex;align-items:center;gap:12px;padding:14px 24px;border-radius:12px;background:#22C55E;font-family:Montserrat;font-weight:800;font-size:24px;color:#04210f;white-space:nowrap}
+[data-composition-id="03-tasks"] .ok{position:absolute;left:0;right:0;top:900px;text-align:center;font-size:44px}
+
+  </style>
+  <div id="root" data-composition-id="03-tasks" data-width="1920" data-height="1080">
+    <div class="clip bg" id="f03-tasks-bg" data-start="0" data-duration="10.37" data-track-index="0">
+      <div class="glow g1" id="f03-tasks-g1"></div><div class="glow g2" id="f03-tasks-g2"></div><div class="glow g3"></div>
+    </div>
+    <div class="clip stage" id="f03-tasks-stage" data-start="0" data-duration="10.37" data-track-index="1">
+<div class="h ttl" id="f03-tasks-ttl">I'll handle <span class="y">the work</span></div><div class="t" id="f03-tasks-t0" style="top:290px"><div class="chk" id="f03-tasks-c0"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#050507" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></div>Upload content</div><div class="t" id="f03-tasks-t1" style="top:394px"><div class="chk" id="f03-tasks-c1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#050507" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></div>Update WooCommerce products</div><div class="t" id="f03-tasks-t2" style="top:498px"><div class="chk" id="f03-tasks-c2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#050507" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></div>Manage plugins</div><div class="t" id="f03-tasks-t3" style="top:602px"><div class="chk" id="f03-tasks-c3"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#050507" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></div>Edit pages</div><div class="t" id="f03-tasks-t4" style="top:706px"><div class="chk" id="f03-tasks-c4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#050507" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></div>Fix minor layout issues</div><div class="card adm" id="f03-tasks-adm"><div class="sb"><div class="hl" id="f03-tasks-hl" style="top:20px"></div><div class="si" style="top:20px">Dashboard</div><div class="si" style="top:76px">Posts</div><div class="si" style="top:132px">Pages</div><div class="si" style="top:188px">Products</div><div class="si" style="top:244px">Plugins</div><div class="si" style="top:300px">Appearance</div><div class="si" style="top:356px">Settings</div></div><div class="pn"><div class="row" id="f03-tasks-r0" style="top:0px"><div style="position:absolute;left:20px;top:18px;width:34px;height:34px;border-radius:8px;background:rgba(139,92,246,.2)"></div><div style="position:absolute;left:72px;top:22px;width:260px;height:12px;border-radius:6px;background:rgba(0,0,0,.6)"></div><div style="position:absolute;left:72px;top:42px;width:160px;height:10px;border-radius:5px;background:rgba(0,0,0,.2)"></div><div id="f03-tasks-p0" style="position:absolute;right:20px;top:24px;width:70px;height:22px;border-radius:11px;background:#22C55E"></div></div><div class="row" id="f03-tasks-r1" style="top:86px"><div style="position:absolute;left:20px;top:18px;width:34px;height:34px;border-radius:8px;background:rgba(139,92,246,.2)"></div><div style="position:absolute;left:72px;top:22px;width:300px;height:12px;border-radius:6px;background:rgba(0,0,0,.6)"></div><div style="position:absolute;left:72px;top:42px;width:160px;height:10px;border-radius:5px;background:rgba(0,0,0,.2)"></div><div id="f03-tasks-p1" style="position:absolute;right:20px;top:24px;width:70px;height:22px;border-radius:11px;background:#22C55E"></div></div><div class="row" id="f03-tasks-r2" style="top:172px"><div style="position:absolute;left:20px;top:18px;width:34px;height:34px;border-radius:8px;background:rgba(139,92,246,.2)"></div><div style="position:absolute;left:72px;top:22px;width:220px;height:12px;border-radius:6px;background:rgba(0,0,0,.6)"></div><div style="position:absolute;left:72px;top:42px;width:160px;height:10px;border-radius:5px;background:rgba(0,0,0,.2)"></div><div id="f03-tasks-p2" style="position:absolute;right:20px;top:24px;width:70px;height:22px;border-radius:11px;background:#22C55E"></div></div><div class="row" id="f03-tasks-r3" style="top:258px"><div style="position:absolute;left:20px;top:18px;width:34px;height:34px;border-radius:8px;background:rgba(139,92,246,.2)"></div><div style="position:absolute;left:72px;top:22px;width:280px;height:12px;border-radius:6px;background:rgba(0,0,0,.6)"></div><div style="position:absolute;left:72px;top:42px;width:160px;height:10px;border-radius:5px;background:rgba(0,0,0,.2)"></div><div id="f03-tasks-p3" style="position:absolute;right:20px;top:24px;width:70px;height:22px;border-radius:11px;background:#22C55E"></div></div><div class="row" id="f03-tasks-r4" style="top:344px"><div style="position:absolute;left:20px;top:18px;width:34px;height:34px;border-radius:8px;background:rgba(139,92,246,.2)"></div><div style="position:absolute;left:72px;top:22px;width:240px;height:12px;border-radius:6px;background:rgba(0,0,0,.6)"></div><div style="position:absolute;left:72px;top:42px;width:160px;height:10px;border-radius:5px;background:rgba(0,0,0,.2)"></div><div id="f03-tasks-p4" style="position:absolute;right:20px;top:24px;width:70px;height:22px;border-radius:11px;background:#22C55E"></div></div><div class="row" id="f03-tasks-r5" style="top:430px"><div style="position:absolute;left:20px;top:18px;width:34px;height:34px;border-radius:8px;background:rgba(139,92,246,.2)"></div><div style="position:absolute;left:72px;top:22px;width:200px;height:12px;border-radius:6px;background:rgba(0,0,0,.6)"></div><div style="position:absolute;left:72px;top:42px;width:160px;height:10px;border-radius:5px;background:rgba(0,0,0,.2)"></div><div id="f03-tasks-p5" style="position:absolute;right:20px;top:24px;width:70px;height:22px;border-radius:11px;background:#22C55E"></div></div></div></div><div class="toast" id="f03-tasks-x0">✓ Content uploaded</div><div class="toast" id="f03-tasks-x1">✓ Products updated</div><div class="toast" id="f03-tasks-x2">✓ Plugins updated</div><div class="toast" id="f03-tasks-x3">✓ Page edited</div><div class="toast" id="f03-tasks-x4">✓ Layout fixed</div><div class="h ok" id="f03-tasks-ok">Your website, <span class="y">running smoothly</span></div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const CID = "03-tasks";
+      const D = 10.37;
+      const R = document.querySelector('[data-composition-id="' + CID + '"]');
+      const q = (s) => Array.from(R.querySelectorAll(s));
+      const id = (s) => "#f" + CID + "-" + s;
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo(id("g1"), {x:0, y:0, scale:1}, {x:60, y:30, scale:1.08, duration:D, ease:"sine.inOut"}, 0);
+      tl.fromTo(id("g2"), {x:0, y:0, scale:1.05}, {x:-60, y:20, scale:0.95, duration:D, ease:"sine.inOut"}, 0);
+      tl.fromTo(id("ttl"), {opacity:0, y:40}, {opacity:1, y:0, duration:0.5, ease:"power3.out"}, 0.05);
+
+      tl.fromTo(id("adm"), {opacity:0, x:100}, {opacity:1, x:0, duration:0.7, ease:"power3.out"}, 0.1);
+      tl.fromTo(q('[id^="f03-tasks-r"]'), {opacity:0, y:20}, {opacity:1, y:0, duration:0.35, stagger:0.06}, 0.4);
+      tl.set(q('[id^="f03-tasks-p"]'), {scaleX:0, transformOrigin:"0 50%"}, 0);
+      tl.fromTo(id("t0"), {opacity:0, x:-40}, {opacity:1, x:0, duration:0.45, ease:"power3.out"}, 0.35);
+      tl.fromTo(id("c0"), {backgroundColor:"rgba(255,214,10,0.15)"}, {backgroundColor:"#FFD60A", duration:0.25}, 0.80);
+      tl.to(id("hl"), {y:56, duration:0.35, ease:"power2.inOut"}, 0.35);
+      tl.fromTo(id("x0"), {opacity:0, y:30}, {opacity:1, y:0, duration:0.3, ease:"power3.out"}, 0.75);
+      tl.to(id("x0"), {opacity:0, y:-20, duration:0.2}, 1.60);
+      tl.to(id("p0"), {scaleX:1, duration:0.5, ease:"power2.out"}, 0.55);
+      tl.fromTo(id("t1"), {opacity:0, x:-40}, {opacity:1, x:0, duration:0.45, ease:"power3.out"}, 1.7);
+      tl.fromTo(id("c1"), {backgroundColor:"rgba(255,214,10,0.15)"}, {backgroundColor:"#FFD60A", duration:0.25}, 2.15);
+      tl.to(id("hl"), {y:168, duration:0.35, ease:"power2.inOut"}, 1.70);
+      tl.fromTo(id("x1"), {opacity:0, y:30}, {opacity:1, y:0, duration:0.3, ease:"power3.out"}, 2.10);
+      tl.to(id("x1"), {opacity:0, y:-20, duration:0.2}, 3.45);
+      tl.to(id("p1"), {scaleX:1, duration:0.5, ease:"power2.out"}, 1.90);
+      tl.fromTo(id("t2"), {opacity:0, x:-40}, {opacity:1, x:0, duration:0.45, ease:"power3.out"}, 3.55);
+      tl.fromTo(id("c2"), {backgroundColor:"rgba(255,214,10,0.15)"}, {backgroundColor:"#FFD60A", duration:0.25}, 4.00);
+      tl.to(id("hl"), {y:224, duration:0.35, ease:"power2.inOut"}, 3.55);
+      tl.fromTo(id("x2"), {opacity:0, y:30}, {opacity:1, y:0, duration:0.3, ease:"power3.out"}, 3.95);
+      tl.to(id("x2"), {opacity:0, y:-20, duration:0.2}, 4.55);
+      tl.to(id("p2"), {scaleX:1, duration:0.5, ease:"power2.out"}, 3.75);
+      tl.fromTo(id("t3"), {opacity:0, x:-40}, {opacity:1, x:0, duration:0.45, ease:"power3.out"}, 4.65);
+      tl.fromTo(id("c3"), {backgroundColor:"rgba(255,214,10,0.15)"}, {backgroundColor:"#FFD60A", duration:0.25}, 5.10);
+      tl.to(id("hl"), {y:112, duration:0.35, ease:"power2.inOut"}, 4.65);
+      tl.fromTo(id("x3"), {opacity:0, y:30}, {opacity:1, y:0, duration:0.3, ease:"power3.out"}, 5.05);
+      tl.to(id("x3"), {opacity:0, y:-20, duration:0.2}, 5.75);
+      tl.to(id("p3"), {scaleX:1, duration:0.5, ease:"power2.out"}, 4.85);
+      tl.fromTo(id("t4"), {opacity:0, x:-40}, {opacity:1, x:0, duration:0.45, ease:"power3.out"}, 5.85);
+      tl.fromTo(id("c4"), {backgroundColor:"rgba(255,214,10,0.15)"}, {backgroundColor:"#FFD60A", duration:0.25}, 6.30);
+      tl.to(id("hl"), {y:280, duration:0.35, ease:"power2.inOut"}, 5.85);
+      tl.fromTo(id("x4"), {opacity:0, y:30}, {opacity:1, y:0, duration:0.3, ease:"power3.out"}, 6.25);
+      tl.to(id("x4"), {opacity:0, y:-20, duration:0.2}, 7.30);
+      tl.to(id("p4"), {scaleX:1, duration:0.5, ease:"power2.out"}, 6.05);
+      tl.to(id("p5"), {scaleX:1, duration:0.5, ease:"power2.out"}, 7.4);
+      tl.fromTo(id("ok"), {opacity:0, y:30}, {opacity:1, y:0, duration:0.6, ease:"power3.out"}, 7.6);
+
+      tl.set({}, {}, D);
+      window.__timelines[CID] = tl;
+    })();
+  </script>
+</template>

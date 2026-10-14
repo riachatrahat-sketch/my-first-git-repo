@@ -1,0 +1,62 @@
+<template>
+  <style>
+
+@font-face{font-family:"Montserrat";src:url("assets/fonts/Montserrat-800.woff2") format("woff2");font-weight:800}
+@font-face{font-family:"Montserrat";src:url("assets/fonts/Montserrat-900.woff2") format("woff2");font-weight:900}
+@font-face{font-family:"Inter";src:url("assets/fonts/Inter-400.woff2") format("woff2");font-weight:400}
+@font-face{font-family:"Inter";src:url("assets/fonts/Inter-600.woff2") format("woff2");font-weight:600}
+
+#root{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;color:#F7F7FA;font-family:"Inter",sans-serif}
+[data-composition-id="04-promise"] .bg{position:absolute;inset:0;background:#050507}
+[data-composition-id="04-promise"] .glow{position:absolute;border-radius:50%;pointer-events:none}
+[data-composition-id="04-promise"] .g1{width:1100px;height:1100px;left:-520px;top:-620px;background:radial-gradient(circle,rgba(124,58,237,.75) 0%,rgba(91,33,182,.35) 35%,rgba(0,0,0,0) 68%)}
+[data-composition-id="04-promise"] .g2{width:1100px;height:1100px;left:1340px;top:-640px;background:radial-gradient(circle,rgba(124,58,237,.6) 0%,rgba(91,33,182,.28) 35%,rgba(0,0,0,0) 68%)}
+[data-composition-id="04-promise"] .g3{width:1400px;height:900px;left:260px;top:620px;background:radial-gradient(ellipse,rgba(91,33,182,.22) 0%,rgba(0,0,0,0) 65%)}
+[data-composition-id="04-promise"] .stage{position:absolute;inset:0}
+[data-composition-id="04-promise"] .h{font-family:"Montserrat",sans-serif;font-weight:900;text-transform:uppercase;letter-spacing:-0.01em;line-height:1.0;color:#F7F7FA}
+[data-composition-id="04-promise"] .y{background:linear-gradient(180deg,#FFE94D 0%,#FFD60A 45%,#F5A800 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+[data-composition-id="04-promise"] .tag{font-family:"Montserrat",sans-serif;font-weight:800;font-size:22px;letter-spacing:.18em;text-transform:uppercase;color:#FFD60A}
+[data-composition-id="04-promise"] .pill{position:absolute;display:flex;align-items:center;gap:14px;padding:16px 28px;border-radius:999px;background:rgba(139,92,246,.16);border:2px solid rgba(139,92,246,.7);font-family:"Montserrat",sans-serif;font-weight:800;font-size:30px;white-space:nowrap}
+[data-composition-id="04-promise"] .card{position:absolute;border-radius:18px;background:#121218;border:1px solid rgba(255,255,255,.08);box-shadow:0 30px 80px rgba(0,0,0,.55)}
+[data-composition-id="04-promise"] .ln{position:absolute;height:12px;border-radius:6px;background:rgba(0,0,0,.14)}
+[data-composition-id="04-promise"] .sel{position:absolute;border:2px solid #0D99FF;pointer-events:none}
+[data-composition-id="04-promise"] .sel i{position:absolute;width:12px;height:12px;background:#fff;border:2px solid #0D99FF}
+[data-composition-id="04-promise"] .chk{width:44px;height:44px;border-radius:50%;background:#FFD60A;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+
+
+[data-composition-id="04-promise"] .ttl{position:absolute;left:0;right:0;top:170px;text-align:center;font-size:66px}
+[data-composition-id="04-promise"] .p{top:360px;width:500px;height:380px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px;text-align:center}
+[data-composition-id="04-promise"] .p span{font-family:"Montserrat",sans-serif;font-weight:800;font-size:40px;line-height:1.1}
+
+  </style>
+  <div id="root" data-composition-id="04-promise" data-width="1920" data-height="1080">
+    <div class="clip bg" id="f04-promise-bg" data-start="0" data-duration="4.69" data-track-index="0">
+      <div class="glow g1" id="f04-promise-g1"></div><div class="glow g2" id="f04-promise-g2"></div><div class="glow g3"></div>
+    </div>
+    <div class="clip stage" id="f04-promise-stage" data-start="0" data-duration="4.69" data-track-index="1">
+<div class="h ttl" id="f04-promise-ttl">What you <span class="y">get</span></div><div class="card p" id="f04-promise-p0" style="left:160px"><svg width="110" height="110" viewBox="0 0 48 48" fill="none" stroke="#FFD60A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M8 28v-4a16 16 0 0 1 32 0v4"/><rect x="6" y="27" width="7" height="11" rx="2"/><rect x="35" y="27" width="7" height="11" rx="2"/></svg><span>Reliable support</span></div><div class="card p" id="f04-promise-p1" style="left:720px"><svg width="110" height="110" viewBox="0 0 48 48" fill="none" stroke="#FFD60A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M8 10h32v22H20l-8 7v-7H8z"/></svg><span>Clear communication</span></div><div class="card p" id="f04-promise-p2" style="left:1280px"><svg width="110" height="110" viewBox="0 0 48 48" fill="none" stroke="#FFD60A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="17"/><path d="M24 13v11l7 5"/></svg><span>Timely delivery</span></div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const CID = "04-promise";
+      const D = 4.69;
+      const R = document.querySelector('[data-composition-id="' + CID + '"]');
+      const q = (s) => Array.from(R.querySelectorAll(s));
+      const id = (s) => "#f" + CID + "-" + s;
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo(id("g1"), {x:0, y:0, scale:1}, {x:60, y:30, scale:1.08, duration:D, ease:"sine.inOut"}, 0);
+      tl.fromTo(id("g2"), {x:0, y:0, scale:1.05}, {x:-60, y:20, scale:0.95, duration:D, ease:"sine.inOut"}, 0);
+      tl.fromTo(id("ttl"), {opacity:0, y:40}, {opacity:1, y:0, duration:0.5, ease:"power3.out"}, 0.05);
+      tl.fromTo(id("p0"), {opacity:0, y:80, scale:0.92}, {opacity:1, y:0, scale:1, duration:0.55, ease:"back.out(1.6)"}, 0.35);
+      tl.fromTo(id("p0"), {borderColor:"rgba(255,214,10,1)"}, {borderColor:"rgba(255,255,255,0.08)", duration:1.0}, 0.75);
+      tl.fromTo(id("p1"), {opacity:0, y:80, scale:0.92}, {opacity:1, y:0, scale:1, duration:0.55, ease:"back.out(1.6)"}, 1.6);
+      tl.fromTo(id("p1"), {borderColor:"rgba(255,214,10,1)"}, {borderColor:"rgba(255,255,255,0.08)", duration:1.0}, 2.00);
+      tl.fromTo(id("p2"), {opacity:0, y:80, scale:0.92}, {opacity:1, y:0, scale:1, duration:0.55, ease:"back.out(1.6)"}, 2.8);
+      tl.fromTo(id("p2"), {borderColor:"rgba(255,214,10,1)"}, {borderColor:"rgba(255,255,255,0.08)", duration:1.0}, 3.20);
+
+      tl.set({}, {}, D);
+      window.__timelines[CID] = tl;
+    })();
+  </script>
+</template>

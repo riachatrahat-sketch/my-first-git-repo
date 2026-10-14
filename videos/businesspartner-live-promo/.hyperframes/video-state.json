@@ -275,7 +275,6 @@
         {
           "scope": "full",
           "id": "82cd66a1-b630-45bd-a791-b21dff867324-0",
-          "image": "/home/user/my-first-git-repo/videos/businesspartner-live-promo/.hyperframes/artifacts/snapshots/b0c53080-4d44-4ecf-bd2a-dca4d5fb33ab/frame-00-at-4s.png",
           "time": 4,
           "metadata": {
             "width": 1920,
@@ -290,12 +289,13 @@
           "revision": "68b11759-5acf-4153-8ca6-ab502e626e27",
           "inputFingerprint": "51aaefe1db2a97ff13a217d706a9b210bc9ff7efb6e1c367df8561f1d13739ee",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "8dd6b940-a0c2-46fc-9ed1-1f69a88c3db2"
         },
         {
           "scope": "full",
           "id": "82cd66a1-b630-45bd-a791-b21dff867324-1",
-          "image": "/home/user/my-first-git-repo/videos/businesspartner-live-promo/.hyperframes/artifacts/snapshots/b0c53080-4d44-4ecf-bd2a-dca4d5fb33ab/frame-01-at-9.5s.png",
           "time": 9.5,
           "metadata": {
             "width": 1920,
@@ -310,12 +310,13 @@
           "revision": "68b11759-5acf-4153-8ca6-ab502e626e27",
           "inputFingerprint": "51aaefe1db2a97ff13a217d706a9b210bc9ff7efb6e1c367df8561f1d13739ee",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "8dd6b940-a0c2-46fc-9ed1-1f69a88c3db2"
         },
         {
           "scope": "full",
           "id": "82cd66a1-b630-45bd-a791-b21dff867324-2",
-          "image": "/home/user/my-first-git-repo/videos/businesspartner-live-promo/.hyperframes/artifacts/snapshots/b0c53080-4d44-4ecf-bd2a-dca4d5fb33ab/frame-02-at-17.5s.png",
           "time": 17.5,
           "metadata": {
             "width": 1920,
@@ -330,12 +331,13 @@
           "revision": "68b11759-5acf-4153-8ca6-ab502e626e27",
           "inputFingerprint": "51aaefe1db2a97ff13a217d706a9b210bc9ff7efb6e1c367df8561f1d13739ee",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "8dd6b940-a0c2-46fc-9ed1-1f69a88c3db2"
         },
         {
           "scope": "full",
           "id": "82cd66a1-b630-45bd-a791-b21dff867324-3",
-          "image": "/home/user/my-first-git-repo/videos/businesspartner-live-promo/.hyperframes/artifacts/snapshots/b0c53080-4d44-4ecf-bd2a-dca4d5fb33ab/frame-03-at-28.5s.png",
           "time": 28.5,
           "metadata": {
             "width": 1920,
@@ -350,12 +352,13 @@
           "revision": "68b11759-5acf-4153-8ca6-ab502e626e27",
           "inputFingerprint": "51aaefe1db2a97ff13a217d706a9b210bc9ff7efb6e1c367df8561f1d13739ee",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "8dd6b940-a0c2-46fc-9ed1-1f69a88c3db2"
         },
         {
           "scope": "full",
           "id": "82cd66a1-b630-45bd-a791-b21dff867324-4",
-          "image": "/home/user/my-first-git-repo/videos/businesspartner-live-promo/.hyperframes/artifacts/snapshots/b0c53080-4d44-4ecf-bd2a-dca4d5fb33ab/frame-04-at-34.5s.png",
           "time": 34.5,
           "metadata": {
             "width": 1920,
@@ -370,12 +373,13 @@
           "revision": "68b11759-5acf-4153-8ca6-ab502e626e27",
           "inputFingerprint": "51aaefe1db2a97ff13a217d706a9b210bc9ff7efb6e1c367df8561f1d13739ee",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "8dd6b940-a0c2-46fc-9ed1-1f69a88c3db2"
         },
         {
           "scope": "full",
           "id": "82cd66a1-b630-45bd-a791-b21dff867324-5",
-          "image": "/home/user/my-first-git-repo/videos/businesspartner-live-promo/.hyperframes/artifacts/snapshots/b0c53080-4d44-4ecf-bd2a-dca4d5fb33ab/frame-05-at-38s.png",
           "time": 38,
           "metadata": {
             "width": 1920,
@@ -390,12 +394,13 @@
           "revision": "68b11759-5acf-4153-8ca6-ab502e626e27",
           "inputFingerprint": "51aaefe1db2a97ff13a217d706a9b210bc9ff7efb6e1c367df8561f1d13739ee",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "8dd6b940-a0c2-46fc-9ed1-1f69a88c3db2"
         },
         {
           "scope": "full",
           "id": "82cd66a1-b630-45bd-a791-b21dff867324-6",
-          "image": "/home/user/my-first-git-repo/videos/businesspartner-live-promo/.hyperframes/artifacts/snapshots/b0c53080-4d44-4ecf-bd2a-dca4d5fb33ab/frame-06-at-42s.png",
           "time": 42,
           "metadata": {
             "width": 1920,
@@ -410,12 +415,13 @@
           "revision": "68b11759-5acf-4153-8ca6-ab502e626e27",
           "inputFingerprint": "51aaefe1db2a97ff13a217d706a9b210bc9ff7efb6e1c367df8561f1d13739ee",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "8dd6b940-a0c2-46fc-9ed1-1f69a88c3db2"
         },
         {
           "scope": "full",
           "id": "82cd66a1-b630-45bd-a791-b21dff867324-7",
-          "image": "/home/user/my-first-git-repo/videos/businesspartner-live-promo/.hyperframes/artifacts/snapshots/b0c53080-4d44-4ecf-bd2a-dca4d5fb33ab/frame-07-at-47.5s.png",
           "time": 47.5,
           "metadata": {
             "width": 1920,
@@ -430,12 +436,13 @@
           "revision": "68b11759-5acf-4153-8ca6-ab502e626e27",
           "inputFingerprint": "51aaefe1db2a97ff13a217d706a9b210bc9ff7efb6e1c367df8561f1d13739ee",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "8dd6b940-a0c2-46fc-9ed1-1f69a88c3db2"
         },
         {
           "scope": "full",
           "id": "82cd66a1-b630-45bd-a791-b21dff867324-8",
-          "image": "/home/user/my-first-git-repo/videos/businesspartner-live-promo/.hyperframes/artifacts/snapshots/b0c53080-4d44-4ecf-bd2a-dca4d5fb33ab/frame-08-at-54.5s.png",
           "time": 54.5,
           "metadata": {
             "width": 1920,
@@ -450,12 +457,13 @@
           "revision": "68b11759-5acf-4153-8ca6-ab502e626e27",
           "inputFingerprint": "51aaefe1db2a97ff13a217d706a9b210bc9ff7efb6e1c367df8561f1d13739ee",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "8dd6b940-a0c2-46fc-9ed1-1f69a88c3db2"
         },
         {
           "scope": "full",
           "id": "82cd66a1-b630-45bd-a791-b21dff867324-9",
-          "image": "/home/user/my-first-git-repo/videos/businesspartner-live-promo/.hyperframes/artifacts/snapshots/b0c53080-4d44-4ecf-bd2a-dca4d5fb33ab/frame-09-at-62s.png",
           "time": 62,
           "metadata": {
             "width": 1920,
@@ -470,12 +478,13 @@
           "revision": "68b11759-5acf-4153-8ca6-ab502e626e27",
           "inputFingerprint": "51aaefe1db2a97ff13a217d706a9b210bc9ff7efb6e1c367df8561f1d13739ee",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "8dd6b940-a0c2-46fc-9ed1-1f69a88c3db2"
         },
         {
           "scope": "full",
           "id": "82cd66a1-b630-45bd-a791-b21dff867324-10",
-          "image": "/home/user/my-first-git-repo/videos/businesspartner-live-promo/.hyperframes/artifacts/snapshots/b0c53080-4d44-4ecf-bd2a-dca4d5fb33ab/frame-10-at-69.5s.png",
           "time": 69.5,
           "metadata": {
             "width": 1920,
@@ -490,12 +499,13 @@
           "revision": "68b11759-5acf-4153-8ca6-ab502e626e27",
           "inputFingerprint": "51aaefe1db2a97ff13a217d706a9b210bc9ff7efb6e1c367df8561f1d13739ee",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "8dd6b940-a0c2-46fc-9ed1-1f69a88c3db2"
         },
         {
           "scope": "full",
           "id": "82cd66a1-b630-45bd-a791-b21dff867324-11",
-          "image": "/home/user/my-first-git-repo/videos/businesspartner-live-promo/.hyperframes/artifacts/snapshots/b0c53080-4d44-4ecf-bd2a-dca4d5fb33ab/frame-11-at-75.5s.png",
           "time": 75.5,
           "metadata": {
             "width": 1920,
@@ -510,12 +520,13 @@
           "revision": "68b11759-5acf-4153-8ca6-ab502e626e27",
           "inputFingerprint": "51aaefe1db2a97ff13a217d706a9b210bc9ff7efb6e1c367df8561f1d13739ee",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "8dd6b940-a0c2-46fc-9ed1-1f69a88c3db2"
         },
         {
           "scope": "full",
           "id": "82cd66a1-b630-45bd-a791-b21dff867324-12",
-          "image": "/home/user/my-first-git-repo/videos/businesspartner-live-promo/.hyperframes/artifacts/snapshots/b0c53080-4d44-4ecf-bd2a-dca4d5fb33ab/frame-12-at-73.623s.png",
           "time": 73.623,
           "metadata": {
             "width": 1920,
@@ -530,7 +541,9 @@
           "revision": "68b11759-5acf-4153-8ca6-ab502e626e27",
           "inputFingerprint": "51aaefe1db2a97ff13a217d706a9b210bc9ff7efb6e1c367df8561f1d13739ee",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "8dd6b940-a0c2-46fc-9ed1-1f69a88c3db2"
         }
       ],
       "6f7e8030-6c18-4681-b02d-89a660d41821": [
@@ -597,5 +610,18 @@
       ]
     },
     "unversioned": []
-  }
+  },
+  "renders": {
+    "latest": {
+      "id": "8dd6b940-a0c2-46fc-9ed1-1f69a88c3db2",
+      "completedAt": 1791964616779,
+      "output": "/home/user/my-first-git-repo/videos/businesspartner-live-promo/renders/video.mp4",
+      "status": "completed",
+      "revision": "6f7e8030-6c18-4681-b02d-89a660d41821"
+    },
+    "retainedRevisions": [
+      "6f7e8030-6c18-4681-b02d-89a660d41821"
+    ]
+  },
+  "pendingArtifactCleanup": []
 }

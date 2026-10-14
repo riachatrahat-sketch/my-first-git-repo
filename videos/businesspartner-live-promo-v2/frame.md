@@ -11,13 +11,13 @@ unit: the frame — 1920×1080 primary; 9:16 and 1:1 documented
 principle: atoms are sacred · composition is free · numbers come from the script
 
 colors:
-  paper: "#0B0A08"
-  paper-deep: "#17140F"
-  sun: "#D4AF37"
+  paper: "#060A07"
+  paper-deep: "#0E1711"
+  sun: "#34D57A"
   sun-soft: "#584813"
   haze: "#78621A"
   ink: "#F3EDE0"
-  ember: "#B8862B"
+  ember: "#1E8F4E"
 
 typography:
   # — reading + data ramp —

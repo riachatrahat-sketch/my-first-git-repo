@@ -271,5 +271,16 @@
         "attribution": "unversioned"
       }
     ]
-  }
+  },
+  "renders": {
+    "latest": {
+      "id": "2f7a33dc-c0a8-45ff-9a11-be6059ce3255",
+      "completedAt": 1791966891016,
+      "output": "/home/user/my-first-git-repo/videos/businesspartner-live-linkedin/renders/businesspartner-linkedin-35s.mp4",
+      "status": "completed",
+      "revision": null
+    },
+    "retainedRevisions": []
+  },
+  "pendingArtifactCleanup": []
 }

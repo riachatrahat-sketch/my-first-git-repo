@@ -770,5 +770,16 @@
         "attribution": "unversioned"
       }
     ]
-  }
+  },
+  "renders": {
+    "latest": {
+      "id": "bcb10548-5d12-420e-be10-0f3463499fe2",
+      "completedAt": 1791965976952,
+      "output": "/home/user/my-first-git-repo/videos/businesspartner-live-promo-v2/renders/video.mp4",
+      "status": "completed",
+      "revision": null
+    },
+    "retainedRevisions": []
+  },
+  "pendingArtifactCleanup": []
 }

@@ -453,5 +453,18 @@
         "attribution": "unversioned"
       }
     ]
-  }
+  },
+  "renders": {
+    "latest": {
+      "id": "e8e3193b-3c3a-4ad9-8f4f-7d9eb452db97",
+      "completedAt": 1791979935951,
+      "output": "/home/user/my-first-git-repo/videos/figma-gig-video/renders/figma-gig-video.mp4",
+      "status": "completed",
+      "revision": "e0faff65-0de4-4768-ae7b-b47099b636ec"
+    },
+    "retainedRevisions": [
+      "e0faff65-0de4-4768-ae7b-b47099b636ec"
+    ]
+  },
+  "pendingArtifactCleanup": []
 }

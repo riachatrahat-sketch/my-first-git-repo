@@ -1,0 +1,77 @@
+<template>
+  <style>
+
+
+@font-face{font-family:"Playfair Display";src:url("assets/fonts/PlayfairDisplay-400.woff2") format("woff2");font-weight:400;font-style:normal}
+@font-face{font-family:"Playfair Display";src:url("assets/fonts/PlayfairDisplay-400italic.woff2") format("woff2");font-weight:400;font-style:italic}
+@font-face{font-family:"Inter";src:url("assets/fonts/Inter-400.woff2") format("woff2");font-weight:400}
+@font-face{font-family:"Inter";src:url("assets/fonts/Inter-600.woff2") format("woff2");font-weight:600}
+@font-face{font-family:"JetBrains Mono";src:url("assets/fonts/JetBrainsMono-400.woff2") format("woff2");font-weight:400}
+
+#root{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;color:#F3EDE0;font-family:"Inter",sans-serif}
+[data-composition-id="12-outro"] .bg{position:absolute;inset:0;background:#0B0A08}
+[data-composition-id="12-outro"] .bloom{position:absolute;border-radius:50%;pointer-events:none}
+[data-composition-id="12-outro"] .bloom.sun{width:1300px;height:1300px;left:760px;top:-260px;background:radial-gradient(circle,rgba(212,175,55,.30) 0%,rgba(212,175,55,.12) 32%,rgba(120,98,26,.06) 52%,rgba(0,0,0,0) 70%)}
+[data-composition-id="12-outro"] .bloom.ember{width:900px;height:900px;left:-300px;top:420px;background:radial-gradient(circle,rgba(184,134,43,.16) 0%,rgba(0,0,0,0) 65%)}
+[data-composition-id="12-outro"] .vignette{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,0,0,0) 55%,rgba(0,0,0,.55) 100%)}
+[data-composition-id="12-outro"] .stage{position:absolute;inset:0}
+[data-composition-id="12-outro"] .display{font-family:"Playfair Display",serif;font-weight:400;letter-spacing:-0.015em;line-height:1.02;color:#F3EDE0}
+[data-composition-id="12-outro"] .it{font-style:italic;color:#D4AF37}
+[data-composition-id="12-outro"] .micro{font-family:"Inter",sans-serif;font-weight:600;font-size:18px;letter-spacing:.32em;text-transform:uppercase;color:#F1D78A}
+[data-composition-id="12-outro"] .mono{font-family:"JetBrains Mono",monospace;color:#D4AF37}
+[data-composition-id="12-outro"] .hair{position:absolute;height:1px;background:#D4AF37;transform-origin:0 50%}
+[data-composition-id="12-outro"] .card{position:absolute;background:rgba(23,20,15,.88);border:1px solid rgba(212,175,55,.45)}
+[data-composition-id="12-outro"] .pagenum{position:absolute;right:64px;top:52px;font-family:"JetBrains Mono",monospace;font-size:15px;letter-spacing:.08em;color:#D4AF37;opacity:.75}
+[data-composition-id="12-outro"] .brand{position:absolute;left:64px;top:50px;font-family:"Playfair Display",serif;font-size:22px;color:#F3EDE0;opacity:.8}
+[data-composition-id="12-outro"] .brand b{font-weight:400;color:#D4AF37}
+
+
+[data-composition-id="12-outro"] .wm{position:absolute;left:0;right:0;top:280px;text-align:center;font-size:126px;white-space:nowrap}
+[data-composition-id="12-outro"] .wm span{display:inline-block}
+[data-composition-id="12-outro"] .wm .gold{color:#D4AF37;font-style:italic}
+[data-composition-id="12-outro"] .rule{left:610px;top:480px;width:700px}
+[data-composition-id="12-outro"] .tag{position:absolute;left:0;right:0;top:540px;display:flex;justify-content:center;gap:60px;font-size:72px}
+[data-composition-id="12-outro"] .url{position:absolute;left:0;right:0;top:720px;text-align:center}
+
+  </style>
+  <div id="root" data-composition-id="12-outro" data-width="1920" data-height="1080">
+    <div class="clip bg" id="f12-outro-bg" data-start="0" data-duration="5.55" data-track-index="0">
+      <div class="bloom sun" id="f12-outro-sun"></div>
+      <div class="bloom ember" id="f12-outro-ember"></div>
+      <div class="vignette"></div>
+    </div>
+    <div class="clip stage" id="f12-outro-stage" data-start="0" data-duration="5.55" data-track-index="1">
+      
+
+      <div class="display wm" id="f12-outro-wm"><span class="ch">B</span><span class="ch">u</span><span class="ch">s</span><span class="ch">i</span><span class="ch">n</span><span class="ch">e</span><span class="ch">s</span><span class="ch">s</span><span class="ch">P</span><span class="ch">a</span><span class="ch">r</span><span class="ch">t</span><span class="ch">n</span><span class="ch">e</span><span class="ch">r</span><span class="ch gold">.</span><span class="ch gold">L</span><span class="ch gold">i</span><span class="ch gold">v</span><span class="ch gold">e</span></div>
+      <div class="hair rule" id="f12-outro-rule"></div>
+      <div class="tag"><span class="display" id="f12-outro-t0">Hire smarter.</span><span class="display" id="f12-outro-t1">Work simpler.</span><span class="display it" id="f12-outro-t2">Grow faster.</span></div>
+      <div class="micro url" id="f12-outro-url">businesspartner.live</div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const CID = "12-outro";
+      const D = 5.55;
+      const R = document.querySelector('[data-composition-id="' + CID + '"]');
+      const q = (s) => Array.from(R.querySelectorAll(s));
+      const id = (s) => "#f" + CID + "-" + s;
+      const tl = gsap.timeline({ paused: true });
+      // ambient: slow bloom drift under every shot
+      tl.fromTo(id("sun"), { scale: 0.92, x: 0 }, { scale: 1.08, x: -60, duration: D, ease: "sine.inOut" }, 0);
+      tl.fromTo(id("ember"), { opacity: 0.6 }, { opacity: 1, duration: D, ease: "sine.inOut" }, 0);
+
+      tl.fromTo(q(".ch"), {opacity:0, y:60}, {opacity:1, y:0, duration:0.6, ease:"power3.out", stagger:0.04}, 0.05);
+      tl.fromTo(id("rule"), {scaleX:0}, {scaleX:1, duration:0.8, ease:"power3.inOut"}, 1.1);
+      tl.fromTo(id("t0"), {opacity:0, y:40}, {opacity:1, y:0, duration:0.55, ease:"power3.out"}, 2.0);
+      tl.fromTo(id("t1"), {opacity:0, y:40}, {opacity:1, y:0, duration:0.55, ease:"power3.out"}, 3.1);
+      tl.fromTo(id("t2"), {opacity:0, y:40, scale:0.9}, {opacity:1, y:0, scale:1, duration:0.6, ease:"back.out(2)"}, 4.3);
+      tl.fromTo(id("url"), {opacity:0}, {opacity:1, duration:0.6}, 4.6);
+      tl.fromTo(id("wm"), {scale:1}, {scale:1.03, duration:5.55, ease:"sine.out"}, 0);
+
+      tl.set({}, {}, D);
+      window.__timelines[CID] = tl;
+    })();
+  </script>
+</template>

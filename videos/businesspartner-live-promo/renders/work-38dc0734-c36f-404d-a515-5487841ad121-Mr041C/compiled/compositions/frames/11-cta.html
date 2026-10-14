@@ -1,0 +1,78 @@
+<template>
+  <style>
+
+
+@font-face{font-family:"Playfair Display";src:url("assets/fonts/PlayfairDisplay-400.woff2") format("woff2");font-weight:400;font-style:normal}
+@font-face{font-family:"Playfair Display";src:url("assets/fonts/PlayfairDisplay-400italic.woff2") format("woff2");font-weight:400;font-style:italic}
+@font-face{font-family:"Inter";src:url("assets/fonts/Inter-400.woff2") format("woff2");font-weight:400}
+@font-face{font-family:"Inter";src:url("assets/fonts/Inter-600.woff2") format("woff2");font-weight:600}
+@font-face{font-family:"JetBrains Mono";src:url("assets/fonts/JetBrainsMono-400.woff2") format("woff2");font-weight:400}
+
+#root{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;color:#F3EDE0;font-family:"Inter",sans-serif}
+[data-composition-id="11-cta"] .bg{position:absolute;inset:0;background:#0B0A08}
+[data-composition-id="11-cta"] .bloom{position:absolute;border-radius:50%;pointer-events:none}
+[data-composition-id="11-cta"] .bloom.sun{width:1300px;height:1300px;left:760px;top:-260px;background:radial-gradient(circle,rgba(212,175,55,.30) 0%,rgba(212,175,55,.12) 32%,rgba(120,98,26,.06) 52%,rgba(0,0,0,0) 70%)}
+[data-composition-id="11-cta"] .bloom.ember{width:900px;height:900px;left:-300px;top:420px;background:radial-gradient(circle,rgba(184,134,43,.16) 0%,rgba(0,0,0,0) 65%)}
+[data-composition-id="11-cta"] .vignette{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,0,0,0) 55%,rgba(0,0,0,.55) 100%)}
+[data-composition-id="11-cta"] .stage{position:absolute;inset:0}
+[data-composition-id="11-cta"] .display{font-family:"Playfair Display",serif;font-weight:400;letter-spacing:-0.015em;line-height:1.02;color:#F3EDE0}
+[data-composition-id="11-cta"] .it{font-style:italic;color:#D4AF37}
+[data-composition-id="11-cta"] .micro{font-family:"Inter",sans-serif;font-weight:600;font-size:18px;letter-spacing:.32em;text-transform:uppercase;color:#F1D78A}
+[data-composition-id="11-cta"] .mono{font-family:"JetBrains Mono",monospace;color:#D4AF37}
+[data-composition-id="11-cta"] .hair{position:absolute;height:1px;background:#D4AF37;transform-origin:0 50%}
+[data-composition-id="11-cta"] .card{position:absolute;background:rgba(23,20,15,.88);border:1px solid rgba(212,175,55,.45)}
+[data-composition-id="11-cta"] .pagenum{position:absolute;right:64px;top:52px;font-family:"JetBrains Mono",monospace;font-size:15px;letter-spacing:.08em;color:#D4AF37;opacity:.75}
+[data-composition-id="11-cta"] .brand{position:absolute;left:64px;top:50px;font-family:"Playfair Display",serif;font-size:22px;color:#F3EDE0;opacity:.8}
+[data-composition-id="11-cta"] .brand b{font-weight:400;color:#D4AF37}
+
+
+[data-composition-id="11-cta"] .ready{position:absolute;left:0;right:0;top:170px;text-align:center;font-size:120px}
+[data-composition-id="11-cta"] .bchip{position:absolute;top:420px;width:300px;height:120px;display:flex;align-items:center;justify-content:center;gap:16px;border-radius:60px;font-size:32px;font-weight:600}
+[data-composition-id="11-cta"] .cta{position:absolute;left:510px;top:400px;width:900px;height:160px;border-radius:80px;background:#D4AF37;color:#0B0A08;display:flex;align-items:center;justify-content:center;font-family:"Playfair Display",serif;font-size:66px}
+[data-composition-id="11-cta"] .cur{position:absolute;left:1180px;top:500px}
+[data-composition-id="11-cta"] .today{position:absolute;left:0;right:0;top:640px;text-align:center}
+
+  </style>
+  <div id="root" data-composition-id="11-cta" data-width="1920" data-height="1080">
+    <div class="clip bg" id="f11-cta-bg" data-start="0" data-duration="7.36" data-track-index="0">
+      <div class="bloom sun" id="f11-cta-sun"></div>
+      <div class="bloom ember" id="f11-cta-ember"></div>
+      <div class="vignette"></div>
+    </div>
+    <div class="clip stage" id="f11-cta-stage" data-start="0" data-duration="7.36" data-track-index="1">
+      <div class="brand" id="f11-cta-brand">BusinessPartner<b>.Live</b></div><div class="pagenum">11 / 12</div>
+<div class="display ready" id="f11-cta-ready">Ready<span class="it">?</span></div><div class="card bchip" id="f11-cta-b0" style="left:380px"><svg width="44" height="44" viewBox="0 0 48 48" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="17"/><path d="M24 13v11l7 5"/></svg><span>Save time</span></div><div class="card bchip" id="f11-cta-b1" style="left:810px"><svg width="44" height="44" viewBox="0 0 48 48" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M27 4L10 27h12l-3 17 18-24H25z"/></svg><span>Productivity</span></div><div class="card bchip" id="f11-cta-b2" style="left:1240px"><svg width="44" height="44" viewBox="0 0 48 48" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 4c8 6 11 15 9 26H15C13 19 16 10 24 4z"/><circle cx="24" cy="18" r="4"/><path d="M15 30l-6 8h9M33 30l6 8h-9M20 34l4 8 4-8"/></svg><span>Next level</span></div><div class="cta" id="f11-cta-cta">BusinessPartner.Live</div><div class="cur" id="f11-cta-cur"><svg width="72" height="72" viewBox="0 0 48 48" fill="none" stroke="#F3EDE0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 6l26 16-11 3-5 12z"/></svg></div><div class="micro today" id="f11-cta-today">Visit today</div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const CID = "11-cta";
+      const D = 7.36;
+      const R = document.querySelector('[data-composition-id="' + CID + '"]');
+      const q = (s) => Array.from(R.querySelectorAll(s));
+      const id = (s) => "#f" + CID + "-" + s;
+      const tl = gsap.timeline({ paused: true });
+      // ambient: slow bloom drift under every shot
+      tl.fromTo(id("sun"), { scale: 0.92, x: 0 }, { scale: 1.08, x: -60, duration: D, ease: "sine.inOut" }, 0);
+      tl.fromTo(id("ember"), { opacity: 0.6 }, { opacity: 1, duration: D, ease: "sine.inOut" }, 0);
+      tl.fromTo(id("ready"), {opacity:0, y:30}, {opacity:1, y:0, duration:0.6, ease:"power3.out"}, 0.05);
+      tl.fromTo(id("b0"), {opacity:0, scale:0.6}, {opacity:1, scale:1, duration:0.5, ease:"back.out(2.2)"}, 0.75);
+      tl.to(id("b0"), {x:430, scale:0.6, opacity:0, duration:0.5, ease:"power3.in"}, 4.2);
+      tl.fromTo(id("b1"), {opacity:0, scale:0.6}, {opacity:1, scale:1, duration:0.5, ease:"back.out(2.2)"}, 1.85);
+      tl.to(id("b1"), {x:0, scale:0.6, opacity:0, duration:0.5, ease:"power3.in"}, 4.2);
+      tl.fromTo(id("b2"), {opacity:0, scale:0.6}, {opacity:1, scale:1, duration:0.5, ease:"back.out(2.2)"}, 3.0);
+      tl.to(id("b2"), {x:-430, scale:0.6, opacity:0, duration:0.5, ease:"power3.in"}, 4.2);
+
+      tl.fromTo(id("cta"), {opacity:0, scale:0.3}, {opacity:1, scale:1, duration:0.6, ease:"back.out(1.8)"}, 4.6);
+      tl.fromTo(id("ready"), {opacity:1}, {opacity:0.35, duration:0.5}, 4.6);
+      tl.fromTo(id("cur"), {opacity:0, x:200, y:200}, {opacity:1, x:0, y:0, duration:0.8, ease:"power2.out"}, 5.1);
+      tl.to(id("cta"), {scale:0.95, duration:0.12, ease:"power2.in"}, 5.95);
+      tl.to(id("cta"), {scale:1, duration:0.35, ease:"back.out(3)"}, 6.07);
+      tl.fromTo(id("cta"), {boxShadow:"0 0 0 0 rgba(212,175,55,0.7)"}, {boxShadow:"0 0 0 60px rgba(212,175,55,0)", duration:0.9, ease:"power2.out"}, 6.05);
+      tl.fromTo(id("today"), {opacity:0, y:14}, {opacity:1, y:0, duration:0.5}, 6.1);
+
+      tl.set({}, {}, D);
+      window.__timelines[CID] = tl;
+    })();
+  </script>
+</template>

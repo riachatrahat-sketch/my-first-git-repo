@@ -15,7 +15,7 @@ vo_mode: verbatim
 - voiceover: "Looking to grow your business without the stress of hiring and managing employees yourself?"
 - duration: 5.21s
 - transition_in: cut
-- status: outline
+- status: animated
 - src: compositions/frames/01-hook.html
 - type: hook
 - persuasion: Pain validation (rhetorical question)
@@ -33,7 +33,7 @@ keyMessage: growing shouldn't mean drowning in hiring.
 - voiceover: "Meet BusinessPartner.Live — your partner in finding the right talent for your business."
 - duration: 5.88s
 - transition_in: zoom-through
-- status: outline
+- status: animated
 - src: compositions/frames/02-intro.html
 - type: product_intro
 - persuasion: Solution reveal (relief after pain)
@@ -51,7 +51,7 @@ keyMessage: BusinessPartner.Live is the partner that finds your talent.
 - voiceover: "From video editors and appointment setters to sales closers, virtual assistants, and more, we help you find skilled professionals who can support your business goals."
 - duration: 9.57s
 - transition_in: crossfade
-- status: outline
+- status: animated
 - src: compositions/frames/03-roles.html
 - type: feature_showcase
 - persuasion: Value stacking (breadth of roles)
@@ -69,7 +69,7 @@ keyMessage: whatever role you need, they have the professional.
 - voiceover: "Whether you need help with lead generation, social media management, graphic design, customer support, or project management, we make it simple to find the support you need."
 - duration: 9.98s
 - transition_in: push-slide LEFT
-- status: outline
+- status: animated
 - src: compositions/frames/04-services.html
 - type: benefit_highlight
 - persuasion: Rule of five / breadth → simplicity
@@ -87,7 +87,7 @@ keyMessage: one place for every kind of support.
 - voiceover: "Here's how it works. First, discover the right role for your business."
 - duration: 4.51s
 - transition_in: zoom-through
-- status: outline
+- status: animated
 - src: compositions/frames/05-step1.html
 - type: feature_showcase
 - persuasion: Friction reduction (clear process)
@@ -95,7 +95,7 @@ keyMessage: one place for every kind of support.
 - blueprint: titlecard-reveal
 - asset_candidates:
 - vo_window: 30.64–35.15s
-- handoff_out: step-rail — bottom band y=930px, x 240→1680px, 4 nodes, node 1 filled gold, progress line 0→25%, scale 1, opacity 1, static
+- handoff_out: step-rail — bottom band y=860px, x 240→1680px, 4 nodes, node 1 filled gold, progress fill at node 1, scale 1, opacity 1, static
 
 narrativeRole: opens the process section; establishes the persistent step rail.
 keyMessage: step one — know what role you need.
@@ -106,7 +106,7 @@ keyMessage: step one — know what role you need.
 - voiceover: "Next, choose your preferred service and explore your options."
 - duration: 3.84s
 - transition_in: push-slide LEFT
-- status: outline
+- status: animated
 - src: compositions/frames/06-step2.html
 - type: feature_showcase
 - persuasion: Choice / control
@@ -114,8 +114,8 @@ keyMessage: step one — know what role you need.
 - blueprint: titlecard-reveal
 - asset_candidates:
 - vo_window: 35.15–38.99s
-- handoff_in: step-rail — bottom band y=930px, x 240→1680px, 4 nodes, node 1 filled gold, progress line 25%, scale 1, opacity 1, static
-- handoff_out: step-rail — bottom band y=930px, x 240→1680px, nodes 1–2 filled gold, progress line 50%, scale 1, opacity 1, static
+- handoff_in: step-rail — bottom band y=860px, x 240→1680px, 4 nodes, node 1 filled gold, progress fill at node 1, scale 1, opacity 1, static
+- handoff_out: step-rail — bottom band y=860px, x 240→1680px, nodes 1–2 filled gold, progress fill to node 2, scale 1, opacity 1, static
 
 narrativeRole: second step; the viewer is in control of the choice.
 keyMessage: pick the service that fits.
@@ -126,7 +126,7 @@ keyMessage: pick the service that fits.
 - voiceover: "Then, get started with a simple and straightforward process."
 - duration: 3.85s
 - transition_in: push-slide LEFT
-- status: outline
+- status: animated
 - src: compositions/frames/07-step3.html
 - type: feature_showcase
 - persuasion: Friction reduction
@@ -134,8 +134,8 @@ keyMessage: pick the service that fits.
 - blueprint: titlecard-reveal
 - asset_candidates:
 - vo_window: 38.99–42.84s
-- handoff_in: step-rail — bottom band y=930px, x 240→1680px, nodes 1–2 filled gold, progress line 50%, scale 1, opacity 1, static
-- handoff_out: step-rail — bottom band y=930px, x 240→1680px, nodes 1–3 filled gold, progress line 75%, scale 1, opacity 1, static
+- handoff_in: step-rail — bottom band y=860px, x 240→1680px, nodes 1–2 filled gold, progress fill to node 2, scale 1, opacity 1, static
+- handoff_out: step-rail — bottom band y=860px, x 240→1680px, nodes 1–3 filled gold, progress fill to node 3, scale 1, opacity 1, static
 
 narrativeRole: third step; onboarding is quick.
 keyMessage: starting is easy.
@@ -146,7 +146,7 @@ keyMessage: starting is easy.
 - voiceover: "And finally, track your progress while focusing on what matters most — growing your business."
 - duration: 6.24s
 - transition_in: push-slide LEFT
-- status: outline
+- status: animated
 - src: compositions/frames/08-step4.html
 - type: benefit_highlight
 - persuasion: Future pacing (outcome = growth)
@@ -154,7 +154,7 @@ keyMessage: starting is easy.
 - blueprint: dataviz-countup
 - asset_candidates:
 - vo_window: 42.84–49.08s
-- handoff_in: step-rail — bottom band y=930px, x 240→1680px, nodes 1–3 filled gold, progress line 75%, scale 1, opacity 1, static
+- handoff_in: step-rail — bottom band y=860px, x 240→1680px, nodes 1–3 filled gold, progress fill to node 3, scale 1, opacity 1, static
 
 narrativeRole: final step pays off in the outcome the hook promised — growth.
 keyMessage: you focus on growing; progress stays visible.
@@ -165,7 +165,7 @@ keyMessage: you focus on growing; progress stays visible.
 - voiceover: "With transparent pricing and flexible plans, you can choose the level of support that fits your needs and budget."
 - duration: 6.36s
 - transition_in: zoom-through
-- status: outline
+- status: animated
 - src: compositions/frames/09-pricing.html
 - type: benefit_highlight
 - persuasion: Risk reversal (transparency, flexibility)
@@ -183,7 +183,7 @@ keyMessage: pay for the level of help you need.
 - voiceover: "No complicated hiring process. No unnecessary hassle. Just a simpler way to get the help your business needs."
 - duration: 7.55s
 - transition_in: crossfade
-- status: outline
+- status: animated
 - src: compositions/frames/10-no-hassle.html
 - type: benefit_highlight
 - persuasion: Negative contrast
@@ -201,7 +201,7 @@ keyMessage: the hassle is gone.
 - voiceover: "Ready to save time, improve productivity, and take your business to the next level? Visit BusinessPartner.Live today."
 - duration: 7.36s
 - transition_in: blur-crossfade
-- status: outline
+- status: animated
 - src: compositions/frames/11-cta.html
 - type: cta
 - persuasion: Value stacking → urgency to act
@@ -219,7 +219,7 @@ keyMessage: go to BusinessPartner.Live now.
 - voiceover: "BusinessPartner.Live — Hire smarter. Work simpler. Grow faster."
 - duration: 5.55s
 - transition_in: zoom-through
-- status: outline
+- status: animated
 - src: compositions/frames/12-outro.html
 - type: branding
 - persuasion: Rule of three

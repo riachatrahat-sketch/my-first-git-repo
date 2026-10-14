@@ -1,0 +1,74 @@
+<template>
+  <style>
+
+@font-face{font-family:"Montserrat";src:url("assets/fonts/Montserrat-800.woff2") format("woff2");font-weight:800}
+@font-face{font-family:"Montserrat";src:url("assets/fonts/Montserrat-900.woff2") format("woff2");font-weight:900}
+@font-face{font-family:"Inter";src:url("assets/fonts/Inter-400.woff2") format("woff2");font-weight:400}
+@font-face{font-family:"Inter";src:url("assets/fonts/Inter-600.woff2") format("woff2");font-weight:600}
+
+#root{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;color:#F7F7FA;font-family:"Inter",sans-serif}
+[data-composition-id="01-hook"] .bg{position:absolute;inset:0;background:#050507}
+[data-composition-id="01-hook"] .glow{position:absolute;border-radius:50%;pointer-events:none}
+[data-composition-id="01-hook"] .g1{width:1100px;height:1100px;left:-520px;top:-620px;background:radial-gradient(circle,rgba(124,58,237,.75) 0%,rgba(91,33,182,.35) 35%,rgba(0,0,0,0) 68%)}
+[data-composition-id="01-hook"] .g2{width:1100px;height:1100px;left:1340px;top:-640px;background:radial-gradient(circle,rgba(124,58,237,.6) 0%,rgba(91,33,182,.28) 35%,rgba(0,0,0,0) 68%)}
+[data-composition-id="01-hook"] .g3{width:1400px;height:900px;left:260px;top:620px;background:radial-gradient(ellipse,rgba(91,33,182,.22) 0%,rgba(0,0,0,0) 65%)}
+[data-composition-id="01-hook"] .stage{position:absolute;inset:0}
+[data-composition-id="01-hook"] .h{font-family:"Montserrat",sans-serif;font-weight:900;text-transform:uppercase;letter-spacing:-0.01em;line-height:1.0;color:#F7F7FA}
+[data-composition-id="01-hook"] .y{background:linear-gradient(180deg,#FFE94D 0%,#FFD60A 45%,#F5A800 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+[data-composition-id="01-hook"] .tag{font-family:"Montserrat",sans-serif;font-weight:800;font-size:22px;letter-spacing:.18em;text-transform:uppercase;color:#FFD60A}
+[data-composition-id="01-hook"] .pill{position:absolute;display:flex;align-items:center;gap:14px;padding:16px 28px;border-radius:999px;background:rgba(139,92,246,.16);border:2px solid rgba(139,92,246,.7);font-family:"Montserrat",sans-serif;font-weight:800;font-size:30px;white-space:nowrap}
+[data-composition-id="01-hook"] .card{position:absolute;border-radius:18px;background:#121218;border:1px solid rgba(255,255,255,.08);box-shadow:0 30px 80px rgba(0,0,0,.55)}
+[data-composition-id="01-hook"] .ln{position:absolute;height:12px;border-radius:6px;background:rgba(0,0,0,.14)}
+[data-composition-id="01-hook"] .sel{position:absolute;border:2px solid #0D99FF;pointer-events:none}
+[data-composition-id="01-hook"] .sel i{position:absolute;width:12px;height:12px;background:#fff;border:2px solid #0D99FF}
+[data-composition-id="01-hook"] .chk{width:44px;height:44px;border-radius:50%;background:#FFD60A;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+
+
+[data-composition-id="01-hook"] .t1{position:absolute;left:0;right:0;top:120px;text-align:center;font-size:84px}
+[data-composition-id="01-hook"] .slot{position:absolute;left:0;right:0;top:215px;height:130px;text-align:center}
+[data-composition-id="01-hook"] .slot .w{position:absolute;left:0;right:0;font-size:120px}
+[data-composition-id="01-hook"] .t3{position:absolute;left:0;right:0;top:360px;text-align:center;font-size:84px}
+[data-composition-id="01-hook"] .src{top:520px}
+
+  </style>
+  <div id="root" data-composition-id="01-hook" data-width="1920" data-height="1080">
+    <div class="clip bg" id="f01-hook-bg" data-start="0" data-duration="5.26" data-track-index="0">
+      <div class="glow g1" id="f01-hook-g1"></div><div class="glow g2" id="f01-hook-g2"></div><div class="glow g3"></div>
+    </div>
+    <div class="clip stage" id="f01-hook-stage" data-start="0" data-duration="5.26" data-track-index="1">
+<div class="h t1" id="f01-hook-t1">Need to convert your</div>
+<div class="slot"><div class="h y w" id="f01-hook-w0">PDF</div><div class="h y w" id="f01-hook-w1">Image</div><div class="h y w" id="f01-hook-w2">Screenshot</div></div>
+<div class="h t3" id="f01-hook-t3">into editable <span class="y">Figma?</span></div>
+<div class="card src" id="f01-hook-pdf" style="left:300px;width:300px;height:390px;transform:rotate(-6deg)"><div style="position:absolute;inset:0;border-radius:10px;background:#FAFAF7"></div><div style="position:absolute;left:30px;top:30px;width:150px;height:22px;border-radius:6px;background:rgba(0,0,0,.7)"></div><div style="position:absolute;left:30px;top:66px;width:110px;height:14px;border-radius:6px;background:rgba(0,0,0,.25)"></div><div class="ln" style="left:30px;top:120px;width:230px"></div><div class="ln" style="left:30px;top:146px;width:210px"></div><div class="ln" style="left:30px;top:172px;width:240px"></div><div class="ln" style="left:30px;top:198px;width:180px"></div><div class="ln" style="left:30px;top:224px;width:220px"></div><div class="ln" style="left:30px;top:250px;width:150px"></div><div class="ln" style="left:30px;top:276px;width:230px"></div><div class="ln" style="left:30px;top:302px;width:200px"></div><div style="position:absolute;right:-18px;top:-18px;padding:10px 16px;border-radius:10px;background:#E5322D;font-family:Montserrat;font-weight:900;font-size:26px;color:#fff">PDF</div></div>
+<div class="card src" id="f01-hook-img" style="left:830px;width:260px;height:420px;background:transparent;border:none"><div style="position:absolute;inset:0;border-radius:30px;background:#EDE9FE;border:6px solid #1c1c22"></div><div style="position:absolute;left:22px;top:30px;width:120px;height:14px;border-radius:7px;background:rgba(0,0,0,.6)"></div><div style="position:absolute;left:22px;top:62px;width:216px;height:150px;border-radius:16px;background:linear-gradient(135deg,#7C3AED,#9BC36B)"></div><div style="position:absolute;left:22px;top:232px;width:216px;height:40px;border-radius:10px;background:rgba(0,0,0,.08)"></div><div style="position:absolute;left:22px;top:284px;width:216px;height:40px;border-radius:10px;background:rgba(0,0,0,.08)"></div><div style="position:absolute;left:22px;top:336px;width:216px;height:40px;border-radius:10px;background:rgba(0,0,0,.08)"></div><div style="position:absolute;left:22px;top:340px;width:216px;height:46px;border-radius:23px;background:#7C3AED"></div><div style="position:absolute;right:-24px;top:-18px;padding:10px 16px;border-radius:10px;background:#0D99FF;font-family:Montserrat;font-weight:900;font-size:24px">IMG</div></div>
+<div class="card src" id="f01-hook-shot" style="left:1300px;width:340px;height:300px;top:560px;transform:rotate(5deg);overflow:hidden"><div style="position:absolute;inset:0;border-radius:14px;background:#FFFFFF"></div><div style="position:absolute;left:24px;top:22px;width:80px;height:16px;border-radius:5px;background:#111"></div><div style="position:absolute;left:300px;top:24px;width:44px;height:10px;border-radius:5px;background:rgba(0,0,0,.25)"></div><div style="position:absolute;left:360px;top:24px;width:44px;height:10px;border-radius:5px;background:rgba(0,0,0,.25)"></div><div style="position:absolute;left:420px;top:24px;width:44px;height:10px;border-radius:5px;background:rgba(0,0,0,.25)"></div><div style="position:absolute;left:480px;top:24px;width:44px;height:10px;border-radius:5px;background:rgba(0,0,0,.25)"></div><div style="position:absolute;left:24px;top:84px;width:250px;height:26px;border-radius:6px;background:#111"></div><div style="position:absolute;left:24px;top:120px;width:200px;height:26px;border-radius:6px;background:#111"></div><div style="position:absolute;left:24px;top:166px;width:230px;height:10px;border-radius:5px;background:rgba(0,0,0,.2)"></div><div style="position:absolute;left:24px;top:186px;width:190px;height:10px;border-radius:5px;background:rgba(0,0,0,.2)"></div><div style="position:absolute;left:24px;top:220px;width:130px;height:40px;border-radius:20px;background:#8B5CF6"></div><div style="position:absolute;left:300px;top:70px;width:236px;height:200px;border-radius:14px;background:linear-gradient(135deg,#FDE68A,#F472B6 55%,#8B5CF6)"></div><div style="position:absolute;right:12px;top:12px;padding:8px 14px;border-radius:10px;background:#10B981;font-family:Montserrat;font-weight:900;font-size:20px">PNG</div></div>
+
+    </div>
+  </div>
+  <script>
+    (function () {
+      const CID = "01-hook";
+      const D = 5.26;
+      const R = document.querySelector('[data-composition-id="' + CID + '"]');
+      const q = (s) => Array.from(R.querySelectorAll(s));
+      const id = (s) => "#f" + CID + "-" + s;
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo(id("g1"), {x:0, y:0, scale:1}, {x:60, y:30, scale:1.08, duration:D, ease:"sine.inOut"}, 0);
+      tl.fromTo(id("g2"), {x:0, y:0, scale:1.05}, {x:-60, y:20, scale:0.95, duration:D, ease:"sine.inOut"}, 0);
+      tl.fromTo(id("t1"), {opacity:0, y:40}, {opacity:1, y:0, duration:0.55, ease:"power3.out"}, 0.05);
+      tl.fromTo(id("t3"), {opacity:0, y:40}, {opacity:1, y:0, duration:0.55, ease:"power3.out"}, 2.6);
+      tl.fromTo(id("w0"), {opacity:0, y:60}, {opacity:1, y:0, duration:0.35, ease:"power3.out"}, 0.85);
+      tl.to(id("w0"), {opacity:0, y:-60, duration:0.25, ease:"power2.in"}, 1.60);
+      tl.fromTo(id("w1"), {opacity:0, y:60}, {opacity:1, y:0, duration:0.35, ease:"power3.out"}, 1.75);
+      tl.to(id("w1"), {opacity:0, y:-60, duration:0.25, ease:"power2.in"}, 2.30);
+      tl.fromTo(id("w2"), {opacity:0, y:60}, {opacity:1, y:0, duration:0.35, ease:"power3.out"}, 2.45);
+      tl.fromTo(id("pdf"), {opacity:0, y:120, rotation:-14}, {opacity:1, y:0, rotation:-6, duration:0.7, ease:"back.out(1.4)"}, 0.85);
+      tl.fromTo(id("img"), {opacity:0, y:120}, {opacity:1, y:0, duration:0.7, ease:"back.out(1.4)"}, 1.75);
+      tl.fromTo(id("shot"), {opacity:0, y:120, rotation:12}, {opacity:1, y:0, rotation:5, duration:0.7, ease:"back.out(1.4)"}, 2.45);
+      tl.to([id("pdf"), id("img"), id("shot")], {y:-14, duration:1.6, ease:"sine.inOut"}, 3.4);
+
+      tl.set({}, {}, D);
+      window.__timelines[CID] = tl;
+    })();
+  </script>
+</template>

@@ -1,0 +1,94 @@
+<template>
+  <style>
+
+@font-face{font-family:"Montserrat";src:url("assets/fonts/Montserrat-800.woff2") format("woff2");font-weight:800}
+@font-face{font-family:"Montserrat";src:url("assets/fonts/Montserrat-900.woff2") format("woff2");font-weight:900}
+@font-face{font-family:"Inter";src:url("assets/fonts/Inter-400.woff2") format("woff2");font-weight:400}
+@font-face{font-family:"Inter";src:url("assets/fonts/Inter-600.woff2") format("woff2");font-weight:600}
+
+#root{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;color:#F7F7FA;font-family:"Inter",sans-serif}
+[data-composition-id="03-accurate"] .bg{position:absolute;inset:0;background:#050507}
+[data-composition-id="03-accurate"] .glow{position:absolute;border-radius:50%;pointer-events:none}
+[data-composition-id="03-accurate"] .g1{width:1100px;height:1100px;left:-520px;top:-620px;background:radial-gradient(circle,rgba(124,58,237,.75) 0%,rgba(91,33,182,.35) 35%,rgba(0,0,0,0) 68%)}
+[data-composition-id="03-accurate"] .g2{width:1100px;height:1100px;left:1340px;top:-640px;background:radial-gradient(circle,rgba(124,58,237,.6) 0%,rgba(91,33,182,.28) 35%,rgba(0,0,0,0) 68%)}
+[data-composition-id="03-accurate"] .g3{width:1400px;height:900px;left:260px;top:620px;background:radial-gradient(ellipse,rgba(91,33,182,.22) 0%,rgba(0,0,0,0) 65%)}
+[data-composition-id="03-accurate"] .stage{position:absolute;inset:0}
+[data-composition-id="03-accurate"] .h{font-family:"Montserrat",sans-serif;font-weight:900;text-transform:uppercase;letter-spacing:-0.01em;line-height:1.0;color:#F7F7FA}
+[data-composition-id="03-accurate"] .y{background:linear-gradient(180deg,#FFE94D 0%,#FFD60A 45%,#F5A800 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+[data-composition-id="03-accurate"] .tag{font-family:"Montserrat",sans-serif;font-weight:800;font-size:22px;letter-spacing:.18em;text-transform:uppercase;color:#FFD60A}
+[data-composition-id="03-accurate"] .pill{position:absolute;display:flex;align-items:center;gap:14px;padding:16px 28px;border-radius:999px;background:rgba(139,92,246,.16);border:2px solid rgba(139,92,246,.7);font-family:"Montserrat",sans-serif;font-weight:800;font-size:30px;white-space:nowrap}
+[data-composition-id="03-accurate"] .card{position:absolute;border-radius:18px;background:#121218;border:1px solid rgba(255,255,255,.08);box-shadow:0 30px 80px rgba(0,0,0,.55)}
+[data-composition-id="03-accurate"] .ln{position:absolute;height:12px;border-radius:6px;background:rgba(0,0,0,.14)}
+[data-composition-id="03-accurate"] .sel{position:absolute;border:2px solid #0D99FF;pointer-events:none}
+[data-composition-id="03-accurate"] .sel i{position:absolute;width:12px;height:12px;background:#fff;border:2px solid #0D99FF}
+[data-composition-id="03-accurate"] .chk{width:44px;height:44px;border-radius:50%;background:#FFD60A;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+
+
+[data-composition-id="03-accurate"] .ttl{position:absolute;left:0;right:0;top:90px;text-align:center;font-size:66px}
+[data-composition-id="03-accurate"] .lbl{position:absolute;top:255px;font-size:22px}
+[data-composition-id="03-accurate"] .src{left:250px;top:300px;width:560px;height:340px;overflow:hidden}
+[data-composition-id="03-accurate"] .dst{left:1110px;top:300px;width:560px;height:340px;overflow:visible}
+[data-composition-id="03-accurate"] .scan{position:absolute;left:250px;top:290px;width:6px;height:360px;background:#FFD60A;box-shadow:0 0 40px 10px rgba(255,214,10,.55);border-radius:3px}
+[data-composition-id="03-accurate"] .arr{position:absolute;left:900px;top:440px}
+[data-composition-id="03-accurate"] .grid{position:absolute;inset:0;border-radius:14px;background-image:linear-gradient(rgba(139,92,246,.35) 1px,transparent 1px),linear-gradient(90deg,rgba(139,92,246,.35) 1px,transparent 1px);background-size:40px 40px}
+[data-composition-id="03-accurate"] .fnt{position:absolute;left:20px;top:-58px;padding:8px 14px;border-radius:8px;background:#0D99FF;font-weight:600;font-size:20px}
+[data-composition-id="03-accurate"] .sw{position:absolute;top:360px;width:56px;height:56px;border-radius:12px;border:3px solid #fff}
+[data-composition-id="03-accurate"] .sp{position:absolute;left:24px;top:206px;width:2px;height:14px;background:#FF3B6B}
+[data-composition-id="03-accurate"] .spl{position:absolute;left:32px;top:200px;padding:2px 8px;border-radius:4px;background:#FF3B6B;font-weight:600;font-size:16px}
+[data-composition-id="03-accurate"] .chips{position:absolute;left:0;right:0;top:820px;display:flex;justify-content:center;gap:26px}
+[data-composition-id="03-accurate"] .chips .pill{position:relative}
+
+  </style>
+  <div id="root" data-composition-id="03-accurate" data-width="1920" data-height="1080">
+    <div class="clip bg" id="f03-accurate-bg" data-start="0" data-duration="5.92" data-track-index="0">
+      <div class="glow g1" id="f03-accurate-g1"></div><div class="glow g2" id="f03-accurate-g2"></div><div class="glow g3"></div>
+    </div>
+    <div class="clip stage" id="f03-accurate-stage" data-start="0" data-duration="5.92" data-track-index="1">
+<div class="h ttl" id="f03-accurate-ttl">Recreated <span class="y">pixel-accurate</span> in Figma</div>
+<div class="tag lbl" style="left:250px">Your file</div><div class="tag lbl" style="left:1110px">Editable Figma design</div>
+<div class="card src" id="f03-accurate-src" style="filter:saturate(.85)"><div style="position:absolute;inset:0;border-radius:14px;background:#FFFFFF"></div><div style="position:absolute;left:24px;top:22px;width:80px;height:16px;border-radius:5px;background:#111"></div><div style="position:absolute;left:300px;top:24px;width:44px;height:10px;border-radius:5px;background:rgba(0,0,0,.25)"></div><div style="position:absolute;left:360px;top:24px;width:44px;height:10px;border-radius:5px;background:rgba(0,0,0,.25)"></div><div style="position:absolute;left:420px;top:24px;width:44px;height:10px;border-radius:5px;background:rgba(0,0,0,.25)"></div><div style="position:absolute;left:480px;top:24px;width:44px;height:10px;border-radius:5px;background:rgba(0,0,0,.25)"></div><div style="position:absolute;left:24px;top:84px;width:250px;height:26px;border-radius:6px;background:#111"></div><div style="position:absolute;left:24px;top:120px;width:200px;height:26px;border-radius:6px;background:#111"></div><div style="position:absolute;left:24px;top:166px;width:230px;height:10px;border-radius:5px;background:rgba(0,0,0,.2)"></div><div style="position:absolute;left:24px;top:186px;width:190px;height:10px;border-radius:5px;background:rgba(0,0,0,.2)"></div><div style="position:absolute;left:24px;top:220px;width:130px;height:40px;border-radius:20px;background:#8B5CF6"></div><div style="position:absolute;left:300px;top:70px;width:236px;height:200px;border-radius:14px;background:linear-gradient(135deg,#FDE68A,#F472B6 55%,#8B5CF6)"></div></div>
+<div class="scan" id="f03-accurate-scan"></div>
+<div class="arr" id="f03-accurate-arr"><svg width="120" height="60" viewBox="0 0 120 60" fill="none" stroke="#FFD60A" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 30h96M80 8l24 22-24 22"/></svg></div>
+<div class="card dst" id="f03-accurate-dst"><div style="position:absolute;inset:0;border-radius:14px;background:#FFFFFF"></div><div style="position:absolute;left:24px;top:22px;width:80px;height:16px;border-radius:5px;background:#111"></div><div style="position:absolute;left:300px;top:24px;width:44px;height:10px;border-radius:5px;background:rgba(0,0,0,.25)"></div><div style="position:absolute;left:360px;top:24px;width:44px;height:10px;border-radius:5px;background:rgba(0,0,0,.25)"></div><div style="position:absolute;left:420px;top:24px;width:44px;height:10px;border-radius:5px;background:rgba(0,0,0,.25)"></div><div style="position:absolute;left:480px;top:24px;width:44px;height:10px;border-radius:5px;background:rgba(0,0,0,.25)"></div><div style="position:absolute;left:24px;top:84px;width:250px;height:26px;border-radius:6px;background:#111"></div><div style="position:absolute;left:24px;top:120px;width:200px;height:26px;border-radius:6px;background:#111"></div><div style="position:absolute;left:24px;top:166px;width:230px;height:10px;border-radius:5px;background:rgba(0,0,0,.2)"></div><div style="position:absolute;left:24px;top:186px;width:190px;height:10px;border-radius:5px;background:rgba(0,0,0,.2)"></div><div style="position:absolute;left:24px;top:220px;width:130px;height:40px;border-radius:20px;background:#8B5CF6"></div><div style="position:absolute;left:300px;top:70px;width:236px;height:200px;border-radius:14px;background:linear-gradient(135deg,#FDE68A,#F472B6 55%,#8B5CF6)"></div><div class="grid" id="f03-accurate-grid"></div>
+<div class="sel" id="f03-accurate-s1" style="left:18px;top:78px;width:262px;height:76px"><i style="left:-7px;top:-7px"></i><i style="left:255px;top:-7px"></i><i style="left:-7px;top:69px"></i><i style="left:255px;top:69px"></i></div>
+<div class="fnt" id="f03-accurate-fnt" style="top:20px;left:300px">Montserrat · Bold · 32</div>
+<div class="sw" id="f03-accurate-sw0" style="left:0px;background:#8B5CF6"></div><div class="sw" id="f03-accurate-sw1" style="left:70px;background:#111"></div><div class="sw" id="f03-accurate-sw2" style="left:140px;background:#F472B6"></div><div class="sw" id="f03-accurate-sw3" style="left:210px;background:#FDE68A"></div>
+<div class="sp" id="f03-accurate-sp"></div><div class="spl" id="f03-accurate-spl">24</div>
+</div>
+<div class="chips"><div class="pill" id="f03-accurate-c0"><div class="chk"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#050507" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></div>Layouts</div><div class="pill" id="f03-accurate-c1"><div class="chk"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#050507" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></div>Fonts</div><div class="pill" id="f03-accurate-c2"><div class="chk"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#050507" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></div>Colors</div><div class="pill" id="f03-accurate-c3"><div class="chk"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#050507" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></div>Spacing</div></div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const CID = "03-accurate";
+      const D = 5.92;
+      const R = document.querySelector('[data-composition-id="' + CID + '"]');
+      const q = (s) => Array.from(R.querySelectorAll(s));
+      const id = (s) => "#f" + CID + "-" + s;
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo(id("g1"), {x:0, y:0, scale:1}, {x:60, y:30, scale:1.08, duration:D, ease:"sine.inOut"}, 0);
+      tl.fromTo(id("g2"), {x:0, y:0, scale:1.05}, {x:-60, y:20, scale:0.95, duration:D, ease:"sine.inOut"}, 0);
+      tl.fromTo(id("ttl"), {opacity:0, y:40}, {opacity:1, y:0, duration:0.6, ease:"power3.out"}, 0.05);
+
+      tl.fromTo(id("src"), {opacity:0, x:-80}, {opacity:1, x:0, duration:0.6, ease:"power3.out"}, 0.3);
+      tl.fromTo(id("scan"), {opacity:0, x:0}, {opacity:1, x:0, duration:0.15}, 0.9);
+      tl.to(id("scan"), {x:560, duration:1.1, ease:"power1.inOut"}, 0.95);
+      tl.to(id("scan"), {opacity:0, duration:0.2}, 2.05);
+      tl.fromTo(id("arr"), {opacity:0, x:-30}, {opacity:1, x:0, duration:0.4}, 1.2);
+      tl.fromTo(id("dst"), {opacity:0, x:80}, {opacity:1, x:0, duration:0.6, ease:"power3.out"}, 1.5);
+      tl.fromTo(id("grid"), {opacity:0}, {opacity:1, duration:0.4}, 2.3);
+      tl.fromTo(id("s1"), {opacity:0, scale:1.15}, {opacity:1, scale:1, duration:0.35, ease:"power3.out"}, 3.3);
+      tl.fromTo(id("fnt"), {opacity:0, y:10}, {opacity:1, y:0, duration:0.35}, 3.4);
+      tl.fromTo(q('[id^="f03-accurate-sw"]'), {opacity:0, scale:0}, {opacity:1, scale:1, duration:0.35, ease:"back.out(2.5)", stagger:0.08}, 3.9);
+      tl.fromTo([id("sp"), id("spl")], {opacity:0}, {opacity:1, duration:0.3}, 4.6);
+      tl.to(id("grid"), {opacity:0.35, duration:0.5}, 4.9);
+      tl.fromTo(id("c0"), {opacity:0, scale:0.6}, {opacity:1, scale:1, duration:0.45, ease:"back.out(2)"}, 2.3);
+      tl.fromTo(id("c1"), {opacity:0, scale:0.6}, {opacity:1, scale:1, duration:0.45, ease:"back.out(2)"}, 3.3);
+      tl.fromTo(id("c2"), {opacity:0, scale:0.6}, {opacity:1, scale:1, duration:0.45, ease:"back.out(2)"}, 3.9);
+      tl.fromTo(id("c3"), {opacity:0, scale:0.6}, {opacity:1, scale:1, duration:0.45, ease:"back.out(2)"}, 4.6);
+
+      tl.set({}, {}, D);
+      window.__timelines[CID] = tl;
+    })();
+  </script>
+</template>

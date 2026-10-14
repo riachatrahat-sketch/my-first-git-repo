@@ -438,5 +438,18 @@
         "attribution": "unversioned"
       }
     ]
-  }
+  },
+  "renders": {
+    "latest": {
+      "id": "fd8b7aa6-3ee4-49f8-a5cc-ed7ce4bf9dde",
+      "completedAt": 1791993580116,
+      "output": "/home/user/my-first-git-repo/videos/wordpress-va-gig-video/renders/wordpress-va-gig-video.mp4",
+      "status": "completed",
+      "revision": "8aad9119-93e9-4465-9f54-cfe835f74a64"
+    },
+    "retainedRevisions": [
+      "8aad9119-93e9-4465-9f54-cfe835f74a64"
+    ]
+  },
+  "pendingArtifactCleanup": []
 }

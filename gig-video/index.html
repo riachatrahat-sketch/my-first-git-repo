@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Editable PowerPoint Promo</title>
+<style>
+  html, body { margin: 0; background: #030914; }
+  canvas { display: block; width: 100vw; height: 56.25vw; max-height: 100vh; max-width: 177.78vh; margin: auto; }
+</style>
+</head>
+<body>
+<canvas id="c" width="1920" height="1080"></canvas>
+<script>
+// Fiverr gig promo: PDF / Figma / Illustrator / Image / Website -> editable PowerPoint.
+// Every frame is a pure function of time, so render.mjs can capture it frame by frame.
+const W = 1920, H = 1080;
+const canvas = document.getElementById('c');
+const ctx = canvas.getContext('2d');
+
+const C = {
+  navy: '#0A1F44', navy2: '#13305F', ink: '#0B1630', orange: '#FF7A1A', orange2: '#FFA24D',
+  white: '#F5F7FB', slate: '#8EA0BF', slateDark: '#5B6B86', red: '#E5484D',
+};
+
+// Scene schedules (seconds). "voice" is synced to the voiceover pauses; "short" is the 15 s cut.
+const MODES = {
+  voice: { total: 29.6, s: [0, 4.1, 12.6, 20.2, 24.3, 29.6] },
+  short: { total: 15.0, s: [0, 2.2, 5.4, 9.6, 12.3, 15.0] },
+};
+let mode = MODES.voice;
+
+// ---------- helpers ----------
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const lerp = (a, b, t) => a + (b - a) * t;
+const prog = (u, a, b) => clamp((u - a) / (b - a));
+const eOut = t => 1 - Math.pow(1 - t, 3);
+const eIn = t => t * t * t;
+const eInOut = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+const eBack = t => { const c1 = 1.70158, c3 = c1 + 1; return 1 + c3 * Math.pow(t - 1, 3) + c1 * Math.pow(t - 1, 2); };
+const eExpo = t => t >= 1 ? 1 : 1 - Math.pow(2, -10 * t);
+
+function rand(seed) { return () => { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+const R = rand(7);
+const PARTS = Array.from({ length: 70 }, () => ({ x: R() * W, y: R() * H, r: 1 + R() * 3.5, v: 0.3 + R() * 1.2, a: 0.05 + R() * 0.25, o: R() < 0.25 }));
+
+function rr(c, x, y, w, h, r) { c.beginPath(); c.roundRect(x, y, w, h, r); }
+function glow(c, x, y, r, col) { const g = c.createRadialGradient(x, y, 0, x, y, r); g.addColorStop(0, col); g.addColorStop(1, 'rgba(0,0,0,0)'); c.fillStyle = g; c.fillRect(x - r, y - r, 2 * r, 2 * r); }
+function txt(c, s, x, y, o = {}) {
+  const { size = 40, weight = 700, color = '#fff', align = 'left', alpha = 1, ls = 0, base = 'alphabetic' } = o;
+  c.save(); c.globalAlpha *= alpha; c.font = `${weight} ${size}px Inter, sans-serif`; c.letterSpacing = ls + 'px';
+  c.textAlign = align; c.textBaseline = base; c.fillStyle = color; c.fillText(s, x, y); c.restore();
+}
+function measure(c, s, size, weight = 700, ls = 0) { c.save(); c.font = `${weight} ${size}px Inter, sans-serif`; c.letterSpacing = ls + 'px'; const w = c.measureText(s).width; c.restore(); return w; }
+// Masked slide-up text reveal.
+function reveal(c, s, x, y, p, o = {}) {
+  const e = eOut(clamp(p)); if (e <= 0) return; const sz = o.size || 40;
+  c.save(); c.beginPath(); c.rect(-1e4, y - sz * 1.15, 2e4, sz * 1.5); c.clip();
+  txt(c, s, x, y + (1 - e) * sz * 1.25, { ...o, alpha: (o.alpha ?? 1) * clamp(e * 1.6) }); c.restore();
+}
+function checkmark(c, x, y, s, col, lw = 3) { c.save(); c.strokeStyle = col; c.lineWidth = lw; c.lineCap = 'round'; c.lineJoin = 'round'; c.beginPath(); c.moveTo(x - s * .5, y); c.lineTo(x - s * .12, y + s * .38); c.lineTo(x + s * .55, y - s * .4); c.stroke(); c.restore(); }
+function cursor(c, x, y, scale = 1, alpha = 1) {
+  if (alpha <= 0) return; c.save(); c.globalAlpha *= alpha; c.translate(x, y); c.scale(scale, scale);
+  c.shadowColor = 'rgba(0,0,0,0.45)'; c.shadowBlur = 14; c.shadowOffsetY = 4;
+  c.beginPath(); c.moveTo(0, 0); c.lineTo(0, 38); c.lineTo(10, 29); c.lineTo(17, 45); c.lineTo(24, 42); c.lineTo(17, 27); c.lineTo(30, 27); c.closePath();
+  c.fillStyle = '#fff'; c.fill(); c.shadowColor = 'transparent'; c.lineWidth = 2.2; c.strokeStyle = '#0B1630'; c.lineJoin = 'round'; c.stroke(); c.restore();
+}
+function ripple(c, x, y, p, col = C.orange) {
+  if (p <= 0 || p >= 1) return; c.save(); c.globalAlpha = 1 - p; c.strokeStyle = col; c.lineWidth = 3;
+  c.beginPath(); c.arc(x, y, 8 + 46 * eOut(p), 0, Math.PI * 2); c.stroke(); c.restore();
+}
+function pill(c, s, x, y, o = {}) {
+  const { size = 18, bg = C.orange, color = '#fff', alpha = 1, pad = 14, h = size * 2, weight = 700, stroke = null, ls = 0.5 } = o;
+  if (alpha <= 0) return; const w = measure(c, s, size, weight, ls) + pad * 2;
+  c.save(); c.globalAlpha *= alpha; rr(c, x, y, w, h, h / 2); if (bg) { c.fillStyle = bg; c.fill(); } if (stroke) { c.strokeStyle = stroke; c.lineWidth = 2; c.stroke(); }
+  txt(c, s, x + pad, y + h / 2 + 1, { size, color, weight, base: 'middle', ls }); c.restore(); return w;
+}
+function lockGlyph(c, x, y, s, col) {
+  c.save(); c.strokeStyle = col; c.fillStyle = col; c.lineWidth = s * 0.14;
+  c.beginPath(); c.arc(x, y - s * 0.12, s * 0.28, Math.PI, 0); c.stroke();
+  rr(c, x - s * 0.42, y - s * 0.12, s * 0.84, s * 0.62, s * 0.1); c.fill(); c.restore();
+}
+
+// Offscreen buffers (grain + compositing).
+const grain = document.createElement('canvas'); grain.width = 512; grain.height = 512;
+{ const g = grain.getContext('2d'); const id = g.createImageData(512, 512); const r = rand(3);
+  for (let i = 0; i < id.data.length; i += 4) { const v = r() * 255; id.data[i] = id.data[i + 1] = id.data[i + 2] = v; id.data[i + 3] = 255; } g.putImageData(id, 0, 0); }
+const buf = document.createElement('canvas'); buf.width = W; buf.height = H; const bctx = buf.getContext('2d');
+
+// ---------- background ----------
+function background(c, t) {
+  const g = c.createRadialGradient(960, 470, 80, 960, 540, 1250);
+  g.addColorStop(0, '#11294F'); g.addColorStop(0.5, '#081733'); g.addColorStop(1, '#030914');
+  c.fillStyle = g; c.fillRect(0, 0, W, H);
+  glow(c, 1500 + Math.sin(t * 0.35) * 140, 840 + Math.cos(t * 0.3) * 70, 760, 'rgba(255,122,26,0.15)');
+  glow(c, 360 + Math.cos(t * 0.25) * 120, 200 + Math.sin(t * 0.3) * 40, 700, 'rgba(61,123,255,0.13)');
+  // drifting dot grid
+  c.fillStyle = 'rgba(255,255,255,0.045)';
+  const ox = (t * 6) % 48, oy = (t * 10) % 48;
+  for (let x = -48; x < W + 48; x += 48) for (let y = -48; y < H + 48; y += 48) c.fillRect(x + ox, y + oy, 2, 2);
+  // bokeh
+  for (const p of PARTS) {
+    let y = (p.y - t * p.v * 30) % (H + 60); if (y < -30) y += H + 60;
+    c.globalAlpha = p.a * (0.7 + 0.3 * Math.sin(t * 2 + p.x));
+    c.fillStyle = p.o ? C.orange2 : '#9DB6FF';
+    c.beginPath(); c.arc(p.x + Math.sin(t * 0.5 + p.y) * 12, y, p.r, 0, Math.PI * 2); c.fill();
+  }
+  c.globalAlpha = 1;
+}
+function finish(c, t) {
+  const v = c.createRadialGradient(960, 540, 520, 960, 540, 1200);
+  v.addColorStop(0, 'rgba(0,0,0,0)'); v.addColorStop(1, 'rgba(0,0,0,0.55)');
+  c.fillStyle = v; c.fillRect(0, 0, W, H);
+  c.save(); c.globalAlpha = 0.035; c.globalCompositeOperation = 'overlay';
+  const f = Math.floor(t * 30); const ox = (f * 137) % 512, oy = (f * 263) % 512;
+  c.fillStyle = c.createPattern(grain, 'repeat'); c.translate(-ox, -oy); c.fillRect(0, 0, W + 512, H + 512); c.restore();
+}
+
+// ---------- the static PDF page ----------
+function pdfPage(c, x, y, w, h, o = {}) {
+  const { alpha = 1, lock = 0, rot = 0 } = o; if (alpha <= 0) return;
+  const s = w / 500;
+  c.save(); c.globalAlpha *= alpha; c.translate(x + w / 2, y + h / 2); c.rotate(rot); c.scale(s, s * (h / w) / 1.3); c.translate(-250, -325);
+  c.shadowColor = 'rgba(0,0,0,0.5)'; c.shadowBlur = 60; c.shadowOffsetY = 30;
+  rr(c, 0, 0, 500, 650, 12); c.fillStyle = '#F2F3F6'; c.fill(); c.shadowColor = 'transparent';
+  c.fillStyle = '#D9DDE4'; c.beginPath(); c.moveTo(440, 0); c.lineTo(500, 60); c.lineTo(440, 60); c.closePath(); c.fill();
+  rr(c, 36, 36, 86, 38, 8); c.fillStyle = C.red; c.fill(); txt(c, 'PDF', 79, 56, { size: 20, align: 'center', base: 'middle' });
+  c.fillStyle = '#B9C0CC'; rr(c, 36, 106, 300, 26, 6); c.fill(); rr(c, 36, 144, 220, 26, 6); c.fill();
+  c.fillStyle = '#D5DAE2'; rr(c, 36, 196, 428, 170, 10); c.fill();
+  c.fillStyle = '#BCC3CE'; c.beginPath(); c.moveTo(60, 366); c.lineTo(170, 260); c.lineTo(260, 340); c.lineTo(330, 290); c.lineTo(440, 366); c.closePath(); c.fill();
+  c.beginPath(); c.arc(390, 245, 22, 0, Math.PI * 2); c.fill();
+  c.fillStyle = '#CDD3DC'; [428, 400, 420, 260].forEach((lw, i) => { rr(c, 36, 392 + i * 24, lw, 10, 5); c.fill(); });
+  c.fillStyle = '#C3C9D3'; [40, 62, 50, 84, 70].forEach((bh, i) => { c.fillRect(40 + i * 34, 610 - bh, 22, bh); });
+  c.fillStyle = '#CDD3DC'; [180, 150, 170].forEach((lw, i) => { rr(c, 240, 520 + i * 24, lw, 10, 5); c.fill(); });
+  const lc = lock > 0 ? C.red : '#1B2B4A';
+  c.beginPath(); c.arc(446, 604, 26 + lock * 6, 0, Math.PI * 2); c.fillStyle = lc; c.fill();
+  lockGlyph(c, 446, 606, 30, '#fff');
+  // flat "scan" sheen
+  c.restore();
+}
+
+// ---------- the designed slide (unit space 1100 x 620) ----------
+const OLD_TITLE = 'Growth Strategy', NEW_TITLE = 'Your Pitch Deck';
+const ELEMS = [
+  { id: 'tag', box: [64, 54, 214, 52], off: [-40, -100], draw: c => pill(c, 'STRATEGY 2027', 70, 60, { size: 18, ls: 2, h: 40, pad: 16 }) },
+  { id: 'title', box: [62, 120, 580, 84], off: [-150, -25], label: 'Editable Text' },
+  { id: 'sub', box: [62, 222, 500, 36], off: [-170, 25], draw: c => txt(c, 'Turning ideas into measurable results', 70, 248, { size: 24, weight: 500, color: C.slateDark }) },
+  { id: 'icons', box: [62, 320, 456, 160], off: [-150, 125], label: 'Icons', draw: drawIconRow },
+  { id: 'chart', box: [600, 176, 450, 340], off: [170, 60], label: 'Charts', draw: drawChart },
+  { id: 'shapes', box: [870, 34, 190, 120], off: [160, -110], label: 'Shapes', draw: drawShapes },
+];
+function drawIconRow(c) {
+  const names = ['Vision', 'Growth', 'Quality'];
+  names.forEach((n, i) => {
+    const cx = 130 + i * 150, cy = 372;
+    const g = c.createLinearGradient(cx - 44, cy - 44, cx + 44, cy + 44); g.addColorStop(0, C.navy2); g.addColorStop(1, C.navy);
+    c.beginPath(); c.arc(cx, cy, 44, 0, Math.PI * 2); c.fillStyle = g; c.fill();
+    c.strokeStyle = '#fff'; c.fillStyle = '#fff'; c.lineWidth = 4; c.lineCap = 'round'; c.lineJoin = 'round';
+    if (i === 0) { c.beginPath(); c.moveTo(cx - 22, cy); c.quadraticCurveTo(cx, cy - 22, cx + 22, cy); c.quadraticCurveTo(cx, cy + 22, cx - 22, cy); c.stroke(); c.beginPath(); c.arc(cx, cy, 7, 0, Math.PI * 2); c.fillStyle = C.orange; c.fill(); }
+    if (i === 1) { c.beginPath(); c.moveTo(cx - 20, cy + 14); c.lineTo(cx - 6, cy); c.lineTo(cx + 4, cy + 8); c.lineTo(cx + 20, cy - 12); c.stroke(); c.beginPath(); c.moveTo(cx + 8, cy - 13); c.lineTo(cx + 21, cy - 13); c.lineTo(cx + 21, cy); c.strokeStyle = C.orange; c.stroke(); }
+    if (i === 2) { c.beginPath(); for (let k = 0; k < 10; k++) { const a = -Math.PI / 2 + k * Math.PI / 5, r = k % 2 ? 9 : 21; c.lineTo(cx + Math.cos(a) * r, cy + Math.sin(a) * r); } c.closePath(); c.fillStyle = C.orange; c.fill(); }
+    txt(c, n, cx, 454, { size: 20, weight: 600, color: C.navy, align: 'center' });
+  });
+}
+function drawChart(c) {
+  rr(c, 606, 182, 438, 328, 18); c.fillStyle = '#F1F4F9'; c.fill();
+  txt(c, 'Revenue Growth', 632, 222, { size: 20, weight: 700, color: C.navy });
+  txt(c, '+68%', 1018, 222, { size: 20, weight: 800, color: C.orange, align: 'right' });
+  c.strokeStyle = '#D6DDE8'; c.lineWidth = 1.5; for (let i = 0; i < 4; i++) { c.beginPath(); c.moveTo(632, 290 + i * 50); c.lineTo(1018, 290 + i * 50); c.stroke(); }
+  [80, 118, 150, 196, 236].forEach((bh, i) => {
+    const x = 646 + i * 76; rr(c, x, 482 - bh, 46, bh, [8, 8, 0, 0]);
+    if (i === 4) { const g = c.createLinearGradient(0, 482 - bh, 0, 482); g.addColorStop(0, C.orange2); g.addColorStop(1, C.orange); c.fillStyle = g; }
+    else c.fillStyle = i % 2 ? C.navy2 : C.navy;
+    c.fill();
+  });
+}
+function drawShapes(c) {
+  c.beginPath(); c.arc(918, 92, 40, 0, Math.PI * 2); c.fillStyle = C.orange; c.fill();
+  c.save(); c.translate(1004, 82); c.rotate(0.35); rr(c, -34, -34, 68, 68, 14); c.fillStyle = C.navy; c.fill(); c.restore();
+  c.beginPath(); c.arc(975, 132, 14, 0, Math.PI * 2); c.strokeStyle = C.orange; c.lineWidth = 5; c.stroke();
+}
+function selBox(c, b, a, lw, handles = true) {
+  if (a <= 0) return; const [x, y, w, h] = b;
+  c.save(); c.globalAlpha *= a; c.strokeStyle = C.orange; c.lineWidth = lw; c.setLineDash([8 * lw / 2, 6 * lw / 2]); c.strokeRect(x, y, w, h); c.setLineDash([]);
+  if (handles) { const hs = 11 * lw / 2;
+    [[x, y], [x + w / 2, y], [x + w, y], [x, y + h / 2], [x + w, y + h / 2], [x, y + h], [x + w / 2, y + h], [x + w, y + h]].forEach(([hx, hy]) => {
+      c.fillStyle = '#fff'; c.fillRect(hx - hs / 2, hy - hs / 2, hs, hs); c.lineWidth = lw * 0.9; c.strokeRect(hx - hs / 2, hy - hs / 2, hs, hs); }); }
+  c.restore();
+}
+// st: explode 0..1, boxes 0..1, scanY (unit y, null = none), veil 0..1, title, select 0..1, caret bool, labels 0..1, titleBox 0..1
+function slide(c, x, y, w, h, st = {}) {
+  const { explode = 0, boxes = 0, scanY = null, veil = 0, title = OLD_TITLE, select = 0, caret = false, labels = 0, titleBox = 0, t = 0, shadow = true } = st;
+  const s = w / 1100;
+  c.save(); c.translate(x, y); c.scale(s, h / 620);
+  // base sheet
+  c.save(); const bs = 1 - 0.035 * explode; c.translate(550, 310); c.scale(bs, bs); c.translate(-550, -310);
+  if (shadow) { c.shadowColor = 'rgba(0,0,0,0.55)'; c.shadowBlur = 70; c.shadowOffsetY = 30; }
+  rr(c, 0, 0, 1100, 620, 14); c.fillStyle = '#FFFFFF'; c.fill(); c.shadowColor = 'transparent';
+  c.save(); rr(c, 0, 0, 1100, 620, 14); c.clip(); c.fillStyle = C.navy; c.fillRect(0, 604, 1100, 16); c.fillStyle = C.orange; c.fillRect(0, 604, 260, 16); c.restore();
+  if (explode > 0) { rr(c, 0, 0, 1100, 620, 14); c.fillStyle = `rgba(10,31,68,${0.55 * explode})`; c.fill();
+    c.strokeStyle = `rgba(255,255,255,${0.25 * explode})`; c.lineWidth = 2; c.setLineDash([10, 8]); c.stroke(); c.setLineDash([]); }
+  c.restore();
+  ELEMS.forEach((el, i) => {
+    const [bx, by, bw, bh] = el.box; const cx = bx + bw / 2, cy = by + bh / 2;
+    const fl = Math.sin(t * 1.6 + i * 1.3) * 6 * clamp(explode);
+    c.save(); c.translate(el.off[0] * explode, el.off[1] * explode + fl);
+    const sc = 1 + 0.05 * clamp(explode); c.translate(cx, cy); c.scale(sc, sc); c.translate(-cx, -cy);
+    if (explode > 0.01) { c.save(); c.globalAlpha = clamp(explode); c.shadowColor = 'rgba(0,0,0,0.45)'; c.shadowBlur = 40; c.shadowOffsetY = 18; rr(c, bx - 8, by - 8, bw + 16, bh + 16, 14); c.fillStyle = 'rgba(255,255,255,0.96)'; c.fill(); c.restore(); }
+    if (el.id === 'title') {
+      const tw = measure(c, title, 66, 800, -1);
+      if (select > 0) { c.fillStyle = `rgba(255,122,26,${0.28 * select})`; c.fillRect(68, 128, tw * eOut(select) + 6, 76); }
+      txt(c, title, 70, 188, { size: 66, weight: 800, color: C.navy, ls: -1 });
+      if (caret) { c.fillStyle = C.orange; c.fillRect(74 + tw, 132, 4, 68); }
+    } else el.draw(c);
+    let ba = boxes; if (scanY !== null) ba = Math.min(ba, clamp((scanY - by) / 60));
+    if (el.id === 'title') ba = Math.max(ba, titleBox);
+    selBox(c, [bx - 6, by - 6, bw + 12, bh + 12], ba, 2.5 / Math.max(s, 0.3), el.id === 'title' || explode > 0.2);
+    if (el.label && labels > 0) {
+      c.save(); c.globalAlpha *= clamp(labels); const pw = measure(c, el.label, 17, 700, 0.5) + 28 + 26;
+      rr(c, bx - 8, by - 50, pw, 34, 17); c.fillStyle = C.orange; c.fill();
+      checkmark(c, bx + 10, by - 33, 13, '#fff', 3);
+      txt(c, el.label, bx + 24, by - 32, { size: 17, weight: 700, base: 'middle', ls: 0.5 }); c.restore();
+    }
+    c.restore();
+  });
+  // raster veil below the scan line (looks flat / uneditable)
+  if (veil > 0) {
+    const vy = scanY === null ? 0 : clamp(scanY, 0, 620);
+    c.save(); rr(c, 0, 0, 1100, 620, 14); c.clip(); c.beginPath(); c.rect(0, vy, 1100, 620 - vy); c.clip();
+    c.fillStyle = `rgba(150,160,178,${0.5 * veil})`; c.fillRect(0, 0, 1100, 620);
+    c.strokeStyle = `rgba(255,255,255,${0.22 * veil})`; c.lineWidth = 2; for (let k = -620; k < 1100; k += 14) { c.beginPath(); c.moveTo(k, 620); c.lineTo(k + 620, 0); c.stroke(); }
+    c.restore();
+  }
+  if (scanY !== null && scanY > 0 && scanY < 620) {
+    const g = c.createLinearGradient(0, scanY - 70, 0, scanY); g.addColorStop(0, 'rgba(255,122,26,0)'); g.addColorStop(1, 'rgba(255,122,26,0.35)');
+    c.fillStyle = g; c.fillRect(-20, scanY - 70, 1140, 70); c.fillStyle = C.orange2; c.shadowColor = C.orange; c.shadowBlur = 25; c.fillRect(-30, scanY - 2, 1160, 4); c.shadowColor = 'transparent';
+  }
+  c.restore();
+}
+
+// ---------- source format cards ----------
+const SOURCES = [
+  { name: 'PDF', sub: 'Documents', col: C.red },
+  { name: 'Figma', sub: 'Design files', col: '#7B61FF' },
+  { name: 'Illustrator', sub: 'AI artwork', col: '#2A1608' },
+  { name: 'Images', sub: 'PNG / JPG', col: '#12A37A' },
+  { name: 'Websites', sub: 'Any URL', col: '#3D7BFF' },
+];
+const CARD_Y = [260, 400, 540, 680, 820];
+function srcIcon(c, i, x, y, s = 64) {
+  const k = s / 64; c.save(); c.translate(x, y); c.scale(k, k);
+  rr(c, 0, 0, 64, 64, 14); c.fillStyle = SOURCES[i].col; c.fill();
+  c.strokeStyle = '#fff'; c.fillStyle = '#fff'; c.lineWidth = 3.5; c.lineCap = 'round'; c.lineJoin = 'round';
+  if (i === 0) { rr(c, 17, 12, 30, 40, 4); c.fill(); txt(c, 'PDF', 32, 38, { size: 11, weight: 800, color: C.red, align: 'center' }); }
+  if (i === 1) { c.beginPath(); c.moveTo(14, 46); c.bezierCurveTo(22, 14, 42, 50, 50, 18); c.stroke(); [[14, 46], [50, 18]].forEach(([a, b]) => { c.fillRect(a - 5, b - 5, 10, 10); }); c.beginPath(); c.arc(32, 32, 4, 0, Math.PI * 2); c.fill(); }
+  if (i === 2) txt(c, 'Ai', 32, 44, { size: 30, weight: 800, color: '#FF9A00', align: 'center' });
+  if (i === 3) { rr(c, 12, 16, 40, 32, 5); c.stroke(); c.beginPath(); c.moveTo(16, 44); c.lineTo(28, 30); c.lineTo(36, 38); c.lineTo(42, 32); c.lineTo(48, 44); c.closePath(); c.fill(); c.beginPath(); c.arc(42, 24, 4, 0, Math.PI * 2); c.fill(); }
+  if (i === 4) { rr(c, 11, 15, 42, 34, 5); c.stroke(); c.beginPath(); c.moveTo(11, 24); c.lineTo(53, 24); c.stroke(); [17, 23, 29].forEach(d => { c.beginPath(); c.arc(d, 19.5, 1.6, 0, Math.PI * 2); c.fill(); }); }
+  c.restore();
+}
+function srcCard(c, i, p) {
+  if (p <= 0) return; const e = eBack(clamp(p)); const yc = CARD_Y[i];
+  c.save(); c.globalAlpha *= clamp(p * 2); c.translate((1 - e) * -80, 0);
+  rr(c, 330, yc - 48, 280, 96, 20); c.fillStyle = 'rgba(255,255,255,0.07)'; c.fill(); c.strokeStyle = 'rgba(255,255,255,0.16)'; c.lineWidth = 1.5; c.stroke();
+  srcIcon(c, i, 346, yc - 32);
+  txt(c, SOURCES[i].name, 430, yc - 2, { size: 28, weight: 700 }); txt(c, SOURCES[i].sub, 430, yc + 26, { size: 17, weight: 500, color: C.slate });
+  c.restore();
+}
+function bez(p0, p1, p2, p3, t) { const m = 1 - t; return [m * m * m * p0[0] + 3 * m * m * t * p1[0] + 3 * m * t * t * p2[0] + t * t * t * p3[0], m * m * m * p0[1] + 3 * m * m * t * p1[1] + 3 * m * t * t * p2[1] + t * t * t * p3[1]]; }
+const CORE = [1010, 540], PPT = [1450, 520];
+function flow(c, i, p, t) {
+  if (p <= 0) return; const yc = CARD_Y[i];
+  const P = [[612, yc], [780, yc], [830, 540], [CORE[0] - 92, 540]];
+  const d = eInOut(clamp(p));
+  c.save(); c.strokeStyle = 'rgba(255,162,77,0.55)'; c.lineWidth = 2.5; c.beginPath();
+  for (let k = 0; k <= 40; k++) { const q = bez(...P, d * k / 40); k ? c.lineTo(...q) : c.moveTo(...q); } c.stroke();
+  if (p >= 1) for (let j = 0; j < 3; j++) { const q = bez(...P, (t * 0.8 + j / 3 + i * 0.17) % 1); c.fillStyle = C.orange2; c.shadowColor = C.orange; c.shadowBlur = 16; c.beginPath(); c.arc(...q, 4.5, 0, Math.PI * 2); c.fill(); }
+  c.restore();
+}
+function core(c, p, fill, t) {
+  if (p <= 0) return; const e = eBack(clamp(p)); const [x, y] = CORE;
+  c.save(); c.globalAlpha *= clamp(p * 2); c.translate(x, y); c.scale(e, e);
+  glow(c, 0, 0, 170, 'rgba(255,122,26,0.22)');
+  c.beginPath(); c.arc(0, 0, 66, 0, Math.PI * 2); c.fillStyle = '#0E2348'; c.fill(); c.strokeStyle = 'rgba(255,255,255,0.15)'; c.lineWidth = 2; c.stroke();
+  c.save(); c.rotate(t * 1.4); c.setLineDash([14, 10]); c.strokeStyle = 'rgba(255,162,77,0.7)'; c.lineWidth = 3; c.beginPath(); c.arc(0, 0, 88, 0, Math.PI * 2); c.stroke(); c.restore();
+  c.strokeStyle = C.orange; c.lineWidth = 7; c.lineCap = 'round'; c.beginPath(); c.arc(0, 0, 66, -Math.PI / 2, -Math.PI / 2 + Math.PI * 2 * fill); c.stroke();
+  c.save(); c.rotate(-t * 2); c.strokeStyle = '#fff'; c.lineWidth = 5;
+  for (const a of [0, Math.PI]) { c.beginPath(); c.arc(0, 0, 26, a + 0.3, a + Math.PI - 0.3); c.stroke(); const ex = Math.cos(a + Math.PI - 0.3) * 26, ey = Math.sin(a + Math.PI - 0.3) * 26; c.save(); c.translate(ex, ey); c.rotate(a + Math.PI - 0.3 + Math.PI / 2); c.beginPath(); c.moveTo(-8, -6); c.lineTo(0, 2); c.lineTo(8, -6); c.stroke(); c.restore(); }
+  c.restore(); c.restore();
+}
+function pptTile(c, p, t, x = PPT[0], y = PPT[1], size = 200) {
+  if (p <= 0) return; const e = eBack(clamp(p)); const k = size / 200;
+  c.save(); c.globalAlpha *= clamp(p * 2); c.translate(x, y); c.scale(e * k, e * k);
+  glow(c, 0, 0, 260, 'rgba(255,122,26,0.3)');
+  const pr = (t * 0.8) % 1; c.strokeStyle = `rgba(255,162,77,${0.5 * (1 - pr)})`; c.lineWidth = 3; rr(c, -100 - pr * 40, -100 - pr * 40, 200 + pr * 80, 200 + pr * 80, 44 + pr * 20); c.stroke();
+  c.shadowColor = 'rgba(255,122,26,0.6)'; c.shadowBlur = 50; const g = c.createLinearGradient(-100, -100, 100, 100); g.addColorStop(0, '#FF9A3C'); g.addColorStop(1, '#E85D04');
+  rr(c, -100, -100, 200, 200, 44); c.fillStyle = g; c.fill(); c.shadowColor = 'transparent';
+  rr(c, 4, -44, 66, 88, 10); c.fillStyle = 'rgba(255,255,255,0.28)'; c.fill();
+  c.fillStyle = '#fff'; c.fillRect(16, -26, 42, 6); c.fillRect(16, -12, 30, 6); c.beginPath(); c.arc(37, 20, 14, 0, Math.PI * 2); c.fill();
+  txt(c, 'P', -42, 6, { size: 120, weight: 800, align: 'center', base: 'middle' });
+  c.restore();
+}
+
+// ---------- monitor (world space) ----------
+const SCR = [320, 130, 1280, 720];
+const SLIDE_R = [605, 283.36, 900, 507.27];
+function thumb(c, i, x, y, w, h, t) {
+  if (i === 0) { slide(c, x, y, w, h, { title: NEW_TITLE, shadow: false }); return; }
+  rr(c, x, y, w, h, 4); c.fillStyle = i === 2 ? '#fff' : C.navy; c.fill();
+  c.fillStyle = C.orange; c.fillRect(x + 10, y + 12, w * 0.4, 6);
+  c.fillStyle = i === 2 ? '#C9D2E0' : 'rgba(255,255,255,0.35)'; c.fillRect(x + 10, y + 24, w * 0.55, 4); c.fillRect(x + 10, y + 32, w * 0.45, 4);
+  if (i === 1) { [16, 24, 30].forEach((bh, k) => { c.fillStyle = k === 2 ? C.orange : '#4A6FA5'; c.fillRect(x + w * 0.62 + k * 14, y + h - 12 - bh, 9, bh); }); }
+  if (i === 2) { [0, 1, 2].forEach(k => { c.beginPath(); c.arc(x + 24 + k * 34, y + h - 22, 10, 0, Math.PI * 2); c.fillStyle = C.navy; c.fill(); }); }
+  if (i === 3) { c.beginPath(); c.arc(x + w * 0.75, y + h * 0.55, 18, 0, Math.PI * 2); c.fillStyle = C.orange; c.fill(); }
+}
+function monitor(c, uiAlpha, t) {
+  c.save(); c.globalAlpha *= uiAlpha;
+  // stand
+  const sg = c.createLinearGradient(0, 900, 0, 1000); sg.addColorStop(0, '#9AA4B5'); sg.addColorStop(1, '#5E6879');
+  c.fillStyle = sg; c.beginPath(); c.moveTo(895, 898); c.lineTo(1025, 898); c.lineTo(1045, 988); c.lineTo(875, 988); c.closePath(); c.fill();
+  rr(c, 790, 982, 340, 20, 10); c.fillStyle = '#B7C0CE'; c.fill();
+  // bezel
+  c.shadowColor = 'rgba(0,0,0,0.6)'; c.shadowBlur = 80; c.shadowOffsetY = 40;
+  rr(c, 290, 100, 1340, 800, 30); const bg = c.createLinearGradient(0, 100, 0, 900); bg.addColorStop(0, '#1A2336'); bg.addColorStop(1, '#0D1320'); c.fillStyle = bg; c.fill();
+  c.shadowColor = 'transparent'; c.strokeStyle = 'rgba(255,255,255,0.12)'; c.lineWidth = 2; c.stroke();
+  c.beginPath(); c.arc(960, 875, 6, 0, Math.PI * 2); c.fillStyle = 'rgba(255,255,255,0.18)'; c.fill();
+  c.save(); c.beginPath(); c.rect(...SCR); c.clip();
+  c.fillStyle = '#DDE3EC'; c.fillRect(...SCR);
+  c.fillStyle = '#1B2B4A'; c.fillRect(320, 130, 1280, 40);
+  ['#FF6B5F', '#FFC23D', '#2BCB4F'].forEach((col, k) => { c.beginPath(); c.arc(344 + k * 20, 150, 6, 0, Math.PI * 2); c.fillStyle = col; c.fill(); });
+  rr(c, 412, 140, 20, 20, 5); c.fillStyle = C.orange; c.fill(); txt(c, 'P', 422, 151, { size: 13, weight: 800, align: 'center', base: 'middle' });
+  txt(c, 'Pitch Deck — Editable', 960, 151, { size: 15, weight: 600, color: '#C9D4E8', align: 'center', base: 'middle' });
+  c.fillStyle = '#F8F9FB'; c.fillRect(320, 170, 1280, 54); c.fillStyle = '#D5DBE5'; c.fillRect(320, 223, 1280, 1);
+  ['Home', 'Insert', 'Design', 'Transitions', 'Animations', 'Slide Show'].forEach((s, k) => {
+    const x = 350 + k * 104; txt(c, s, x, 190, { size: 13, weight: k ? 500 : 700, color: k ? '#4A556A' : C.orange, base: 'middle' });
+    if (!k) { c.fillStyle = C.orange; c.fillRect(x, 199, 36, 2.5); }
+  });
+  for (let k = 0; k < 16; k++) { rr(c, 350 + k * 34 + Math.floor(k / 4) * 16, 205, 24, 13, 3); c.fillStyle = k % 4 === 0 ? '#C8D0DC' : '#E3E8EF'; c.fill(); }
+  c.fillStyle = '#EEF1F5'; c.fillRect(320, 224, 190, 626); c.fillStyle = '#D5DBE5'; c.fillRect(509, 224, 1, 626);
+  for (let k = 0; k < 5; k++) {
+    const ty = 244 + k * 104; txt(c, String(k + 1), 334, ty + 12, { size: 12, weight: 600, color: '#7C879B' });
+    thumb(c, k % 4, 352, ty, 140, 79, t);
+    if (!k) { c.strokeStyle = C.orange; c.lineWidth = 3; rr(c, 350, ty - 2, 144, 83, 5); c.stroke(); }
+  }
+  c.restore(); c.restore();
+}
+function screenSheen(c, a) {
+  c.save(); c.globalAlpha = a; c.beginPath(); c.rect(...SCR); c.clip();
+  const g = c.createLinearGradient(320, 130, 1100, 850); g.addColorStop(0, 'rgba(255,255,255,0.10)'); g.addColorStop(0.35, 'rgba(255,255,255,0.02)'); g.addColorStop(0.36, 'rgba(255,255,255,0)'); g.addColorStop(1, 'rgba(255,255,255,0)');
+  c.fillStyle = g; c.fillRect(...SCR); c.restore();
+}
+
+// ---------- scenes (u = 0..1 local progress, t = global seconds) ----------
+const PAGE = [730, 300, 460, 598];
+function pageMotion(t) { return { fy: Math.sin(t * 1.2) * 8, rot: 0.012 * Math.sin(t * 0.9) - 0.01 }; }
+function s1(c, u, t, dur) {
+  const enter = eOut(prog(u, 0, 0.28)); const { fy, rot } = pageMotion(t);
+  const click = prog(u, 0.56, 0.62), shake = prog(u, 0.58, 0.82);
+  const sx = Math.sin(shake * Math.PI * 7) * 10 * (1 - shake) * (shake > 0 ? 1 : 0);
+  const [x, y, w, h] = PAGE; const sc = lerp(0.9, 1, enter);
+  c.save(); c.translate(960, 600); c.scale(sc, sc); c.translate(-960, -600);
+  pdfPage(c, x + sx, y + fy + (1 - enter) * 90, w, h, { alpha: enter, rot: rot - 0.05 * (1 - enter), lock: shake > 0 && shake < 1 ? 1 - shake : 0 });
+  // light sweep
+  const sw = prog(u, 0.18, 0.5); if (sw > 0 && sw < 1) { c.save(); c.translate(960 + sx, 600 + fy); c.rotate(rot); c.beginPath(); c.rect(-w / 2, -h / 2, w, h); c.clip(); const gx = lerp(-w, w, eInOut(sw)); const g = c.createLinearGradient(gx - 120, 0, gx + 120, 0); g.addColorStop(0, 'rgba(255,255,255,0)'); g.addColorStop(0.5, 'rgba(255,255,255,0.45)'); g.addColorStop(1, 'rgba(255,255,255,0)'); c.fillStyle = g; c.fillRect(-w, -h, 2 * w, 2 * h); c.restore(); }
+  c.restore();
+  reveal(c, 'Tired of uneditable PDFs?', 960, 190, prog(u, 0.06, 0.3), { size: 62, weight: 800, align: 'center', ls: -1 });
+  const ul = eOut(prog(u, 0.2, 0.4)); c.fillStyle = C.orange; c.fillRect(960 - 90 * ul, 226, 180 * ul, 5);
+  // cursor tries to edit
+  const cm = eInOut(prog(u, 0.34, 0.56)); const ca = prog(u, 0.3, 0.38) * (1 - prog(u, 0.92, 1));
+  const cx = lerp(1380, 905, cm), cy = lerp(880, 412, cm) + fy;
+  ripple(c, 905, 412 + fy, prog(u, 0.56, 0.72), C.red);
+  cursor(c, cx, cy, 1 - 0.12 * Math.sin(click * Math.PI), ca);
+  const pa = prog(u, 0.6, 0.7) * (1 - prog(u, 0.9, 1)); if (pa > 0) {
+    c.save(); c.globalAlpha = pa; const e = eBack(prog(u, 0.6, 0.7)); c.translate(950, 470 + fy); c.scale(e, e);
+    rr(c, 0, 0, 220, 48, 24); c.fillStyle = C.red; c.shadowColor = 'rgba(229,72,77,0.5)'; c.shadowBlur = 24; c.fill(); c.shadowColor = 'transparent';
+    lockGlyph(c, 28, 26, 22, '#fff'); txt(c, 'Not Editable', 50, 25, { size: 20, weight: 700, base: 'middle' }); c.restore();
+  }
+}
+const POPS = [0.09, 0.18, 0.30, 0.42, 0.52];
+function s2(c, u, t) {
+  // camera push-through at the end
+  const zoom = eIn(prog(u, 0.86, 1)); const fade = 1 - prog(u, 0.93, 1);
+  c.save(); c.globalAlpha = fade; c.translate(PPT[0], PPT[1]); c.scale(1 + zoom * 2.6, 1 + zoom * 2.6); c.translate(-PPT[0], -PPT[1]);
+  reveal(c, 'From Any Design to PowerPoint', 960, 128, prog(u, 0.03, 0.14), { size: 52, weight: 800, align: 'center', ls: -0.5 });
+  SOURCES.forEach((_, i) => { flow(c, i, prog(u, POPS[i] + 0.04, POPS[i] + 0.16), t); });
+  SOURCES.forEach((_, i) => srcCard(c, i, prog(u, POPS[i], POPS[i] + 0.08)));
+  core(c, prog(u, 0.08, 0.18), eInOut(prog(u, 0.14, 0.64)), t);
+  // beam core -> PowerPoint
+  const bm = eInOut(prog(u, 0.58, 0.66)); if (bm > 0) {
+    c.save(); const x0 = CORE[0] + 92, x1 = lerp(x0, PPT[0] - 115, bm); const g = c.createLinearGradient(x0, 0, PPT[0] - 115, 0); g.addColorStop(0, 'rgba(255,122,26,0.2)'); g.addColorStop(1, C.orange2);
+    c.strokeStyle = g; c.lineWidth = 4; c.beginPath(); c.moveTo(x0, 540); c.quadraticCurveTo((x0 + x1) / 2, 540, x1, lerp(540, 520, bm)); c.stroke();
+    if (bm >= 1) for (let j = 0; j < 3; j++) { const q = (t * 1.1 + j / 3) % 1; c.fillStyle = '#fff'; c.shadowColor = C.orange; c.shadowBlur = 18; c.beginPath(); c.arc(lerp(x0, PPT[0] - 115, q), lerp(540, 522, q), 5, 0, Math.PI * 2); c.fill(); }
+    c.restore();
+  }
+  pptTile(c, prog(u, 0.64, 0.76), t);
+  reveal(c, 'PowerPoint', PPT[0], 690, prog(u, 0.7, 0.8), { size: 38, weight: 800, align: 'center' });
+  const ca = prog(u, 0.74, 0.84); if (ca > 0) { const w = measure(c, 'Fully Editable', 18, 700, 1) + 28 + 30; c.save(); c.translate(PPT[0] - w / 2, 716); pill(c, 'Fully Editable', 0, 0, { size: 18, ls: 1, bg: 'rgba(255,122,26,0.15)', stroke: C.orange, color: C.orange2, alpha: ca, pad: 15 + 15, h: 40 }); checkmark(c, 19, 20, 11, C.orange2, 3 * ca); c.restore(); }
+  c.restore();
+  // PDF page from scene 1 shrinking into the first card
+  const f = prog(u, 0, 0.12); if (f < 1) {
+    const e = eInOut(f); const { fy, rot } = pageMotion(t); const tw = 64, th = 83, tx = 346, ty = CARD_Y[0] - 41;
+    pdfPage(c, lerp(PAGE[0], tx, e), lerp(PAGE[1] + fy, ty, e), lerp(PAGE[2], tw, e), lerp(PAGE[3], th, e), { alpha: 1 - prog(f, 0.7, 1), rot: rot * (1 - e) });
+  }
+}
+const SL = [410, 230, 1100, 620];
+function s3(c, u, t) {
+  const ent = eExpo(prog(u, 0, 0.1));
+  const from = [PPT[0] - 110, PPT[1] - 62, 220, 124];
+  const scan = prog(u, 0.1, 0.32);
+  const ex = prog(u, 0.32, 0.47), snap = prog(u, 0.6, 0.7);
+  let explode = eInOut(ex); if (snap > 0) explode = 1 - eBack(snap);
+  const cam = 1 - 0.1 * clamp(explode) + 0.025 * Math.sin(Math.PI * u);
+  const rect = from.map((v, i) => lerp(v, SL[i], ent));
+  c.save(); c.translate(960, 540); c.scale(cam, cam); c.translate(-960, -540);
+  const click = 0.74, sel = prog(u, click, click + 0.04), type = prog(u, click + 0.04, 0.9);
+  let title = OLD_TITLE; if (u >= click + 0.04) title = NEW_TITLE.slice(0, Math.round(NEW_TITLE.length * type));
+  const caretOn = u >= click && u < 0.97 && (type > 0 && type < 1 ? true : Math.floor(t * 2.6) % 2 === 0);
+  slide(c, ...rect, {
+    t, explode, scanY: scan > 0 && scan < 1 ? lerp(-10, 640, eInOut(scan)) : (scan >= 1 ? null : -10),
+    veil: 1 - prog(u, 0.3, 0.33), boxes: (scan >= 1 ? 1 : 0) * (1 - prog(u, 0.7, 0.78)),
+    labels: prog(u, 0.38, 0.46) * (1 - prog(u, 0.62, 0.68)), title, select: u >= click + 0.04 ? 0 : sel, caret: caretOn, titleBox: prog(u, 0.7, 0.74),
+  });
+  c.restore();
+  // "static PDF" badge before the scan
+  const ba = prog(u, 0.04, 0.1) * (1 - prog(u, 0.24, 0.3)); if (ba > 0) { c.save(); c.globalAlpha = ba; rr(c, 410, 176, 210, 40, 20); c.fillStyle = 'rgba(229,72,77,0.18)'; c.fill(); c.strokeStyle = C.red; c.lineWidth = 2; c.stroke(); lockGlyph(c, 436, 197, 20, '#FF8A8E'); txt(c, 'Flat. Locked.', 456, 197, { size: 18, weight: 700, color: '#FF8A8E', base: 'middle' }); c.restore(); }
+  reveal(c, 'Pixel-Perfect. Every Element Editable.', 960, 1000, prog(u, 0.3, 0.42) * (1 - prog(u, 0.9, 1)), { size: 46, weight: 800, align: 'center', ls: -0.5 });
+  const flash = 1 - prog(u, 0, 0.07); if (flash > 0 && u > 0) { c.save(); c.globalAlpha = flash * 0.55; glow(c, 960, 540, 1100, C.orange); c.restore(); }
+  // cursor edits the title
+  const cm = eInOut(prog(u, 0.66, click)); const ca = prog(u, 0.64, 0.68) * (1 - prog(u, 0.93, 0.98));
+  const tx = 410 + 70 + measure(c, OLD_TITLE, 66, 800, -1) * 0.6, ty = 230 + 168;
+  ripple(c, tx, ty, prog(u, click, click + 0.1));
+  cursor(c, lerp(1520, tx, cm), lerp(920, ty, cm), 1 - 0.12 * Math.sin(prog(u, click - 0.01, click + 0.03) * Math.PI), ca);
+}
+function camS4(u) {
+  const e = eInOut(prog(u, 0, 0.55));
+  const k0 = SL[2] / SLIDE_R[2], k1 = 0.74 * (1 + 0.02 * prog(u, 0.55, 1));
+  return { k: Math.exp(lerp(Math.log(k0), Math.log(k1), e)), P: [lerp(SLIDE_R[0], 960, e), lerp(SLIDE_R[1], 545, e)], Q: [lerp(SL[0], 640, e), lerp(SL[1], 545, e)] };
+}
+function s4(c, u, t, textAlpha = 1) {
+  const { k, P, Q } = camS4(u);
+  c.save(); c.translate(Q[0], Q[1]); c.scale(k, k); c.translate(-P[0], -P[1]);
+  monitor(c, prog(u, 0, 0.16), t);
+  slide(c, ...SLIDE_R, { title: NEW_TITLE, titleBox: 1 - prog(u, 0.5, 0.65), shadow: u < 0.1 });
+  screenSheen(c, prog(u, 0.1, 0.3));
+  c.restore();
+  c.save(); c.globalAlpha = textAlpha;
+  const x = 1196; const ln = eOut(prog(u, 0.36, 0.5)); c.fillStyle = C.orange; c.fillRect(x, 372, 70 * ln, 5);
+  reveal(c, 'Your Design.', x, 476, prog(u, 0.4, 0.56), { size: 86, weight: 800, ls: -1.5 });
+  reveal(c, 'Fully Editable.', x, 574, prog(u, 0.48, 0.64), { size: 86, weight: 800, ls: -1.5, color: C.orange });
+  reveal(c, 'PDF · Figma · Illustrator · Image · Website', x, 642, prog(u, 0.6, 0.76), { size: 22, weight: 500, color: C.slate, ls: 0.3 });
+  c.restore();
+}
+function shineText(c, lines, p) {
+  bctx.clearRect(0, 0, W, H); lines.forEach(l => txt(bctx, ...l));
+  if (p > 0 && p < 1) { bctx.save(); bctx.globalCompositeOperation = 'source-atop'; const gx = lerp(200, 1720, p); const g = bctx.createLinearGradient(gx - 160, 0, gx + 160, 0); g.addColorStop(0, 'rgba(255,255,255,0)'); g.addColorStop(0.5, 'rgba(255,255,255,0.85)'); g.addColorStop(1, 'rgba(255,255,255,0)'); bctx.fillStyle = g; bctx.fillRect(0, 0, W, H); bctx.restore(); }
+  c.drawImage(buf, 0, 0);
+}
+const prev = document.createElement('canvas'); prev.width = W; prev.height = H; const pctx = prev.getContext('2d');
+function s5(c, u, t) {
+  const out = eInOut(prog(u, 0, 0.2));
+  if (out < 1) { pctx.clearRect(0, 0, W, H); s4(pctx, 1, t); c.save(); c.globalAlpha = 1 - out; c.filter = `blur(${out * 14}px)`; c.translate(960, 540); c.scale(1 - 0.1 * out, 1 - 0.1 * out); c.translate(-960, -540); c.drawImage(prev, 0, 0); c.restore(); c.filter = 'none'; }
+  const g = prog(u, 0.1, 0.35); if (g > 0) { c.save(); c.globalAlpha = g * (0.85 + 0.15 * Math.sin(t * 2)); glow(c, 960, 520, 900, 'rgba(255,122,26,0.18)'); c.restore(); }
+  // chat icon
+  const ip = prog(u, 0.12, 0.26); if (ip > 0) {
+    const e = eBack(ip); c.save(); c.globalAlpha = clamp(ip * 2); c.translate(960, 300); c.scale(e, e);
+    c.shadowColor = 'rgba(255,122,26,0.6)'; c.shadowBlur = 50; const gg = c.createLinearGradient(-60, -60, 60, 60); gg.addColorStop(0, '#FF9A3C'); gg.addColorStop(1, '#E85D04');
+    c.beginPath(); c.arc(0, 0, 62, 0, Math.PI * 2); c.fillStyle = gg; c.fill(); c.shadowColor = 'transparent';
+    c.fillStyle = '#fff'; rr(c, -30, -24, 60, 40, 12); c.fill(); c.beginPath(); c.moveTo(-14, 14); c.lineTo(-20, 30); c.lineTo(2, 14); c.closePath(); c.fill();
+    const d = Math.floor(t * 3) % 3; [-13, 0, 13].forEach((dx, k) => { c.beginPath(); c.arc(dx, -4 - (k === d ? 3 : 0), 4.5, 0, Math.PI * 2); c.fillStyle = C.orange; c.fill(); });
+    c.restore();
+  }
+  const l1 = prog(u, 0.18, 0.34), l2 = prog(u, 0.24, 0.4);
+  if (u < 0.45) {
+    reveal(c, 'Message Me', 960, 500, l1, { size: 112, weight: 800, align: 'center', ls: -2 });
+    reveal(c, 'Before Ordering', 960, 624, l2, { size: 112, weight: 800, align: 'center', ls: -2, color: C.orange });
+  } else {
+    shineText(c, [['Message Me', 960, 500, { size: 112, weight: 800, align: 'center', ls: -2 }], ['Before Ordering', 960, 624, { size: 112, weight: 800, align: 'center', ls: -2, color: C.orange }]], eInOut(prog(u, 0.48, 0.72)));
+  }
+  const ul = eOut(prog(u, 0.36, 0.52)); c.fillStyle = C.orange; c.fillRect(960 - 160 * ul, 668, 320 * ul, 5);
+  reveal(c, 'Let’s transform your design into an editable PowerPoint.', 960, 740, prog(u, 0.38, 0.54), { size: 32, weight: 500, align: 'center', color: '#C9D4E8' });
+}
+
+function render(t) {
+  const s = mode.s; ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; ctx.filter = 'none';
+  background(ctx, t);
+  let i = 0; while (i < 4 && t >= s[i + 1]) i++;
+  const u = clamp((t - s[i]) / (s[i + 1] - s[i]));
+  [s1, s2, s3, s4, s5][i](ctx, u, t, s[i + 1] - s[i]);
+  finish(ctx, t);
+}
+
+window.setMode = m => { mode = MODES[m]; return mode.total; };
+window.renderAt = t => render(t);
+window.ready = document.fonts.load('800 40px Inter').then(() => Promise.all([500, 600, 700].map(w => document.fonts.load(`${w} 40px Inter`))));
+const q = new URLSearchParams(location.search);
+if (q.get('mode')) setMode(q.get('mode'));
+if (!q.has('render')) ready.then(() => { const t0 = performance.now(); const loop = () => { render(((performance.now() - t0) / 1000) % mode.total); requestAnimationFrame(loop); }; loop(); });
+</script>
+</body>
+</html>

@@ -1,20 +1,168 @@
-nav li {
+/* Tokens: the aqua accent is the page's own colour, kept as a surface
+   (dark text on it) because aqua text on white fails contrast. */
+:root {
+    --ink: #13232b;
+    --ink-soft: #3d5560;
+    --paper: #fbfcfc;
+    --aqua: #00ffff;
+    --aqua-wash: #d9fbfb;
+    --aqua-deep: #006b73;
+    --rule: #d3e3e5;
+
+    --font-read: "Source Serif 4", Georgia, "Times New Roman", serif;
+    --font-ui: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+    --measure: 68ch;
+    --space-1: 0.5rem;
+    --space-2: 1rem;
+    --space-3: 1.5rem;
+    --space-4: 2.5rem;
+    --space-5: 4rem;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-read);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    font-optical-sizing: auto;
+}
+
+/* Browser surfaces carry the palette too. */
+::selection {
+    background: var(--aqua);
+    color: var(--ink);
+}
+
+:focus-visible {
+    outline: 2px solid var(--aqua-deep);
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+a {
+    color: var(--aqua-deep);
+    text-underline-offset: 0.2em;
+    text-decoration-thickness: 1px;
+}
+
+/* Navigation */
+.site-header {
+    border-bottom: 1px solid var(--rule);
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1);
+    max-width: var(--measure);
+    margin: 0 auto;
+    padding: var(--space-2);
     list-style: none;
-    display: inline;
-    margin: 15px;
-}
-nav li:hover{
-    background-color: aqua;
-    text-shadow: burlywood;
 }
 
-nav li a{
- 
+nav a {
+    display: inline-block;
+    padding: 0.5rem 0.875rem;
+    border-radius: 6px;
+    color: var(--ink);
+    font-family: var(--font-ui);
+    font-size: 0.9375rem;
+    font-weight: 500;
     text-decoration: none;
+    transition: background-color 160ms cubic-bezier(0.16, 1, 0.3, 1);
 }
-.blog{
-    background-color: aqua;
-    height: 144px;
-    width: 400px;
 
+nav a:hover {
+    background-color: var(--aqua);
+}
+
+nav a[aria-current="page"] {
+    background-color: var(--aqua-wash);
+}
+
+/* Article */
+main {
+    padding: var(--space-5) var(--space-2) var(--space-4);
+}
+
+.post {
+    max-width: var(--measure);
+    margin: 0 auto;
+}
+
+.post h1 {
+    margin: 0 0 var(--space-3);
+    font-size: clamp(2rem, 1.4rem + 2.6vw, 3rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+}
+
+.post p {
+    margin: 0 0 var(--space-3);
+    text-wrap: pretty;
+}
+
+.post figure {
+    margin: var(--space-4) 0;
+}
+
+.post img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    border-radius: 8px;
+    background: var(--aqua-wash);
+}
+
+/* The aqua note block, kept from the original, now sized by its text. */
+.blog {
+    padding: var(--space-3);
+    border-radius: 8px;
+    background-color: var(--aqua-wash);
+}
+
+/* Footer */
+.site-footer {
+    border-top: 1px solid var(--rule);
+    padding: var(--space-3) var(--space-2);
+    text-align: center;
+    color: var(--ink-soft);
+    font-family: var(--font-ui);
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+@media (max-width: 480px) {
+    main {
+        padding-top: var(--space-4);
+    }
+
+    nav ul {
+        padding: var(--space-1) var(--space-2);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    nav a {
+        transition: none;
+    }
 }

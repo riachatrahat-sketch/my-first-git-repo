@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "nby-awesome-design-md": {
+      "source": "smartchainark/nby-skills",
+      "sourceType": "github",
+      "skillPath": "nby-awesome-design-md/SKILL.md",
+      "computedHash": "ed2218ab25a977ad75cac66029550192cff2e7e19cfec22f88a98f11005bac2f"
+    }
+  }
+}
